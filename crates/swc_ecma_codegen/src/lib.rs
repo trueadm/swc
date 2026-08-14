@@ -46,6 +46,7 @@ mod stmt;
 #[cfg(test)]
 mod tests;
 pub mod text_writer;
+mod tsrx;
 mod typescript;
 pub mod util;
 
@@ -872,6 +873,19 @@ where
         skip_first_src_map: bool,
     ) -> Result {
         self.emit_leading_comments_of_span(node.span(), false)?;
+
+        if let [Stmt::Expr(ExprStmt { expr, .. })] = node.stmts.as_slice() {
+            if let Expr::Tsrx(tsrx) = &**expr {
+                if let TsrxExpr::CodeBlock(block) = &**tsrx {
+                    if block.is_function_body {
+                        punct!(self, "@");
+                        emit!(self, block);
+                        return Ok(());
+                    }
+                }
+            }
+        }
+
         self.emit_braced_stmts(node.span, &node.stmts, skip_first_src_map)
     }
 
@@ -1767,6 +1781,7 @@ impl MacroNode for Expr {
             Expr::TsSatisfies(n) => {
                 emit!(n)
             }
+            Expr::Tsrx(n) => emit!(n),
             #[cfg(swc_ast_unknown)]
             _ => return Err(unknown_error()),
         }

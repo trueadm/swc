@@ -176,11 +176,15 @@ impl_enum!(
         JSXElement,
         JSXExprContainer,
         JSXFragment,
-        JSXSpreadChild
+        JSXSpreadChild,
+        Tsrx
     ]
 );
 impl_enum!(OptChainBase, [Member, Call]);
-impl_enum!(JSXElementName, [Ident, JSXMemberExpr, JSXNamespacedName]);
+impl_enum!(
+    JSXElementName,
+    [Ident, JSXMemberExpr, JSXNamespacedName, JSXExprContainer]
+);
 impl_enum!(JSXAttrOrSpread, [JSXAttr, SpreadElement]);
 
 impl<T> ToCode for Vec<T>

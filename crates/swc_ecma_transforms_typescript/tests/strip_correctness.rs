@@ -88,6 +88,7 @@ fn identity(entry: PathBuf) {
         let mut parser: Parser<Lexer> = Parser::new(
             Syntax::Typescript(TsSyntax {
                 tsx: file_name.contains("tsx"),
+                tsrx: false,
                 decorators: true,
                 dts: false,
                 no_early_errors: false,

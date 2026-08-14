@@ -1101,9 +1101,24 @@ impl Default for Rc {
             Config {
                 env: None,
                 test: None,
-                exclude: Some(FileMatcher::Pattern(FilePattern::Regex("\\.tsx?$".into()))),
+                exclude: Some(FileMatcher::Pattern(FilePattern::Regex(
+                    "\\.(?:ts|tsx|tsrx)$".into(),
+                ))),
                 jsc: JscConfig {
                     syntax: Some(Default::default()),
+                    ..Default::default()
+                },
+                ..Default::default()
+            },
+            Config {
+                env: None,
+                test: Some(FileMatcher::Pattern(FilePattern::Regex("\\.tsrx$".into()))),
+                exclude: None,
+                jsc: JscConfig {
+                    syntax: Some(Syntax::Typescript(TsSyntax {
+                        tsrx: true,
+                        ..Default::default()
+                    })),
                     ..Default::default()
                 },
                 ..Default::default()
@@ -1244,9 +1259,10 @@ impl Config {
     ///
     ///
     ///
-    /// - typescript: `tsx` will be modified if file extension is `ts`.
+    /// - typescript: `tsx` and `tsrx` are adjusted for their matching file
+    ///   extensions.
     pub fn adjust(&mut self, file: &Path) {
-        if let Some(Syntax::Typescript(TsSyntax { tsx, dts, .. })) = &mut self.jsc.syntax {
+        if let Some(Syntax::Typescript(TsSyntax { tsx, tsrx, dts, .. })) = &mut self.jsc.syntax {
             let is_dts = file
                 .file_name()
                 .and_then(|f| f.to_str())
@@ -1257,10 +1273,15 @@ impl Config {
                 *dts = true;
             }
 
-            if file.extension() == Some("tsx".as_ref()) {
+            if file.extension() == Some("tsrx".as_ref()) {
+                *tsx = false;
+                *tsrx = true;
+            } else if file.extension() == Some("tsx".as_ref()) {
                 *tsx = true;
+                *tsrx = false;
             } else if file.extension() == Some("ts".as_ref()) {
                 *tsx = false;
+                *tsrx = false;
             }
         }
     }

@@ -58,7 +58,8 @@ impl_enum!(
         TsSatisfies,
         PrivateName,
         OptChain,
-        Invalid
+        Invalid,
+        Tsrx
     ],
     true
 );
@@ -142,7 +143,9 @@ impl_struct!(SpreadElement, [dot3_token, expr]);
 impl_struct!(JSXExprContainer, [span, expr]);
 impl_struct!(JSXSpreadChild, [span, expr]);
 
-impl_struct!(JSXAttr, [span, name, value]);
+impl_struct!(JSXAttr, [span, name, value, shorthand]);
+
+fail_todo!(TsrxExpr);
 
 impl_enum!(
     JSXAttrValue,

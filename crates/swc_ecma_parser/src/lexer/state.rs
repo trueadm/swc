@@ -31,7 +31,21 @@ bitflags::bitflags! {
 }
 
 static JSX_CHILD_TABLE: SafeByteMatchTable =
-    safe_byte_match_table!(|b| matches!(b, b'{' | b'}' | b'<' | b'>' | b'&'));
+    safe_byte_match_table!(|b| matches!(b, b'{' | b'}' | b'<' | b'>' | b'&' | b'@'));
+
+fn is_tsrx_directive_start(source: &str) -> bool {
+    if source.starts_with("@{") {
+        return true;
+    }
+
+    ["@if", "@for", "@switch", "@try"].iter().any(|prefix| {
+        source.strip_prefix(prefix).is_some_and(|rest| {
+            rest.as_bytes().first().map_or(true, |byte| {
+                !byte.is_ascii_alphanumeric() && !matches!(byte, b'_' | b'$')
+            })
+        })
+    })
+}
 
 /// State of lexer.
 ///
@@ -461,6 +475,10 @@ impl Lexer<'_> {
                 self.bump(1);
                 Ok(Token::LBrace)
             }
+            Some(b'@') if self.syntax.tsrx() && is_tsrx_directive_start(self.input().as_str()) => {
+                self.bump(1);
+                Ok(Token::At)
+            }
             Some(_) => {
                 // Fast path: we assume there's no `&` in the jsx child
                 byte_search! {
@@ -492,6 +510,10 @@ impl Lexer<'_> {
                             },
                             // Encountered `&`, go to the slow path
                             b'&' => return self.scan_jsx_token_with_jsx_entity(),
+                            b'@' => {
+                                let rest = &self.input().as_str()[pos_offset..];
+                                !self.syntax.tsrx() || !is_tsrx_directive_start(rest)
+                            },
                             _ => false,
                         }
                     },
@@ -567,6 +589,9 @@ impl Lexer<'_> {
                     chunk_start = self.input.cur_pos();
                 }
                 '<' | '{' => break,
+                '@' if self.syntax.tsrx() && is_tsrx_directive_start(self.input().as_str()) => {
+                    break
+                }
                 c => {
                     self.bump(c.len_utf8());
                 }

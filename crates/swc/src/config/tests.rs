@@ -1,4 +1,7 @@
+use std::path::Path;
+
 use swc_config::types::BoolOr;
+use swc_ecma_parser::Syntax;
 
 use crate::{
     config::{Rc, ReactCompilerCompilationMode, ReactCompilerOutputMode, ReactCompilerTarget},
@@ -16,6 +19,19 @@ fn array() {
     let rc = parse_swcrc(include_str!("array.json")).expect("failed to parse");
 
     dbg!(&rc);
+}
+
+#[test]
+fn default_config_enables_tsrx_for_tsrx_files() {
+    let config = Rc::default()
+        .into_config(Some(Path::new("component.tsrx")))
+        .expect("failed to select config")
+        .expect("expected a config");
+
+    assert!(matches!(
+        config.jsc.syntax,
+        Some(Syntax::Typescript(syntax)) if syntax.tsrx && !syntax.tsx
+    ));
 }
 
 #[test]

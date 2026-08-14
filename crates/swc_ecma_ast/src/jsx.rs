@@ -6,7 +6,7 @@ use crate::{
     expr::{Expr, SpreadElement},
     ident::Ident,
     typescript::TsTypeParamInstantiation,
-    IdentName, Str,
+    IdentName, Str, TsrxExpr,
 };
 
 /// Used for `obj` property of `JSXMemberExpr`.
@@ -99,6 +99,8 @@ pub enum JSXElementName {
     JSXMemberExpr(JSXMemberExpr),
     #[tag("JSXNamespacedName")]
     JSXNamespacedName(JSXNamespacedName),
+    #[tag("JSXExpressionContainer")]
+    JSXExprContainer(JSXExprContainer),
 }
 
 impl Take for JSXElementName {
@@ -178,6 +180,10 @@ pub struct JSXAttr {
         encoding(with = "cbor4ii::core::types::Maybe")
     )]
     pub value: Option<JSXAttrValue>,
+
+    /// Whether this attribute used TSRX's `{name}` shorthand syntax.
+    #[cfg_attr(feature = "serde-impl", serde(default))]
+    pub shorthand: bool,
 }
 
 #[ast_node]
@@ -275,6 +281,9 @@ pub enum JSXElementChild {
 
     #[tag("JSXFragment")]
     JSXFragment(JSXFragment),
+
+    #[tag("*")]
+    Tsrx(Box<TsrxExpr>),
 }
 
 #[ast_node("JSXFragment")]

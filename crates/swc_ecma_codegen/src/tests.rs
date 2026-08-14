@@ -6,7 +6,7 @@ use swc_ecma_parser;
 use swc_ecma_testing::{exec_node_js, JsExecOptions};
 use testing::DebugUsingDisplay;
 
-use self::swc_ecma_parser::{EsSyntax, Parser, StringInput, Syntax};
+use self::swc_ecma_parser::{EsSyntax, Parser, StringInput, Syntax, TsSyntax};
 use super::*;
 use crate::{lit::get_quoted_utf16, text_writer::omit_trailing_semi};
 
@@ -1405,4 +1405,40 @@ fn test_str_lit_inner(input: PathBuf) {
     let actual = run_node(&output_code);
 
     assert_eq!(actual, expected);
+}
+
+#[test]
+fn tsrx_parse_print_is_stable() {
+    let source = r#"
+        export function View({ items, Tag, value }: Props) @{
+            const count = items.length;
+            <{Tag} {value}>
+                @if (count > 0) {
+                    @for (const item of items; index index; key item.id) {
+                        <Row item={item} index={index} />
+                    }
+                } @else {
+                    <Empty />
+                }
+            </{Tag}>
+        }
+    "#;
+    let syntax = Syntax::Typescript(TsSyntax {
+        tsrx: true,
+        ..Default::default()
+    });
+    let config = Config {
+        minify: true,
+        target: EsVersion::latest(),
+        omit_last_semi: true,
+        ..Default::default()
+    };
+
+    let first = parse_then_emit(source, config, syntax);
+    let second = parse_then_emit(&first, config, syntax);
+
+    assert_eq!(
+        DebugUsingDisplay(first.trim()),
+        DebugUsingDisplay(second.trim())
+    );
 }

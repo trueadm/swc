@@ -1313,7 +1313,8 @@ fn can_be_null(e: &Expr) -> bool {
         | Expr::JSXNamespacedName(..)
         | Expr::JSXEmpty(..)
         | Expr::JSXElement(..)
-        | Expr::JSXFragment(..) => unreachable!("destructuring jsx"),
+        | Expr::JSXFragment(..)
+        | Expr::Tsrx(..) => unreachable!("destructuring template expression"),
 
         Expr::TsNonNull(..) => false,
         Expr::TsAs(TsAsExpr { ref expr, .. })

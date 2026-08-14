@@ -2024,7 +2024,8 @@ impl ExprCtx {
             | Expr::JSXNamespacedName(..)
             | Expr::JSXEmpty(..)
             | Expr::JSXElement(..)
-            | Expr::JSXFragment(..) => to.push(Box::new(expr)),
+            | Expr::JSXFragment(..)
+            | Expr::Tsrx(..) => to.push(Box::new(expr)),
 
             Expr::TsTypeAssertion(TsTypeAssertion { expr, .. })
             | Expr::TsNonNull(TsNonNullExpr { expr, .. })
@@ -2562,6 +2563,7 @@ where
                     JSXElementName::Ident(ident) => ident.into(),
                     JSXElementName::JSXMemberExpr(expr) => Box::new(expr).into(),
                     JSXElementName::JSXNamespacedName(..) => unimplemented!(),
+                    JSXElementName::JSXExprContainer(..) => return,
                     #[cfg(swc_ast_unknown)]
                     _ => return,
                 }
@@ -3783,7 +3785,8 @@ fn may_have_side_effects(expr: &Expr, ctx: ExprCtx) -> bool {
         | Expr::JSXNamespacedName(..)
         | Expr::JSXEmpty(..)
         | Expr::JSXElement(..)
-        | Expr::JSXFragment(..) => true,
+        | Expr::JSXFragment(..)
+        | Expr::Tsrx(..) => true,
 
         Expr::TsAs(TsAsExpr { ref expr, .. })
         | Expr::TsNonNull(TsNonNullExpr { ref expr, .. })

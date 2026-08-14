@@ -232,6 +232,7 @@ fn parse_jsx_attr<'a, P: Parser<'a>>(p: &mut P) -> PResult<JSXAttrOrSpread> {
         span: p.span(start),
         name,
         value,
+        shorthand: false,
     }
     .into())
 }

@@ -211,6 +211,7 @@ impl SizeWithCtxt for Expr {
             Expr::TsAs(_) => TODO,
             Expr::TsInstantiation(_) => TODO,
             Expr::TsSatisfies(_) => TODO,
+            Expr::Tsrx(_) => TODO,
             #[cfg(swc_ast_unknown)]
             _ => TODO,
         }

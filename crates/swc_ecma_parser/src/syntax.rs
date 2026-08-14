@@ -48,7 +48,8 @@ impl Syntax {
         match self {
             Syntax::Es(EsSyntax { jsx: true, .. }) => true,
             #[cfg(feature = "typescript")]
-            Syntax::Typescript(TsSyntax { tsx: true, .. }) => true,
+            Syntax::Typescript(TsSyntax { tsx: true, .. })
+            | Syntax::Typescript(TsSyntax { tsrx: true, .. }) => true,
             #[cfg(feature = "flow")]
             Syntax::Flow(FlowSyntax { jsx: true, .. }) => true,
             _ => false,
@@ -122,6 +123,15 @@ impl Syntax {
 
     pub const fn types_like(self) -> bool {
         self.typescript()
+    }
+
+    /// Should we parse TSRX extensions?
+    pub const fn tsrx(self) -> bool {
+        match self {
+            #[cfg(feature = "typescript")]
+            Syntax::Typescript(TsSyntax { tsrx: true, .. }) => true,
+            _ => false,
+        }
     }
 
     pub fn export_default_from(self) -> bool {
@@ -220,6 +230,10 @@ pub struct TsSyntax {
     #[serde(default)]
     pub tsx: bool,
 
+    /// Enable TSRX syntax. TSRX is a superset of TSX, so this also enables JSX.
+    #[serde(default)]
+    pub tsrx: bool,
+
     #[serde(default)]
     pub decorators: bool,
 
@@ -249,8 +263,11 @@ impl TsSyntax {
             .union(SyntaxFlags::ALLOW_SUPER_OUTSIDE_METHOD)
             .union(SyntaxFlags::EXPLICIT_RESOURCE_MANAGEMENT);
 
-        if self.tsx {
+        if self.tsx || self.tsrx {
             flags |= SyntaxFlags::JSX;
+        }
+        if self.tsrx {
+            flags |= SyntaxFlags::TSRX;
         }
         if self.decorators {
             flags |= SyntaxFlags::DECORATORS;
@@ -430,6 +447,12 @@ impl SyntaxFlags {
     #[inline(always)]
     pub const fn jsx(&self) -> bool {
         self.contains(SyntaxFlags::JSX)
+    }
+
+    /// Should we parse TSRX extensions?
+    #[inline(always)]
+    pub const fn tsrx(&self) -> bool {
+        self.contains(SyntaxFlags::TSRX)
     }
 
     #[inline(always)]
@@ -655,5 +678,6 @@ bitflags::bitflags! {
         const FLOW_COMPONENTS = 1 << 20;
         #[cfg(feature = "flow")]
         const FLOW_PATTERN_MATCHING = 1 << 21;
+        const TSRX = 1 << 22;
     }
 }

@@ -603,6 +603,13 @@ pub trait Visit {
     fn visit_jsx_attr_value(&mut self, node: &JSXAttrValue) {
         <JSXAttrValue as VisitWith<Self>>::visit_children_with(node, self)
     }
+    #[doc = "Visit a node of type `JSXCatchClause`.\n\nBy default, this method calls \
+             [`JSXCatchClause::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_catch_clause(&mut self, node: &JSXCatchClause) {
+        <JSXCatchClause as VisitWith<Self>>::visit_children_with(node, self)
+    }
     #[doc = "Visit a node of type `JSXClosingElement`.\n\nBy default, this method calls \
              [`JSXClosingElement::visit_children_with`]. If you want to recurse, you need to call \
              it manually."]
@@ -616,6 +623,13 @@ pub trait Visit {
     #[inline]
     fn visit_jsx_closing_fragment(&mut self, node: &JSXClosingFragment) {
         <JSXClosingFragment as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXCodeBlock`.\n\nBy default, this method calls \
+             [`JSXCodeBlock::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_code_block(&mut self, node: &JSXCodeBlock) {
+        <JSXCodeBlock as VisitWith<Self>>::visit_children_with(node, self)
     }
     #[doc = "Visit a node of type `JSXElement`.\n\nBy default, this method calls \
              [`JSXElement::visit_children_with`]. If you want to recurse, you need to call it \
@@ -666,12 +680,40 @@ pub trait Visit {
     fn visit_jsx_expr_container(&mut self, node: &JSXExprContainer) {
         <JSXExprContainer as VisitWith<Self>>::visit_children_with(node, self)
     }
+    #[doc = "Visit a node of type `JSXForExpr`.\n\nBy default, this method calls \
+             [`JSXForExpr::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_for_expr(&mut self, node: &JSXForExpr) {
+        <JSXForExpr as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXForKind`.\n\nBy default, this method calls \
+             [`JSXForKind::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_for_kind(&mut self, node: &JSXForKind) {
+        <JSXForKind as VisitWith<Self>>::visit_children_with(node, self)
+    }
     #[doc = "Visit a node of type `JSXFragment`.\n\nBy default, this method calls \
              [`JSXFragment::visit_children_with`]. If you want to recurse, you need to call it \
              manually."]
     #[inline]
     fn visit_jsx_fragment(&mut self, node: &JSXFragment) {
         <JSXFragment as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXIfAlternate`.\n\nBy default, this method calls \
+             [`JSXIfAlternate::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_if_alternate(&mut self, node: &JSXIfAlternate) {
+        <JSXIfAlternate as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXIfExpr`.\n\nBy default, this method calls \
+             [`JSXIfExpr::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_if_expr(&mut self, node: &JSXIfExpr) {
+        <JSXIfExpr as VisitWith<Self>>::visit_children_with(node, self)
     }
     #[doc = "Visit a node of type `JSXMemberExpr`.\n\nBy default, this method calls \
              [`JSXMemberExpr::visit_children_with`]. If you want to recurse, you need to call it \
@@ -715,12 +757,47 @@ pub trait Visit {
     fn visit_jsx_spread_child(&mut self, node: &JSXSpreadChild) {
         <JSXSpreadChild as VisitWith<Self>>::visit_children_with(node, self)
     }
+    #[doc = "Visit a node of type `JSXStyleElement`.\n\nBy default, this method calls \
+             [`JSXStyleElement::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_style_element(&mut self, node: &JSXStyleElement) {
+        <JSXStyleElement as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXSwitchCase`.\n\nBy default, this method calls \
+             [`JSXSwitchCase::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_switch_case(&mut self, node: &JSXSwitchCase) {
+        <JSXSwitchCase as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `Vec < JSXSwitchCase >`.\n\nBy default, this method calls [`Vec \
+             < JSXSwitchCase >::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase]) {
+        <[JSXSwitchCase] as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXSwitchExpr`.\n\nBy default, this method calls \
+             [`JSXSwitchExpr::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr) {
+        <JSXSwitchExpr as VisitWith<Self>>::visit_children_with(node, self)
+    }
     #[doc = "Visit a node of type `JSXText`.\n\nBy default, this method calls \
              [`JSXText::visit_children_with`]. If you want to recurse, you need to call it \
              manually."]
     #[inline]
     fn visit_jsx_text(&mut self, node: &JSXText) {
         <JSXText as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXTryExpr`.\n\nBy default, this method calls \
+             [`JSXTryExpr::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_jsx_try_expr(&mut self, node: &JSXTryExpr) {
+        <JSXTryExpr as VisitWith<Self>>::visit_children_with(node, self)
     }
     #[doc = "Visit a node of type `Key`.\n\nBy default, this method calls \
              [`Key::visit_children_with`]. If you want to recurse, you need to call it manually."]
@@ -955,6 +1032,13 @@ pub trait Visit {
     fn visit_opt_expr_or_spreads(&mut self, node: &Option<Vec<ExprOrSpread>>) {
         <Option<Vec<ExprOrSpread>> as VisitWith<Self>>::visit_children_with(node, self)
     }
+    #[doc = "Visit a node of type `Option < ForHead >`.\n\nBy default, this method calls [`Option \
+             < ForHead >::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_opt_for_head(&mut self, node: &Option<ForHead>) {
+        <Option<ForHead> as VisitWith<Self>>::visit_children_with(node, self)
+    }
     #[doc = "Visit a node of type `Option < FunctionBody >`.\n\nBy default, this method calls \
              [`Option < FunctionBody >::visit_children_with`]. If you want to recurse, you need to \
              call it manually."]
@@ -975,12 +1059,33 @@ pub trait Visit {
     fn visit_opt_jsx_attr_value(&mut self, node: &Option<JSXAttrValue>) {
         <Option<JSXAttrValue> as VisitWith<Self>>::visit_children_with(node, self)
     }
+    #[doc = "Visit a node of type `Option < JSXCatchClause >`.\n\nBy default, this method calls \
+             [`Option < JSXCatchClause >::visit_children_with`]. If you want to recurse, you need \
+             to call it manually."]
+    #[inline]
+    fn visit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>) {
+        <Option<JSXCatchClause> as VisitWith<Self>>::visit_children_with(node, self)
+    }
     #[doc = "Visit a node of type `Option < JSXClosingElement >`.\n\nBy default, this method calls \
              [`Option < JSXClosingElement >::visit_children_with`]. If you want to recurse, you \
              need to call it manually."]
     #[inline]
     fn visit_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>) {
         <Option<JSXClosingElement> as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `Option < JSXCodeBlock >`.\n\nBy default, this method calls \
+             [`Option < JSXCodeBlock >::visit_children_with`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>) {
+        <Option<JSXCodeBlock> as VisitWith<Self>>::visit_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `Option < JSXIfAlternate >`.\n\nBy default, this method calls \
+             [`Option < JSXIfAlternate >::visit_children_with`]. If you want to recurse, you need \
+             to call it manually."]
+    #[inline]
+    fn visit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>) {
+        <Option<JSXIfAlternate> as VisitWith<Self>>::visit_children_with(node, self)
     }
     #[doc = "Visit a node of type `Option < ModuleExportName >`.\n\nBy default, this method calls \
              [`Option < ModuleExportName >::visit_children_with`]. If you want to recurse, you \
@@ -1971,6 +2076,13 @@ pub trait Visit {
     fn visit_ts_union_type(&mut self, node: &TsUnionType) {
         <TsUnionType as VisitWith<Self>>::visit_children_with(node, self)
     }
+    #[doc = "Visit a node of type `TsrxExpr`.\n\nBy default, this method calls \
+             [`TsrxExpr::visit_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_tsrx_expr(&mut self, node: &TsrxExpr) {
+        <TsrxExpr as VisitWith<Self>>::visit_children_with(node, self)
+    }
     #[doc = "Visit a node of type `UnaryExpr`.\n\nBy default, this method calls \
              [`UnaryExpr::visit_children_with`]. If you want to recurse, you need to call it \
              manually."]
@@ -2510,6 +2622,11 @@ where
     }
 
     #[inline]
+    fn visit_jsx_catch_clause(&mut self, node: &JSXCatchClause) {
+        <V as Visit>::visit_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_jsx_closing_element(&mut self, node: &JSXClosingElement) {
         <V as Visit>::visit_jsx_closing_element(&mut **self, node)
     }
@@ -2517,6 +2634,11 @@ where
     #[inline]
     fn visit_jsx_closing_fragment(&mut self, node: &JSXClosingFragment) {
         <V as Visit>::visit_jsx_closing_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_code_block(&mut self, node: &JSXCodeBlock) {
+        <V as Visit>::visit_jsx_code_block(&mut **self, node)
     }
 
     #[inline]
@@ -2555,8 +2677,28 @@ where
     }
 
     #[inline]
+    fn visit_jsx_for_expr(&mut self, node: &JSXForExpr) {
+        <V as Visit>::visit_jsx_for_expr(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_for_kind(&mut self, node: &JSXForKind) {
+        <V as Visit>::visit_jsx_for_kind(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_jsx_fragment(&mut self, node: &JSXFragment) {
         <V as Visit>::visit_jsx_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_if_alternate(&mut self, node: &JSXIfAlternate) {
+        <V as Visit>::visit_jsx_if_alternate(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_if_expr(&mut self, node: &JSXIfExpr) {
+        <V as Visit>::visit_jsx_if_expr(&mut **self, node)
     }
 
     #[inline]
@@ -2590,8 +2732,33 @@ where
     }
 
     #[inline]
+    fn visit_jsx_style_element(&mut self, node: &JSXStyleElement) {
+        <V as Visit>::visit_jsx_style_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_case(&mut self, node: &JSXSwitchCase) {
+        <V as Visit>::visit_jsx_switch_case(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase]) {
+        <V as Visit>::visit_jsx_switch_cases(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr) {
+        <V as Visit>::visit_jsx_switch_expr(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_jsx_text(&mut self, node: &JSXText) {
         <V as Visit>::visit_jsx_text(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_try_expr(&mut self, node: &JSXTryExpr) {
+        <V as Visit>::visit_jsx_try_expr(&mut **self, node)
     }
 
     #[inline]
@@ -2765,6 +2932,11 @@ where
     }
 
     #[inline]
+    fn visit_opt_for_head(&mut self, node: &Option<ForHead>) {
+        <V as Visit>::visit_opt_for_head(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_opt_function_body(&mut self, node: &Option<FunctionBody>) {
         <V as Visit>::visit_opt_function_body(&mut **self, node)
     }
@@ -2780,8 +2952,23 @@ where
     }
 
     #[inline]
+    fn visit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>) {
+        <V as Visit>::visit_opt_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>) {
         <V as Visit>::visit_opt_jsx_closing_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>) {
+        <V as Visit>::visit_opt_jsx_code_block(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>) {
+        <V as Visit>::visit_opt_jsx_if_alternate(&mut **self, node)
     }
 
     #[inline]
@@ -3500,6 +3687,11 @@ where
     #[inline]
     fn visit_ts_union_type(&mut self, node: &TsUnionType) {
         <V as Visit>::visit_ts_union_type(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_tsrx_expr(&mut self, node: &TsrxExpr) {
+        <V as Visit>::visit_tsrx_expr(&mut **self, node)
     }
 
     #[inline]
@@ -4012,6 +4204,11 @@ where
     }
 
     #[inline]
+    fn visit_jsx_catch_clause(&mut self, node: &JSXCatchClause) {
+        <V as Visit>::visit_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_jsx_closing_element(&mut self, node: &JSXClosingElement) {
         <V as Visit>::visit_jsx_closing_element(&mut **self, node)
     }
@@ -4019,6 +4216,11 @@ where
     #[inline]
     fn visit_jsx_closing_fragment(&mut self, node: &JSXClosingFragment) {
         <V as Visit>::visit_jsx_closing_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_code_block(&mut self, node: &JSXCodeBlock) {
+        <V as Visit>::visit_jsx_code_block(&mut **self, node)
     }
 
     #[inline]
@@ -4057,8 +4259,28 @@ where
     }
 
     #[inline]
+    fn visit_jsx_for_expr(&mut self, node: &JSXForExpr) {
+        <V as Visit>::visit_jsx_for_expr(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_for_kind(&mut self, node: &JSXForKind) {
+        <V as Visit>::visit_jsx_for_kind(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_jsx_fragment(&mut self, node: &JSXFragment) {
         <V as Visit>::visit_jsx_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_if_alternate(&mut self, node: &JSXIfAlternate) {
+        <V as Visit>::visit_jsx_if_alternate(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_if_expr(&mut self, node: &JSXIfExpr) {
+        <V as Visit>::visit_jsx_if_expr(&mut **self, node)
     }
 
     #[inline]
@@ -4092,8 +4314,33 @@ where
     }
 
     #[inline]
+    fn visit_jsx_style_element(&mut self, node: &JSXStyleElement) {
+        <V as Visit>::visit_jsx_style_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_case(&mut self, node: &JSXSwitchCase) {
+        <V as Visit>::visit_jsx_switch_case(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase]) {
+        <V as Visit>::visit_jsx_switch_cases(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr) {
+        <V as Visit>::visit_jsx_switch_expr(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_jsx_text(&mut self, node: &JSXText) {
         <V as Visit>::visit_jsx_text(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_jsx_try_expr(&mut self, node: &JSXTryExpr) {
+        <V as Visit>::visit_jsx_try_expr(&mut **self, node)
     }
 
     #[inline]
@@ -4267,6 +4514,11 @@ where
     }
 
     #[inline]
+    fn visit_opt_for_head(&mut self, node: &Option<ForHead>) {
+        <V as Visit>::visit_opt_for_head(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_opt_function_body(&mut self, node: &Option<FunctionBody>) {
         <V as Visit>::visit_opt_function_body(&mut **self, node)
     }
@@ -4282,8 +4534,23 @@ where
     }
 
     #[inline]
+    fn visit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>) {
+        <V as Visit>::visit_opt_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>) {
         <V as Visit>::visit_opt_jsx_closing_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>) {
+        <V as Visit>::visit_opt_jsx_code_block(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>) {
+        <V as Visit>::visit_opt_jsx_if_alternate(&mut **self, node)
     }
 
     #[inline]
@@ -5002,6 +5269,11 @@ where
     #[inline]
     fn visit_ts_union_type(&mut self, node: &TsUnionType) {
         <V as Visit>::visit_ts_union_type(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_tsrx_expr(&mut self, node: &TsrxExpr) {
+        <V as Visit>::visit_tsrx_expr(&mut **self, node)
     }
 
     #[inline]
@@ -5792,6 +6064,14 @@ where
     }
 
     #[inline]
+    fn visit_jsx_catch_clause(&mut self, node: &JSXCatchClause) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_catch_clause(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_catch_clause(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_jsx_closing_element(&mut self, node: &JSXClosingElement) {
         match self {
             swc_visit::Either::Left(visitor) => Visit::visit_jsx_closing_element(visitor, node),
@@ -5804,6 +6084,14 @@ where
         match self {
             swc_visit::Either::Left(visitor) => Visit::visit_jsx_closing_fragment(visitor, node),
             swc_visit::Either::Right(visitor) => Visit::visit_jsx_closing_fragment(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_code_block(&mut self, node: &JSXCodeBlock) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_code_block(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_code_block(visitor, node),
         }
     }
 
@@ -5864,10 +6152,42 @@ where
     }
 
     #[inline]
+    fn visit_jsx_for_expr(&mut self, node: &JSXForExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_for_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_for_expr(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_for_kind(&mut self, node: &JSXForKind) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_for_kind(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_for_kind(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_jsx_fragment(&mut self, node: &JSXFragment) {
         match self {
             swc_visit::Either::Left(visitor) => Visit::visit_jsx_fragment(visitor, node),
             swc_visit::Either::Right(visitor) => Visit::visit_jsx_fragment(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_if_alternate(&mut self, node: &JSXIfAlternate) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_if_alternate(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_if_alternate(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_if_expr(&mut self, node: &JSXIfExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_if_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_if_expr(visitor, node),
         }
     }
 
@@ -5920,10 +6240,50 @@ where
     }
 
     #[inline]
+    fn visit_jsx_style_element(&mut self, node: &JSXStyleElement) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_style_element(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_style_element(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_case(&mut self, node: &JSXSwitchCase) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_switch_case(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_switch_case(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase]) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_switch_cases(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_switch_cases(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_switch_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_switch_expr(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_jsx_text(&mut self, node: &JSXText) {
         match self {
             swc_visit::Either::Left(visitor) => Visit::visit_jsx_text(visitor, node),
             swc_visit::Either::Right(visitor) => Visit::visit_jsx_text(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_try_expr(&mut self, node: &JSXTryExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_jsx_try_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_jsx_try_expr(visitor, node),
         }
     }
 
@@ -6200,6 +6560,14 @@ where
     }
 
     #[inline]
+    fn visit_opt_for_head(&mut self, node: &Option<ForHead>) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_opt_for_head(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_opt_for_head(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_opt_function_body(&mut self, node: &Option<FunctionBody>) {
         match self {
             swc_visit::Either::Left(visitor) => Visit::visit_opt_function_body(visitor, node),
@@ -6224,12 +6592,36 @@ where
     }
 
     #[inline]
+    fn visit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_opt_jsx_catch_clause(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_opt_jsx_catch_clause(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>) {
         match self {
             swc_visit::Either::Left(visitor) => Visit::visit_opt_jsx_closing_element(visitor, node),
             swc_visit::Either::Right(visitor) => {
                 Visit::visit_opt_jsx_closing_element(visitor, node)
             }
+        }
+    }
+
+    #[inline]
+    fn visit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_opt_jsx_code_block(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_opt_jsx_code_block(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_opt_jsx_if_alternate(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_opt_jsx_if_alternate(visitor, node),
         }
     }
 
@@ -7415,6 +7807,14 @@ where
     }
 
     #[inline]
+    fn visit_tsrx_expr(&mut self, node: &TsrxExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => Visit::visit_tsrx_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Visit::visit_tsrx_expr(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_unary_expr(&mut self, node: &UnaryExpr) {
         match self {
             swc_visit::Either::Left(visitor) => Visit::visit_unary_expr(visitor, node),
@@ -8227,6 +8627,14 @@ where
     }
 
     #[inline]
+    fn visit_jsx_catch_clause(&mut self, node: &JSXCatchClause) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_catch_clause(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_jsx_closing_element(&mut self, node: &JSXClosingElement) {
         if self.enabled {
             <V as Visit>::visit_jsx_closing_element(&mut self.visitor, node)
@@ -8238,6 +8646,14 @@ where
     fn visit_jsx_closing_fragment(&mut self, node: &JSXClosingFragment) {
         if self.enabled {
             <V as Visit>::visit_jsx_closing_fragment(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_code_block(&mut self, node: &JSXCodeBlock) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_code_block(&mut self.visitor, node)
         } else {
         }
     }
@@ -8299,9 +8715,41 @@ where
     }
 
     #[inline]
+    fn visit_jsx_for_expr(&mut self, node: &JSXForExpr) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_for_expr(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_for_kind(&mut self, node: &JSXForKind) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_for_kind(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_jsx_fragment(&mut self, node: &JSXFragment) {
         if self.enabled {
             <V as Visit>::visit_jsx_fragment(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_if_alternate(&mut self, node: &JSXIfAlternate) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_if_alternate(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_if_expr(&mut self, node: &JSXIfExpr) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_if_expr(&mut self.visitor, node)
         } else {
         }
     }
@@ -8355,9 +8803,49 @@ where
     }
 
     #[inline]
+    fn visit_jsx_style_element(&mut self, node: &JSXStyleElement) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_style_element(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_case(&mut self, node: &JSXSwitchCase) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_switch_case(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase]) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_switch_cases(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_switch_expr(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_jsx_text(&mut self, node: &JSXText) {
         if self.enabled {
             <V as Visit>::visit_jsx_text(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_try_expr(&mut self, node: &JSXTryExpr) {
+        if self.enabled {
+            <V as Visit>::visit_jsx_try_expr(&mut self.visitor, node)
         } else {
         }
     }
@@ -8635,6 +9123,14 @@ where
     }
 
     #[inline]
+    fn visit_opt_for_head(&mut self, node: &Option<ForHead>) {
+        if self.enabled {
+            <V as Visit>::visit_opt_for_head(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_opt_function_body(&mut self, node: &Option<FunctionBody>) {
         if self.enabled {
             <V as Visit>::visit_opt_function_body(&mut self.visitor, node)
@@ -8659,9 +9155,33 @@ where
     }
 
     #[inline]
+    fn visit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>) {
+        if self.enabled {
+            <V as Visit>::visit_opt_jsx_catch_clause(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>) {
         if self.enabled {
             <V as Visit>::visit_opt_jsx_closing_element(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>) {
+        if self.enabled {
+            <V as Visit>::visit_opt_jsx_code_block(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>) {
+        if self.enabled {
+            <V as Visit>::visit_opt_jsx_if_alternate(&mut self.visitor, node)
         } else {
         }
     }
@@ -9809,6 +10329,14 @@ where
     fn visit_ts_union_type(&mut self, node: &TsUnionType) {
         if self.enabled {
             <V as Visit>::visit_ts_union_type(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_tsrx_expr(&mut self, node: &TsrxExpr) {
+        if self.enabled {
+            <V as Visit>::visit_tsrx_expr(&mut self.visitor, node)
         } else {
         }
     }
@@ -11270,6 +11798,9 @@ impl<V: ?Sized + Visit> VisitWith<V> for Expr {
             Expr::Invalid { 0: _field_0 } => {
                 <Invalid as VisitWith<V>>::visit_with(_field_0, visitor);
             }
+            Expr::Tsrx { 0: _field_0 } => {
+                <Box<TsrxExpr> as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
             #[cfg(swc_ast_unknown)]
             _ => (),
         }
@@ -11860,7 +12391,12 @@ impl<V: ?Sized + Visit> VisitWith<V> for JSXAttr {
 
     fn visit_children_with(&self, visitor: &mut V) {
         match self {
-            JSXAttr { span, name, value } => {
+            JSXAttr {
+                span,
+                name,
+                value,
+                shorthand,
+            } => {
                 {
                     <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
                 };
@@ -11937,6 +12473,36 @@ impl<V: ?Sized + Visit> VisitWith<V> for JSXAttrValue {
         }
     }
 }
+impl<V: ?Sized + Visit> VisitWith<V> for JSXCatchClause {
+    #[doc = "Calls [Visit`::visit_jsx_catch_clause`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_catch_clause(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXCatchClause {
+                span,
+                param,
+                reset,
+                body,
+            } => {
+                {
+                    <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
+                };
+                {
+                    <Option<Pat> as VisitWith<V>>::visit_with(param, visitor)
+                };
+                {
+                    <Option<Ident> as VisitWith<V>>::visit_with(reset, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitWith<V>>::visit_with(body, visitor)
+                };
+            }
+        }
+    }
+}
 impl<V: ?Sized + Visit> VisitWith<V> for JSXClosingElement {
     #[doc = "Calls [Visit`::visit_jsx_closing_element`] with `self`."]
     fn visit_with(&self, visitor: &mut V) {
@@ -11967,6 +12533,33 @@ impl<V: ?Sized + Visit> VisitWith<V> for JSXClosingFragment {
             JSXClosingFragment { span } => {
                 {
                     <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + Visit> VisitWith<V> for JSXCodeBlock {
+    #[doc = "Calls [Visit`::visit_jsx_code_block`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_code_block(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXCodeBlock {
+                span,
+                body,
+                render,
+                is_function_body,
+            } => {
+                {
+                    <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
+                };
+                {
+                    <Vec<Stmt> as VisitWith<V>>::visit_with(body, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitWith<V>>::visit_with(render, visitor)
                 };
             }
         }
@@ -12025,6 +12618,9 @@ impl<V: ?Sized + Visit> VisitWith<V> for JSXElementChild {
             JSXElementChild::JSXFragment { 0: _field_0 } => {
                 <JSXFragment as VisitWith<V>>::visit_with(_field_0, visitor);
             }
+            JSXElementChild::Tsrx { 0: _field_0 } => {
+                <Box<TsrxExpr> as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
             #[cfg(swc_ast_unknown)]
             _ => (),
         }
@@ -12046,6 +12642,9 @@ impl<V: ?Sized + Visit> VisitWith<V> for JSXElementName {
             }
             JSXElementName::JSXNamespacedName { 0: _field_0 } => {
                 <JSXNamespacedName as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
+            JSXElementName::JSXExprContainer { 0: _field_0 } => {
+                <JSXExprContainer as VisitWith<V>>::visit_with(_field_0, visitor);
             }
             #[cfg(swc_ast_unknown)]
             _ => (),
@@ -12106,6 +12705,81 @@ impl<V: ?Sized + Visit> VisitWith<V> for JSXExprContainer {
         }
     }
 }
+impl<V: ?Sized + Visit> VisitWith<V> for JSXForExpr {
+    #[doc = "Calls [Visit`::visit_jsx_for_expr`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_for_expr(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXForExpr {
+                span,
+                kind,
+                init,
+                test,
+                update,
+                left,
+                right,
+                is_await,
+                body,
+                index,
+                key,
+                empty,
+            } => {
+                {
+                    <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
+                };
+                {
+                    <JSXForKind as VisitWith<V>>::visit_with(kind, visitor)
+                };
+                {
+                    <Option<VarDeclOrExpr> as VisitWith<V>>::visit_with(init, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitWith<V>>::visit_with(test, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitWith<V>>::visit_with(update, visitor)
+                };
+                {
+                    <Option<ForHead> as VisitWith<V>>::visit_with(left, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitWith<V>>::visit_with(right, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitWith<V>>::visit_with(body, visitor)
+                };
+                {
+                    <Option<Ident> as VisitWith<V>>::visit_with(index, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitWith<V>>::visit_with(key, visitor)
+                };
+                {
+                    <Option<JSXCodeBlock> as VisitWith<V>>::visit_with(empty, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + Visit> VisitWith<V> for JSXForKind {
+    #[doc = "Calls [Visit`::visit_jsx_for_kind`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_for_kind(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXForKind::ForStatement => {}
+            JSXForKind::ForInStatement => {}
+            JSXForKind::ForOfStatement => {}
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
 impl<V: ?Sized + Visit> VisitWith<V> for JSXFragment {
     #[doc = "Calls [Visit`::visit_jsx_fragment`] with `self`."]
     fn visit_with(&self, visitor: &mut V) {
@@ -12131,6 +12805,55 @@ impl<V: ?Sized + Visit> VisitWith<V> for JSXFragment {
                 };
                 {
                     <JSXClosingFragment as VisitWith<V>>::visit_with(closing, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + Visit> VisitWith<V> for JSXIfAlternate {
+    #[doc = "Calls [Visit`::visit_jsx_if_alternate`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_if_alternate(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXIfAlternate::CodeBlock { 0: _field_0 } => {
+                <JSXCodeBlock as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
+            JSXIfAlternate::If { 0: _field_0 } => {
+                <Box<JSXIfExpr> as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
+impl<V: ?Sized + Visit> VisitWith<V> for JSXIfExpr {
+    #[doc = "Calls [Visit`::visit_jsx_if_expr`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_if_expr(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXIfExpr {
+                span,
+                test,
+                consequent,
+                alternate,
+            } => {
+                {
+                    <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
+                };
+                {
+                    <Box<Expr> as VisitWith<V>>::visit_with(test, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitWith<V>>::visit_with(consequent, visitor)
+                };
+                {
+                    <Option<JSXIfAlternate> as VisitWith<V>>::visit_with(alternate, visitor)
                 };
             }
         }
@@ -12267,6 +12990,88 @@ impl<V: ?Sized + Visit> VisitWith<V> for JSXSpreadChild {
         }
     }
 }
+impl<V: ?Sized + Visit> VisitWith<V> for JSXStyleElement {
+    #[doc = "Calls [Visit`::visit_jsx_style_element`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_style_element(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXStyleElement {
+                span,
+                opening,
+                css,
+                closing,
+            } => {
+                {
+                    <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
+                };
+                {
+                    <JSXOpeningElement as VisitWith<V>>::visit_with(opening, visitor)
+                };
+                {
+                    <swc_atoms::Atom as VisitWith<V>>::visit_with(css, visitor)
+                };
+                {
+                    <JSXClosingElement as VisitWith<V>>::visit_with(closing, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + Visit> VisitWith<V> for JSXSwitchCase {
+    #[doc = "Calls [Visit`::visit_jsx_switch_case`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_switch_case(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXSwitchCase {
+                span,
+                test,
+                consequent,
+            } => {
+                {
+                    <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitWith<V>>::visit_with(test, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitWith<V>>::visit_with(consequent, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + Visit> VisitWith<V> for JSXSwitchExpr {
+    #[doc = "Calls [Visit`::visit_jsx_switch_expr`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_switch_expr(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXSwitchExpr {
+                span,
+                discriminant,
+                cases,
+            } => {
+                {
+                    <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
+                };
+                {
+                    <Box<Expr> as VisitWith<V>>::visit_with(discriminant, visitor)
+                };
+                {
+                    <Vec<JSXSwitchCase> as VisitWith<V>>::visit_with(cases, visitor)
+                };
+            }
+        }
+    }
+}
 impl<V: ?Sized + Visit> VisitWith<V> for JSXText {
     #[doc = "Calls [Visit`::visit_jsx_text`] with `self`."]
     fn visit_with(&self, visitor: &mut V) {
@@ -12284,6 +13089,40 @@ impl<V: ?Sized + Visit> VisitWith<V> for JSXText {
                 };
                 {
                     <swc_atoms::Atom as VisitWith<V>>::visit_with(raw, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + Visit> VisitWith<V> for JSXTryExpr {
+    #[doc = "Calls [Visit`::visit_jsx_try_expr`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_try_expr(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            JSXTryExpr {
+                span,
+                block,
+                pending,
+                handler,
+                finalizer,
+            } => {
+                {
+                    <swc_common::Span as VisitWith<V>>::visit_with(span, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitWith<V>>::visit_with(block, visitor)
+                };
+                {
+                    <Option<JSXCodeBlock> as VisitWith<V>>::visit_with(pending, visitor)
+                };
+                {
+                    <Option<JSXCatchClause> as VisitWith<V>>::visit_with(handler, visitor)
+                };
+                {
+                    <Option<BlockStmt> as VisitWith<V>>::visit_with(finalizer, visitor)
                 };
             }
         }
@@ -15593,6 +16432,37 @@ impl<V: ?Sized + Visit> VisitWith<V> for TsUnionType {
         }
     }
 }
+impl<V: ?Sized + Visit> VisitWith<V> for TsrxExpr {
+    #[doc = "Calls [Visit`::visit_tsrx_expr`] with `self`."]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_tsrx_expr(visitor, self)
+    }
+
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            TsrxExpr::CodeBlock { 0: _field_0 } => {
+                <JSXCodeBlock as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
+            TsrxExpr::StyleElement { 0: _field_0 } => {
+                <Box<JSXStyleElement> as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
+            TsrxExpr::If { 0: _field_0 } => {
+                <Box<JSXIfExpr> as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
+            TsrxExpr::For { 0: _field_0 } => {
+                <Box<JSXForExpr> as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
+            TsrxExpr::Switch { 0: _field_0 } => {
+                <Box<JSXSwitchExpr> as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
+            TsrxExpr::Try { 0: _field_0 } => {
+                <Box<JSXTryExpr> as VisitWith<V>>::visit_with(_field_0, visitor);
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
 impl<V: ?Sized + Visit> VisitWith<V> for UnaryExpr {
     #[doc = "Calls [Visit`::visit_unary_expr`] with `self`."]
     fn visit_with(&self, visitor: &mut V) {
@@ -16001,6 +16871,19 @@ impl<V: ?Sized + Visit> VisitWith<V> for [JSXElementChild] {
             .for_each(|item| <JSXElementChild as VisitWith<V>>::visit_with(item, visitor))
     }
 }
+impl<V: ?Sized + Visit> VisitWith<V> for [JSXSwitchCase] {
+    #[doc = "Calls [Visit`::visit_jsx_switch_cases`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_jsx_switch_cases(visitor, self)
+    }
+
+    #[inline]
+    fn visit_children_with(&self, visitor: &mut V) {
+        self.iter()
+            .for_each(|item| <JSXSwitchCase as VisitWith<V>>::visit_with(item, visitor))
+    }
+}
 impl<V: ?Sized + Visit> VisitWith<V> for [ModuleItem] {
     #[doc = "Calls [Visit`::visit_module_items`] with `self`. (Extra impl)"]
     #[inline]
@@ -16132,6 +17015,21 @@ impl<V: ?Sized + Visit> VisitWith<V> for Option<Vec<ExprOrSpread>> {
         }
     }
 }
+impl<V: ?Sized + Visit> VisitWith<V> for Option<ForHead> {
+    #[doc = "Calls [Visit`::visit_opt_for_head`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_opt_for_head(visitor, self)
+    }
+
+    #[inline]
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            Some(inner) => <ForHead as VisitWith<V>>::visit_with(inner, visitor),
+            None => {}
+        }
+    }
+}
 impl<V: ?Sized + Visit> VisitWith<V> for Option<FunctionBody> {
     #[doc = "Calls [Visit`::visit_opt_function_body`] with `self`. (Extra impl)"]
     #[inline]
@@ -16177,6 +17075,21 @@ impl<V: ?Sized + Visit> VisitWith<V> for Option<JSXAttrValue> {
         }
     }
 }
+impl<V: ?Sized + Visit> VisitWith<V> for Option<JSXCatchClause> {
+    #[doc = "Calls [Visit`::visit_opt_jsx_catch_clause`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_opt_jsx_catch_clause(visitor, self)
+    }
+
+    #[inline]
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            Some(inner) => <JSXCatchClause as VisitWith<V>>::visit_with(inner, visitor),
+            None => {}
+        }
+    }
+}
 impl<V: ?Sized + Visit> VisitWith<V> for Option<JSXClosingElement> {
     #[doc = "Calls [Visit`::visit_opt_jsx_closing_element`] with `self`. (Extra impl)"]
     #[inline]
@@ -16188,6 +17101,36 @@ impl<V: ?Sized + Visit> VisitWith<V> for Option<JSXClosingElement> {
     fn visit_children_with(&self, visitor: &mut V) {
         match self {
             Some(inner) => <JSXClosingElement as VisitWith<V>>::visit_with(inner, visitor),
+            None => {}
+        }
+    }
+}
+impl<V: ?Sized + Visit> VisitWith<V> for Option<JSXCodeBlock> {
+    #[doc = "Calls [Visit`::visit_opt_jsx_code_block`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_opt_jsx_code_block(visitor, self)
+    }
+
+    #[inline]
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            Some(inner) => <JSXCodeBlock as VisitWith<V>>::visit_with(inner, visitor),
+            None => {}
+        }
+    }
+}
+impl<V: ?Sized + Visit> VisitWith<V> for Option<JSXIfAlternate> {
+    #[doc = "Calls [Visit`::visit_opt_jsx_if_alternate`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with(&self, visitor: &mut V) {
+        <V as Visit>::visit_opt_jsx_if_alternate(visitor, self)
+    }
+
+    #[inline]
+    fn visit_children_with(&self, visitor: &mut V) {
+        match self {
+            Some(inner) => <JSXIfAlternate as VisitWith<V>>::visit_with(inner, visitor),
             None => {}
         }
     }
@@ -17759,6 +18702,19 @@ pub trait VisitAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `JSXCatchClause`.\n\nBy default, this method calls \
+             [`JSXCatchClause::visit_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCatchClause,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXCatchClause as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `JSXClosingElement`.\n\nBy default, this method calls \
              [`JSXClosingElement::visit_children_with_ast_path`]. If you want to recurse, you need \
              to call it manually."]
@@ -17782,6 +18738,19 @@ pub trait VisitAstPath {
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <JSXClosingFragment as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXCodeBlock`.\n\nBy default, this method calls \
+             [`JSXCodeBlock::visit_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCodeBlock,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXCodeBlock as VisitWithAstPath<Self>>::visit_children_with_ast_path(
             node, self, __ast_path,
         )
     }
@@ -17872,6 +18841,28 @@ pub trait VisitAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `JSXForExpr`.\n\nBy default, this method calls \
+             [`JSXForExpr::visit_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_jsx_for_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXForExpr as VisitWithAstPath<Self>>::visit_children_with_ast_path(node, self, __ast_path)
+    }
+    #[doc = "Visit a node of type `JSXForKind`.\n\nBy default, this method calls \
+             [`JSXForKind::visit_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_jsx_for_kind<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForKind,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXForKind as VisitWithAstPath<Self>>::visit_children_with_ast_path(node, self, __ast_path)
+    }
     #[doc = "Visit a node of type `JSXFragment`.\n\nBy default, this method calls \
              [`JSXFragment::visit_children_with_ast_path`]. If you want to recurse, you need to \
              call it manually."]
@@ -17884,6 +18875,30 @@ pub trait VisitAstPath {
         <JSXFragment as VisitWithAstPath<Self>>::visit_children_with_ast_path(
             node, self, __ast_path,
         )
+    }
+    #[doc = "Visit a node of type `JSXIfAlternate`.\n\nBy default, this method calls \
+             [`JSXIfAlternate::visit_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfAlternate,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXIfAlternate as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXIfExpr`.\n\nBy default, this method calls \
+             [`JSXIfExpr::visit_children_with_ast_path`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn visit_jsx_if_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXIfExpr as VisitWithAstPath<Self>>::visit_children_with_ast_path(node, self, __ast_path)
     }
     #[doc = "Visit a node of type `JSXMemberExpr`.\n\nBy default, this method calls \
              [`JSXMemberExpr::visit_children_with_ast_path`]. If you want to recurse, you need to \
@@ -17961,6 +18976,58 @@ pub trait VisitAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `JSXStyleElement`.\n\nBy default, this method calls \
+             [`JSXStyleElement::visit_children_with_ast_path`]. If you want to recurse, you need \
+             to call it manually."]
+    #[inline]
+    fn visit_jsx_style_element<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXStyleElement,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXStyleElement as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXSwitchCase`.\n\nBy default, this method calls \
+             [`JSXSwitchCase::visit_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_jsx_switch_case<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchCase,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXSwitchCase as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `Vec < JSXSwitchCase >`.\n\nBy default, this method calls [`Vec \
+             < JSXSwitchCase >::visit_children_with_ast_path`]. If you want to recurse, you need \
+             to call it manually."]
+    #[inline]
+    fn visit_jsx_switch_cases<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast [JSXSwitchCase],
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <[JSXSwitchCase] as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXSwitchExpr`.\n\nBy default, this method calls \
+             [`JSXSwitchExpr::visit_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_jsx_switch_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXSwitchExpr as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `JSXText`.\n\nBy default, this method calls \
              [`JSXText::visit_children_with_ast_path`]. If you want to recurse, you need to call \
              it manually."]
@@ -17971,6 +19038,17 @@ pub trait VisitAstPath {
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <JSXText as VisitWithAstPath<Self>>::visit_children_with_ast_path(node, self, __ast_path)
+    }
+    #[doc = "Visit a node of type `JSXTryExpr`.\n\nBy default, this method calls \
+             [`JSXTryExpr::visit_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_jsx_try_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXTryExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <JSXTryExpr as VisitWithAstPath<Self>>::visit_children_with_ast_path(node, self, __ast_path)
     }
     #[doc = "Visit a node of type `Key`.\n\nBy default, this method calls \
              [`Key::visit_children_with_ast_path`]. If you want to recurse, you need to call it \
@@ -18364,6 +19442,19 @@ pub trait VisitAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `Option < ForHead >`.\n\nBy default, this method calls [`Option \
+             < ForHead >::visit_children_with_ast_path`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn visit_opt_for_head<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<ForHead>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <Option<ForHead> as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `Option < FunctionBody >`.\n\nBy default, this method calls \
              [`Option < FunctionBody >::visit_children_with_ast_path`]. If you want to recurse, \
              you need to call it manually."]
@@ -18403,6 +19494,19 @@ pub trait VisitAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `Option < JSXCatchClause >`.\n\nBy default, this method calls \
+             [`Option < JSXCatchClause >::visit_children_with_ast_path`]. If you want to recurse, \
+             you need to call it manually."]
+    #[inline]
+    fn visit_opt_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCatchClause>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <Option<JSXCatchClause> as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `Option < JSXClosingElement >`.\n\nBy default, this method calls \
              [`Option < JSXClosingElement >::visit_children_with_ast_path`]. If you want to \
              recurse, you need to call it manually."]
@@ -18413,6 +19517,32 @@ pub trait VisitAstPath {
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <Option<JSXClosingElement> as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `Option < JSXCodeBlock >`.\n\nBy default, this method calls \
+             [`Option < JSXCodeBlock >::visit_children_with_ast_path`]. If you want to recurse, \
+             you need to call it manually."]
+    #[inline]
+    fn visit_opt_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCodeBlock>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <Option<JSXCodeBlock> as VisitWithAstPath<Self>>::visit_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `Option < JSXIfAlternate >`.\n\nBy default, this method calls \
+             [`Option < JSXIfAlternate >::visit_children_with_ast_path`]. If you want to recurse, \
+             you need to call it manually."]
+    #[inline]
+    fn visit_opt_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXIfAlternate>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <Option<JSXIfAlternate> as VisitWithAstPath<Self>>::visit_children_with_ast_path(
             node, self, __ast_path,
         )
     }
@@ -20148,6 +21278,17 @@ pub trait VisitAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `TsrxExpr`.\n\nBy default, this method calls \
+             [`TsrxExpr::visit_children_with_ast_path`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn visit_tsrx_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast TsrxExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <TsrxExpr as VisitWithAstPath<Self>>::visit_children_with_ast_path(node, self, __ast_path)
+    }
     #[doc = "Visit a node of type `UnaryExpr`.\n\nBy default, this method calls \
              [`UnaryExpr::visit_children_with_ast_path`]. If you want to recurse, you need to call \
              it manually."]
@@ -21075,6 +22216,15 @@ where
     }
 
     #[inline]
+    fn visit_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCatchClause,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_jsx_closing_element<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXClosingElement,
@@ -21090,6 +22240,15 @@ where
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_jsx_closing_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCodeBlock,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_code_block(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -21156,12 +22315,48 @@ where
     }
 
     #[inline]
+    fn visit_jsx_for_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_for_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_for_kind<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForKind,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_for_kind(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_jsx_fragment<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXFragment,
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_jsx_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfAlternate,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_if_alternate(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_if_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_if_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -21219,12 +22414,57 @@ where
     }
 
     #[inline]
+    fn visit_jsx_style_element<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXStyleElement,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_style_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_case<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchCase,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_switch_case(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_cases<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast [JSXSwitchCase],
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_switch_cases(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_switch_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_jsx_text<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXText,
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_jsx_text(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_try_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXTryExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_try_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -21514,6 +22754,15 @@ where
     }
 
     #[inline]
+    fn visit_opt_for_head<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<ForHead>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_for_head(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_opt_function_body<'ast: 'r, 'r>(
         &mut self,
         node: &'ast Option<FunctionBody>,
@@ -21541,12 +22790,39 @@ where
     }
 
     #[inline]
+    fn visit_opt_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCatchClause>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_opt_jsx_closing_element<'ast: 'r, 'r>(
         &mut self,
         node: &'ast Option<JSXClosingElement>,
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_opt_jsx_closing_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_opt_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCodeBlock>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_jsx_code_block(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_opt_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXIfAlternate>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_jsx_if_alternate(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -22786,6 +24062,15 @@ where
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_ts_union_type(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_tsrx_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast TsrxExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_tsrx_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -23676,6 +24961,15 @@ where
     }
 
     #[inline]
+    fn visit_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCatchClause,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_jsx_closing_element<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXClosingElement,
@@ -23691,6 +24985,15 @@ where
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_jsx_closing_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCodeBlock,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_code_block(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -23757,12 +25060,48 @@ where
     }
 
     #[inline]
+    fn visit_jsx_for_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_for_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_for_kind<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForKind,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_for_kind(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_jsx_fragment<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXFragment,
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_jsx_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfAlternate,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_if_alternate(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_if_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_if_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -23820,12 +25159,57 @@ where
     }
 
     #[inline]
+    fn visit_jsx_style_element<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXStyleElement,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_style_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_case<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchCase,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_switch_case(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_cases<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast [JSXSwitchCase],
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_switch_cases(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_switch_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_switch_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_jsx_text<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXText,
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_jsx_text(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_jsx_try_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXTryExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_try_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -24115,6 +25499,15 @@ where
     }
 
     #[inline]
+    fn visit_opt_for_head<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<ForHead>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_for_head(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_opt_function_body<'ast: 'r, 'r>(
         &mut self,
         node: &'ast Option<FunctionBody>,
@@ -24142,12 +25535,39 @@ where
     }
 
     #[inline]
+    fn visit_opt_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCatchClause>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_opt_jsx_closing_element<'ast: 'r, 'r>(
         &mut self,
         node: &'ast Option<JSXClosingElement>,
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_opt_jsx_closing_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_opt_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCodeBlock>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_jsx_code_block(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_opt_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXIfAlternate>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_jsx_if_alternate(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -25387,6 +26807,15 @@ where
         __ast_path: &mut AstNodePath<'r>,
     ) {
         <V as VisitAstPath>::visit_ts_union_type(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_tsrx_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast TsrxExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_tsrx_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -26879,6 +28308,22 @@ where
     }
 
     #[inline]
+    fn visit_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCatchClause,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_catch_clause(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_catch_clause(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_jsx_closing_element<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXClosingElement,
@@ -26906,6 +28351,22 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 VisitAstPath::visit_jsx_closing_fragment(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCodeBlock,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_code_block(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_code_block(visitor, node, __ast_path)
             }
         }
     }
@@ -27023,6 +28484,38 @@ where
     }
 
     #[inline]
+    fn visit_jsx_for_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_for_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_for_expr(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_for_kind<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForKind,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_for_kind(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_for_kind(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_jsx_fragment<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXFragment,
@@ -27034,6 +28527,38 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 VisitAstPath::visit_jsx_fragment(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfAlternate,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_if_alternate(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_if_alternate(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_if_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_if_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_if_expr(visitor, node, __ast_path)
             }
         }
     }
@@ -27135,6 +28660,70 @@ where
     }
 
     #[inline]
+    fn visit_jsx_style_element<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXStyleElement,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_style_element(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_style_element(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_case<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchCase,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_switch_case(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_switch_case(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_cases<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast [JSXSwitchCase],
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_switch_cases(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_switch_cases(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_switch_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_switch_expr(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_jsx_text<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXText,
@@ -27146,6 +28735,22 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 VisitAstPath::visit_jsx_text(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_try_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXTryExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_jsx_try_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_jsx_try_expr(visitor, node, __ast_path)
             }
         }
     }
@@ -27665,6 +29270,22 @@ where
     }
 
     #[inline]
+    fn visit_opt_for_head<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<ForHead>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_opt_for_head(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_opt_for_head(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_opt_function_body<'ast: 'r, 'r>(
         &mut self,
         node: &'ast Option<FunctionBody>,
@@ -27713,6 +29334,22 @@ where
     }
 
     #[inline]
+    fn visit_opt_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCatchClause>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_opt_jsx_catch_clause(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_opt_jsx_catch_clause(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_opt_jsx_closing_element<'ast: 'r, 'r>(
         &mut self,
         node: &'ast Option<JSXClosingElement>,
@@ -27724,6 +29361,38 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 VisitAstPath::visit_opt_jsx_closing_element(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_opt_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCodeBlock>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_opt_jsx_code_block(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_opt_jsx_code_block(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_opt_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXIfAlternate>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_opt_jsx_if_alternate(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_opt_jsx_if_alternate(visitor, node, __ast_path)
             }
         }
     }
@@ -29949,6 +31618,22 @@ where
     }
 
     #[inline]
+    fn visit_tsrx_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast TsrxExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitAstPath::visit_tsrx_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitAstPath::visit_tsrx_expr(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_unary_expr<'ast: 'r, 'r>(
         &mut self,
         node: &'ast UnaryExpr,
@@ -31199,6 +32884,18 @@ where
     }
 
     #[inline]
+    fn visit_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCatchClause,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_catch_clause(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_jsx_closing_element<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXClosingElement,
@@ -31218,6 +32915,18 @@ where
     ) {
         if self.enabled {
             <V as VisitAstPath>::visit_jsx_closing_fragment(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXCodeBlock,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_code_block(&mut self.visitor, node, __ast_path)
         } else {
         }
     }
@@ -31307,6 +33016,30 @@ where
     }
 
     #[inline]
+    fn visit_jsx_for_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_for_expr(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_for_kind<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXForKind,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_for_kind(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_jsx_fragment<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXFragment,
@@ -31314,6 +33047,30 @@ where
     ) {
         if self.enabled {
             <V as VisitAstPath>::visit_jsx_fragment(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfAlternate,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_if_alternate(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_if_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXIfExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_if_expr(&mut self.visitor, node, __ast_path)
         } else {
         }
     }
@@ -31391,6 +33148,54 @@ where
     }
 
     #[inline]
+    fn visit_jsx_style_element<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXStyleElement,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_style_element(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_case<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchCase,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_switch_case(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_cases<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast [JSXSwitchCase],
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_switch_cases(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_switch_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXSwitchExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_switch_expr(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_jsx_text<'ast: 'r, 'r>(
         &mut self,
         node: &'ast JSXText,
@@ -31398,6 +33203,18 @@ where
     ) {
         if self.enabled {
             <V as VisitAstPath>::visit_jsx_text(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_jsx_try_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast JSXTryExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_jsx_try_expr(&mut self.visitor, node, __ast_path)
         } else {
         }
     }
@@ -31791,6 +33608,18 @@ where
     }
 
     #[inline]
+    fn visit_opt_for_head<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<ForHead>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_opt_for_head(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_opt_function_body<'ast: 'r, 'r>(
         &mut self,
         node: &'ast Option<FunctionBody>,
@@ -31827,6 +33656,18 @@ where
     }
 
     #[inline]
+    fn visit_opt_jsx_catch_clause<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCatchClause>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_opt_jsx_catch_clause(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_opt_jsx_closing_element<'ast: 'r, 'r>(
         &mut self,
         node: &'ast Option<JSXClosingElement>,
@@ -31834,6 +33675,30 @@ where
     ) {
         if self.enabled {
             <V as VisitAstPath>::visit_opt_jsx_closing_element(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_opt_jsx_code_block<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXCodeBlock>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_opt_jsx_code_block(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_opt_jsx_if_alternate<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast Option<JSXIfAlternate>,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_opt_jsx_if_alternate(&mut self.visitor, node, __ast_path)
         } else {
         }
     }
@@ -33526,6 +35391,18 @@ where
     ) {
         if self.enabled {
             <V as VisitAstPath>::visit_ts_union_type(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_tsrx_expr<'ast: 'r, 'r>(
+        &mut self,
+        node: &'ast TsrxExpr,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        if self.enabled {
+            <V as VisitAstPath>::visit_tsrx_expr(&mut self.visitor, node, __ast_path)
         } else {
         }
     }
@@ -36974,6 +38851,15 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Expr {
                     &mut *__ast_path,
                 );
             }
+            Expr::Tsrx { 0: _field_0 } => {
+                let mut __ast_path = __ast_path
+                    .with_guard(AstParentNodeRef::Expr(self, self::fields::ExprField::Tsrx));
+                <Box<TsrxExpr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
             #[cfg(swc_ast_unknown)]
             _ => (),
         }
@@ -38363,7 +40249,12 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXAttr {
         __ast_path: &mut AstNodePath<'r>,
     ) {
         match self {
-            JSXAttr { span, name, value } => {
+            JSXAttr {
+                span,
+                name,
+                value,
+                shorthand,
+            } => {
                 {
                     let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXAttr(
                         self,
@@ -38560,6 +40451,78 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXAttrValue {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXCatchClause {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_catch_clause`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_catch_clause(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXCatchClause {
+                span,
+                param,
+                reset,
+                body,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXCatchClause(
+                        self,
+                        self::fields::JSXCatchClauseField::Span,
+                    ));
+                    <swc_common::Span as VisitWithAstPath<V>>::visit_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXCatchClause(
+                        self,
+                        self::fields::JSXCatchClauseField::Param,
+                    ));
+                    <Option<Pat> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        param,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXCatchClause(
+                        self,
+                        self::fields::JSXCatchClauseField::Reset,
+                    ));
+                    <Option<Ident> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        reset,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXCatchClause(
+                        self,
+                        self::fields::JSXCatchClauseField::Body,
+                    ));
+                    <JSXCodeBlock as VisitWithAstPath<V>>::visit_with_ast_path(
+                        body,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXClosingElement {
     #[doc = "Calls [VisitAstPath`::visit_jsx_closing_element`] with `self`."]
     fn visit_with_ast_path<'ast: 'r, 'r>(
@@ -38632,6 +40595,67 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXClosingFragment {
                         ));
                     <swc_common::Span as VisitWithAstPath<V>>::visit_with_ast_path(
                         span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXCodeBlock {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_code_block`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_code_block(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXCodeBlock {
+                span,
+                body,
+                render,
+                is_function_body,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXCodeBlock(
+                        self,
+                        self::fields::JSXCodeBlockField::Span,
+                    ));
+                    <swc_common::Span as VisitWithAstPath<V>>::visit_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXCodeBlock(
+                        self,
+                        self::fields::JSXCodeBlockField::Body(usize::MAX),
+                    ));
+                    <Vec<Stmt> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        body,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXCodeBlock(
+                        self,
+                        self::fields::JSXCodeBlockField::Render,
+                    ));
+                    <Option<Box<Expr>> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        render,
                         visitor,
                         &mut *__ast_path,
                     )
@@ -38785,6 +40809,17 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXElementChild {
                     &mut *__ast_path,
                 );
             }
+            JSXElementChild::Tsrx { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXElementChild(
+                    self,
+                    self::fields::JSXElementChildField::Tsrx,
+                ));
+                <Box<TsrxExpr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
             #[cfg(swc_ast_unknown)]
             _ => (),
         }
@@ -38836,6 +40871,17 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXElementName {
                     self::fields::JSXElementNameField::JsxnamespacedName,
                 ));
                 <JSXNamespacedName as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            JSXElementName::JSXExprContainer { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXElementName(
+                    self,
+                    self::fields::JSXElementNameField::JsxexprContainer,
+                ));
+                <JSXExprContainer as VisitWithAstPath<V>>::visit_with_ast_path(
                     _field_0,
                     visitor,
                     &mut *__ast_path,
@@ -38972,6 +41018,189 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXExprContainer {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXForExpr {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_for_expr`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_for_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXForExpr {
+                span,
+                kind,
+                init,
+                test,
+                update,
+                left,
+                right,
+                is_await,
+                body,
+                index,
+                key,
+                empty,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Span,
+                    ));
+                    <swc_common::Span as VisitWithAstPath<V>>::visit_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Kind,
+                    ));
+                    <JSXForKind as VisitWithAstPath<V>>::visit_with_ast_path(
+                        kind,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Init,
+                    ));
+                    <Option<VarDeclOrExpr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        init,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Test,
+                    ));
+                    <Option<Box<Expr>> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        test,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Update,
+                    ));
+                    <Option<Box<Expr>> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        update,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Left,
+                    ));
+                    <Option<ForHead> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        left,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Right,
+                    ));
+                    <Option<Box<Expr>> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        right,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Body,
+                    ));
+                    <JSXCodeBlock as VisitWithAstPath<V>>::visit_with_ast_path(
+                        body,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Index,
+                    ));
+                    <Option<Ident> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        index,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Key,
+                    ));
+                    <Option<Box<Expr>> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        key,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXForExpr(
+                        self,
+                        self::fields::JSXForExprField::Empty,
+                    ));
+                    <Option<JSXCodeBlock> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        empty,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXForKind {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_for_kind`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_for_kind(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXForKind::ForStatement => {}
+            JSXForKind::ForInStatement => {}
+            JSXForKind::ForOfStatement => {}
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXFragment {
     #[doc = "Calls [VisitAstPath`::visit_jsx_fragment`] with `self`."]
     fn visit_with_ast_path<'ast: 'r, 'r>(
@@ -39034,6 +41263,123 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXFragment {
                     ));
                     <JSXClosingFragment as VisitWithAstPath<V>>::visit_with_ast_path(
                         closing,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXIfAlternate {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_if_alternate`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_if_alternate(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXIfAlternate::CodeBlock { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXIfAlternate(
+                    self,
+                    self::fields::JSXIfAlternateField::CodeBlock,
+                ));
+                <JSXCodeBlock as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            JSXIfAlternate::If { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXIfAlternate(
+                    self,
+                    self::fields::JSXIfAlternateField::If,
+                ));
+                <Box<JSXIfExpr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXIfExpr {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_if_expr`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_if_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXIfExpr {
+                span,
+                test,
+                consequent,
+                alternate,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXIfExpr(
+                        self,
+                        self::fields::JSXIfExprField::Span,
+                    ));
+                    <swc_common::Span as VisitWithAstPath<V>>::visit_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXIfExpr(
+                        self,
+                        self::fields::JSXIfExprField::Test,
+                    ));
+                    <Box<Expr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        test,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXIfExpr(
+                        self,
+                        self::fields::JSXIfExprField::Consequent,
+                    ));
+                    <JSXCodeBlock as VisitWithAstPath<V>>::visit_with_ast_path(
+                        consequent,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXIfExpr(
+                        self,
+                        self::fields::JSXIfExprField::Alternate,
+                    ));
+                    <Option<JSXIfAlternate> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        alternate,
                         visitor,
                         &mut *__ast_path,
                     )
@@ -39357,6 +41703,198 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXSpreadChild {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXStyleElement {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_style_element`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_style_element(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXStyleElement {
+                span,
+                opening,
+                css,
+                closing,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXStyleElement(
+                        self,
+                        self::fields::JSXStyleElementField::Span,
+                    ));
+                    <swc_common::Span as VisitWithAstPath<V>>::visit_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXStyleElement(
+                        self,
+                        self::fields::JSXStyleElementField::Opening,
+                    ));
+                    <JSXOpeningElement as VisitWithAstPath<V>>::visit_with_ast_path(
+                        opening,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXStyleElement(
+                        self,
+                        self::fields::JSXStyleElementField::Css,
+                    ));
+                    <swc_atoms::Atom as VisitWithAstPath<V>>::visit_with_ast_path(
+                        css,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXStyleElement(
+                        self,
+                        self::fields::JSXStyleElementField::Closing,
+                    ));
+                    <JSXClosingElement as VisitWithAstPath<V>>::visit_with_ast_path(
+                        closing,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXSwitchCase {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_switch_case`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_switch_case(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXSwitchCase {
+                span,
+                test,
+                consequent,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXSwitchCase(
+                        self,
+                        self::fields::JSXSwitchCaseField::Span,
+                    ));
+                    <swc_common::Span as VisitWithAstPath<V>>::visit_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXSwitchCase(
+                        self,
+                        self::fields::JSXSwitchCaseField::Test,
+                    ));
+                    <Option<Box<Expr>> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        test,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXSwitchCase(
+                        self,
+                        self::fields::JSXSwitchCaseField::Consequent,
+                    ));
+                    <JSXCodeBlock as VisitWithAstPath<V>>::visit_with_ast_path(
+                        consequent,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXSwitchExpr {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_switch_expr`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_switch_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXSwitchExpr {
+                span,
+                discriminant,
+                cases,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXSwitchExpr(
+                        self,
+                        self::fields::JSXSwitchExprField::Span,
+                    ));
+                    <swc_common::Span as VisitWithAstPath<V>>::visit_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXSwitchExpr(
+                        self,
+                        self::fields::JSXSwitchExprField::Discriminant,
+                    ));
+                    <Box<Expr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        discriminant,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXSwitchExpr(
+                        self,
+                        self::fields::JSXSwitchExprField::Cases(usize::MAX),
+                    ));
+                    <Vec<JSXSwitchCase> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        cases,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXText {
     #[doc = "Calls [VisitAstPath`::visit_jsx_text`] with `self`."]
     fn visit_with_ast_path<'ast: 'r, 'r>(
@@ -39403,6 +41941,90 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXText {
                     ));
                     <swc_atoms::Atom as VisitWithAstPath<V>>::visit_with_ast_path(
                         raw,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for JSXTryExpr {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_try_expr`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_try_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            JSXTryExpr {
+                span,
+                block,
+                pending,
+                handler,
+                finalizer,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXTryExpr(
+                        self,
+                        self::fields::JSXTryExprField::Span,
+                    ));
+                    <swc_common::Span as VisitWithAstPath<V>>::visit_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXTryExpr(
+                        self,
+                        self::fields::JSXTryExprField::Block,
+                    ));
+                    <JSXCodeBlock as VisitWithAstPath<V>>::visit_with_ast_path(
+                        block,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXTryExpr(
+                        self,
+                        self::fields::JSXTryExprField::Pending,
+                    ));
+                    <Option<JSXCodeBlock> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        pending,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXTryExpr(
+                        self,
+                        self::fields::JSXTryExprField::Handler,
+                    ));
+                    <Option<JSXCatchClause> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        handler,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::JSXTryExpr(
+                        self,
+                        self::fields::JSXTryExprField::Finalizer,
+                    ));
+                    <Option<BlockStmt> as VisitWithAstPath<V>>::visit_with_ast_path(
+                        finalizer,
                         visitor,
                         &mut *__ast_path,
                     )
@@ -47369,6 +49991,95 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for TsUnionType {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for TsrxExpr {
+    #[doc = "Calls [VisitAstPath`::visit_tsrx_expr`] with `self`."]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_tsrx_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            TsrxExpr::CodeBlock { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::TsrxExpr(
+                    self,
+                    self::fields::TsrxExprField::CodeBlock,
+                ));
+                <JSXCodeBlock as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::StyleElement { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::TsrxExpr(
+                    self,
+                    self::fields::TsrxExprField::StyleElement,
+                ));
+                <Box<JSXStyleElement> as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::If { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::TsrxExpr(
+                    self,
+                    self::fields::TsrxExprField::If,
+                ));
+                <Box<JSXIfExpr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::For { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::TsrxExpr(
+                    self,
+                    self::fields::TsrxExprField::For,
+                ));
+                <Box<JSXForExpr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::Switch { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::TsrxExpr(
+                    self,
+                    self::fields::TsrxExprField::Switch,
+                ));
+                <Box<JSXSwitchExpr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::Try { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentNodeRef::TsrxExpr(
+                    self,
+                    self::fields::TsrxExprField::Try,
+                ));
+                <Box<JSXTryExpr> as VisitWithAstPath<V>>::visit_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for UnaryExpr {
     #[doc = "Calls [VisitAstPath`::visit_unary_expr`] with `self`."]
     fn visit_with_ast_path<'ast: 'r, 'r>(
@@ -48253,6 +50964,35 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for [JSXElementChild] {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for [JSXSwitchCase] {
+    #[doc = "Calls [VisitAstPath`::visit_jsx_switch_cases`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_jsx_switch_cases(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        self.iter().enumerate().for_each(|(__idx, item)| {
+            let mut __ast_path = __ast_path.with_index_guard(__idx);
+            <JSXSwitchCase as VisitWithAstPath<V>>::visit_with_ast_path(
+                item,
+                visitor,
+                &mut *__ast_path,
+            )
+        })
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for [ModuleItem] {
     #[doc = "Calls [VisitAstPath`::visit_module_items`] with `self`. (Extra impl)"]
     #[inline]
@@ -48500,6 +51240,33 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Option<Vec<ExprOrSpread>>
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Option<ForHead> {
+    #[doc = "Calls [VisitAstPath`::visit_opt_for_head`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_for_head(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            Some(inner) => {
+                <ForHead as VisitWithAstPath<V>>::visit_with_ast_path(inner, visitor, __ast_path)
+            }
+            None => {}
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Option<FunctionBody> {
     #[doc = "Calls [VisitAstPath`::visit_opt_function_body`] with `self`. (Extra impl)"]
     #[inline]
@@ -48581,6 +51348,33 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Option<JSXAttrValue> {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Option<JSXCatchClause> {
+    #[doc = "Calls [VisitAstPath`::visit_opt_jsx_catch_clause`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_jsx_catch_clause(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            Some(inner) => <JSXCatchClause as VisitWithAstPath<V>>::visit_with_ast_path(
+                inner, visitor, __ast_path,
+            ),
+            None => {}
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Option<JSXClosingElement> {
     #[doc = "Calls [VisitAstPath`::visit_opt_jsx_closing_element`] with `self`. (Extra impl)"]
     #[inline]
@@ -48600,6 +51394,60 @@ impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Option<JSXClosingElement>
     ) {
         match self {
             Some(inner) => <JSXClosingElement as VisitWithAstPath<V>>::visit_with_ast_path(
+                inner, visitor, __ast_path,
+            ),
+            None => {}
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Option<JSXCodeBlock> {
+    #[doc = "Calls [VisitAstPath`::visit_opt_jsx_code_block`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_jsx_code_block(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            Some(inner) => <JSXCodeBlock as VisitWithAstPath<V>>::visit_with_ast_path(
+                inner, visitor, __ast_path,
+            ),
+            None => {}
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitAstPath> VisitWithAstPath<V> for Option<JSXIfAlternate> {
+    #[doc = "Calls [VisitAstPath`::visit_opt_jsx_if_alternate`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        <V as VisitAstPath>::visit_opt_jsx_if_alternate(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_children_with_ast_path<'ast: 'r, 'r>(
+        &'ast self,
+        visitor: &mut V,
+        __ast_path: &mut AstNodePath<'r>,
+    ) {
+        match self {
+            Some(inner) => <JSXIfAlternate as VisitWithAstPath<V>>::visit_with_ast_path(
                 inner, visitor, __ast_path,
             ),
             None => {}
@@ -50278,6 +53126,13 @@ pub trait VisitMut {
     fn visit_mut_jsx_attr_value(&mut self, node: &mut JSXAttrValue) {
         <JSXAttrValue as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
+    #[doc = "Visit a node of type `JSXCatchClause`.\n\nBy default, this method calls \
+             [`JSXCatchClause::visit_mut_children_with`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn visit_mut_jsx_catch_clause(&mut self, node: &mut JSXCatchClause) {
+        <JSXCatchClause as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
     #[doc = "Visit a node of type `JSXClosingElement`.\n\nBy default, this method calls \
              [`JSXClosingElement::visit_mut_children_with`]. If you want to recurse, you need to \
              call it manually."]
@@ -50291,6 +53146,13 @@ pub trait VisitMut {
     #[inline]
     fn visit_mut_jsx_closing_fragment(&mut self, node: &mut JSXClosingFragment) {
         <JSXClosingFragment as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXCodeBlock`.\n\nBy default, this method calls \
+             [`JSXCodeBlock::visit_mut_children_with`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock) {
+        <JSXCodeBlock as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
     #[doc = "Visit a node of type `JSXElement`.\n\nBy default, this method calls \
              [`JSXElement::visit_mut_children_with`]. If you want to recurse, you need to call it \
@@ -50341,12 +53203,40 @@ pub trait VisitMut {
     fn visit_mut_jsx_expr_container(&mut self, node: &mut JSXExprContainer) {
         <JSXExprContainer as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
+    #[doc = "Visit a node of type `JSXForExpr`.\n\nBy default, this method calls \
+             [`JSXForExpr::visit_mut_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr) {
+        <JSXForExpr as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXForKind`.\n\nBy default, this method calls \
+             [`JSXForKind::visit_mut_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind) {
+        <JSXForKind as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
     #[doc = "Visit a node of type `JSXFragment`.\n\nBy default, this method calls \
              [`JSXFragment::visit_mut_children_with`]. If you want to recurse, you need to call it \
              manually."]
     #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment) {
         <JSXFragment as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXIfAlternate`.\n\nBy default, this method calls \
+             [`JSXIfAlternate::visit_mut_children_with`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn visit_mut_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate) {
+        <JSXIfAlternate as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXIfExpr`.\n\nBy default, this method calls \
+             [`JSXIfExpr::visit_mut_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr) {
+        <JSXIfExpr as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
     #[doc = "Visit a node of type `JSXMemberExpr`.\n\nBy default, this method calls \
              [`JSXMemberExpr::visit_mut_children_with`]. If you want to recurse, you need to call \
@@ -50390,12 +53280,47 @@ pub trait VisitMut {
     fn visit_mut_jsx_spread_child(&mut self, node: &mut JSXSpreadChild) {
         <JSXSpreadChild as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
+    #[doc = "Visit a node of type `JSXStyleElement`.\n\nBy default, this method calls \
+             [`JSXStyleElement::visit_mut_children_with`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_mut_jsx_style_element(&mut self, node: &mut JSXStyleElement) {
+        <JSXStyleElement as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXSwitchCase`.\n\nBy default, this method calls \
+             [`JSXSwitchCase::visit_mut_children_with`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn visit_mut_jsx_switch_case(&mut self, node: &mut JSXSwitchCase) {
+        <JSXSwitchCase as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `Vec < JSXSwitchCase >`.\n\nBy default, this method calls [`Vec \
+             < JSXSwitchCase >::visit_mut_children_with`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_mut_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>) {
+        <Vec<JSXSwitchCase> as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXSwitchExpr`.\n\nBy default, this method calls \
+             [`JSXSwitchExpr::visit_mut_children_with`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn visit_mut_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr) {
+        <JSXSwitchExpr as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
     #[doc = "Visit a node of type `JSXText`.\n\nBy default, this method calls \
              [`JSXText::visit_mut_children_with`]. If you want to recurse, you need to call it \
              manually."]
     #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText) {
         <JSXText as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXTryExpr`.\n\nBy default, this method calls \
+             [`JSXTryExpr::visit_mut_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr) {
+        <JSXTryExpr as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
     #[doc = "Visit a node of type `Key`.\n\nBy default, this method calls \
              [`Key::visit_mut_children_with`]. If you want to recurse, you need to call it \
@@ -50635,6 +53560,13 @@ pub trait VisitMut {
     fn visit_mut_opt_expr_or_spreads(&mut self, node: &mut Option<Vec<ExprOrSpread>>) {
         <Option<Vec<ExprOrSpread>> as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
+    #[doc = "Visit a node of type `Option < ForHead >`.\n\nBy default, this method calls [`Option \
+             < ForHead >::visit_mut_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>) {
+        <Option<ForHead> as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
     #[doc = "Visit a node of type `Option < FunctionBody >`.\n\nBy default, this method calls \
              [`Option < FunctionBody >::visit_mut_children_with`]. If you want to recurse, you \
              need to call it manually."]
@@ -50656,12 +53588,33 @@ pub trait VisitMut {
     fn visit_mut_opt_jsx_attr_value(&mut self, node: &mut Option<JSXAttrValue>) {
         <Option<JSXAttrValue> as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
+    #[doc = "Visit a node of type `Option < JSXCatchClause >`.\n\nBy default, this method calls \
+             [`Option < JSXCatchClause >::visit_mut_children_with`]. If you want to recurse, you \
+             need to call it manually."]
+    #[inline]
+    fn visit_mut_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>) {
+        <Option<JSXCatchClause> as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
     #[doc = "Visit a node of type `Option < JSXClosingElement >`.\n\nBy default, this method calls \
              [`Option < JSXClosingElement >::visit_mut_children_with`]. If you want to recurse, \
              you need to call it manually."]
     #[inline]
     fn visit_mut_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>) {
         <Option<JSXClosingElement> as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `Option < JSXCodeBlock >`.\n\nBy default, this method calls \
+             [`Option < JSXCodeBlock >::visit_mut_children_with`]. If you want to recurse, you \
+             need to call it manually."]
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>) {
+        <Option<JSXCodeBlock> as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `Option < JSXIfAlternate >`.\n\nBy default, this method calls \
+             [`Option < JSXIfAlternate >::visit_mut_children_with`]. If you want to recurse, you \
+             need to call it manually."]
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>) {
+        <Option<JSXIfAlternate> as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
     #[doc = "Visit a node of type `Option < ModuleExportName >`.\n\nBy default, this method calls \
              [`Option < ModuleExportName >::visit_mut_children_with`]. If you want to recurse, you \
@@ -51666,6 +54619,13 @@ pub trait VisitMut {
     fn visit_mut_ts_union_type(&mut self, node: &mut TsUnionType) {
         <TsUnionType as VisitMutWith<Self>>::visit_mut_children_with(node, self)
     }
+    #[doc = "Visit a node of type `TsrxExpr`.\n\nBy default, this method calls \
+             [`TsrxExpr::visit_mut_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr) {
+        <TsrxExpr as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
     #[doc = "Visit a node of type `UnaryExpr`.\n\nBy default, this method calls \
              [`UnaryExpr::visit_mut_children_with`]. If you want to recurse, you need to call it \
              manually."]
@@ -52205,6 +55165,11 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_catch_clause(&mut self, node: &mut JSXCatchClause) {
+        <V as VisitMut>::visit_mut_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_jsx_closing_element(&mut self, node: &mut JSXClosingElement) {
         <V as VisitMut>::visit_mut_jsx_closing_element(&mut **self, node)
     }
@@ -52212,6 +55177,11 @@ where
     #[inline]
     fn visit_mut_jsx_closing_fragment(&mut self, node: &mut JSXClosingFragment) {
         <V as VisitMut>::visit_mut_jsx_closing_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock) {
+        <V as VisitMut>::visit_mut_jsx_code_block(&mut **self, node)
     }
 
     #[inline]
@@ -52250,8 +55220,28 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr) {
+        <V as VisitMut>::visit_mut_jsx_for_expr(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind) {
+        <V as VisitMut>::visit_mut_jsx_for_kind(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment) {
         <V as VisitMut>::visit_mut_jsx_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate) {
+        <V as VisitMut>::visit_mut_jsx_if_alternate(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr) {
+        <V as VisitMut>::visit_mut_jsx_if_expr(&mut **self, node)
     }
 
     #[inline]
@@ -52285,8 +55275,33 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_style_element(&mut self, node: &mut JSXStyleElement) {
+        <V as VisitMut>::visit_mut_jsx_style_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_case(&mut self, node: &mut JSXSwitchCase) {
+        <V as VisitMut>::visit_mut_jsx_switch_case(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>) {
+        <V as VisitMut>::visit_mut_jsx_switch_cases(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr) {
+        <V as VisitMut>::visit_mut_jsx_switch_expr(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText) {
         <V as VisitMut>::visit_mut_jsx_text(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr) {
+        <V as VisitMut>::visit_mut_jsx_try_expr(&mut **self, node)
     }
 
     #[inline]
@@ -52460,6 +55475,11 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>) {
+        <V as VisitMut>::visit_mut_opt_for_head(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_opt_function_body(&mut self, node: &mut Option<FunctionBody>) {
         <V as VisitMut>::visit_mut_opt_function_body(&mut **self, node)
     }
@@ -52475,8 +55495,23 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>) {
+        <V as VisitMut>::visit_mut_opt_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>) {
         <V as VisitMut>::visit_mut_opt_jsx_closing_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>) {
+        <V as VisitMut>::visit_mut_opt_jsx_code_block(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>) {
+        <V as VisitMut>::visit_mut_opt_jsx_if_alternate(&mut **self, node)
     }
 
     #[inline]
@@ -53195,6 +56230,11 @@ where
     #[inline]
     fn visit_mut_ts_union_type(&mut self, node: &mut TsUnionType) {
         <V as VisitMut>::visit_mut_ts_union_type(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr) {
+        <V as VisitMut>::visit_mut_tsrx_expr(&mut **self, node)
     }
 
     #[inline]
@@ -53707,6 +56747,11 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_catch_clause(&mut self, node: &mut JSXCatchClause) {
+        <V as VisitMut>::visit_mut_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_jsx_closing_element(&mut self, node: &mut JSXClosingElement) {
         <V as VisitMut>::visit_mut_jsx_closing_element(&mut **self, node)
     }
@@ -53714,6 +56759,11 @@ where
     #[inline]
     fn visit_mut_jsx_closing_fragment(&mut self, node: &mut JSXClosingFragment) {
         <V as VisitMut>::visit_mut_jsx_closing_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock) {
+        <V as VisitMut>::visit_mut_jsx_code_block(&mut **self, node)
     }
 
     #[inline]
@@ -53752,8 +56802,28 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr) {
+        <V as VisitMut>::visit_mut_jsx_for_expr(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind) {
+        <V as VisitMut>::visit_mut_jsx_for_kind(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment) {
         <V as VisitMut>::visit_mut_jsx_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate) {
+        <V as VisitMut>::visit_mut_jsx_if_alternate(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr) {
+        <V as VisitMut>::visit_mut_jsx_if_expr(&mut **self, node)
     }
 
     #[inline]
@@ -53787,8 +56857,33 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_style_element(&mut self, node: &mut JSXStyleElement) {
+        <V as VisitMut>::visit_mut_jsx_style_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_case(&mut self, node: &mut JSXSwitchCase) {
+        <V as VisitMut>::visit_mut_jsx_switch_case(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>) {
+        <V as VisitMut>::visit_mut_jsx_switch_cases(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr) {
+        <V as VisitMut>::visit_mut_jsx_switch_expr(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText) {
         <V as VisitMut>::visit_mut_jsx_text(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr) {
+        <V as VisitMut>::visit_mut_jsx_try_expr(&mut **self, node)
     }
 
     #[inline]
@@ -53962,6 +57057,11 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>) {
+        <V as VisitMut>::visit_mut_opt_for_head(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_opt_function_body(&mut self, node: &mut Option<FunctionBody>) {
         <V as VisitMut>::visit_mut_opt_function_body(&mut **self, node)
     }
@@ -53977,8 +57077,23 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>) {
+        <V as VisitMut>::visit_mut_opt_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn visit_mut_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>) {
         <V as VisitMut>::visit_mut_opt_jsx_closing_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>) {
+        <V as VisitMut>::visit_mut_opt_jsx_code_block(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>) {
+        <V as VisitMut>::visit_mut_opt_jsx_if_alternate(&mut **self, node)
     }
 
     #[inline]
@@ -54697,6 +57812,11 @@ where
     #[inline]
     fn visit_mut_ts_union_type(&mut self, node: &mut TsUnionType) {
         <V as VisitMut>::visit_mut_ts_union_type(&mut **self, node)
+    }
+
+    #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr) {
+        <V as VisitMut>::visit_mut_tsrx_expr(&mut **self, node)
     }
 
     #[inline]
@@ -55541,6 +58661,16 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_catch_clause(&mut self, node: &mut JSXCatchClause) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_catch_clause(visitor, node),
+            swc_visit::Either::Right(visitor) => {
+                VisitMut::visit_mut_jsx_catch_clause(visitor, node)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_closing_element(&mut self, node: &mut JSXClosingElement) {
         match self {
             swc_visit::Either::Left(visitor) => {
@@ -55561,6 +58691,14 @@ where
             swc_visit::Either::Right(visitor) => {
                 VisitMut::visit_mut_jsx_closing_fragment(visitor, node)
             }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_code_block(visitor, node),
+            swc_visit::Either::Right(visitor) => VisitMut::visit_mut_jsx_code_block(visitor, node),
         }
     }
 
@@ -55635,10 +58773,44 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_for_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => VisitMut::visit_mut_jsx_for_expr(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_for_kind(visitor, node),
+            swc_visit::Either::Right(visitor) => VisitMut::visit_mut_jsx_for_kind(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment) {
         match self {
             swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_fragment(visitor, node),
             swc_visit::Either::Right(visitor) => VisitMut::visit_mut_jsx_fragment(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_if_alternate(visitor, node),
+            swc_visit::Either::Right(visitor) => {
+                VisitMut::visit_mut_jsx_if_alternate(visitor, node)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_if_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => VisitMut::visit_mut_jsx_if_expr(visitor, node),
         }
     }
 
@@ -55705,10 +58877,56 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_style_element(&mut self, node: &mut JSXStyleElement) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMut::visit_mut_jsx_style_element(visitor, node)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMut::visit_mut_jsx_style_element(visitor, node)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_case(&mut self, node: &mut JSXSwitchCase) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_switch_case(visitor, node),
+            swc_visit::Either::Right(visitor) => VisitMut::visit_mut_jsx_switch_case(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_switch_cases(visitor, node),
+            swc_visit::Either::Right(visitor) => {
+                VisitMut::visit_mut_jsx_switch_cases(visitor, node)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_switch_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => VisitMut::visit_mut_jsx_switch_expr(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText) {
         match self {
             swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_text(visitor, node),
             swc_visit::Either::Right(visitor) => VisitMut::visit_mut_jsx_text(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_jsx_try_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => VisitMut::visit_mut_jsx_try_expr(visitor, node),
         }
     }
 
@@ -56009,6 +59227,14 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_opt_for_head(visitor, node),
+            swc_visit::Either::Right(visitor) => VisitMut::visit_mut_opt_for_head(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_mut_opt_function_body(&mut self, node: &mut Option<FunctionBody>) {
         match self {
             swc_visit::Either::Left(visitor) => {
@@ -56041,6 +59267,18 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMut::visit_mut_opt_jsx_catch_clause(visitor, node)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMut::visit_mut_opt_jsx_catch_clause(visitor, node)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_mut_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>) {
         match self {
             swc_visit::Either::Left(visitor) => {
@@ -56048,6 +59286,30 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 VisitMut::visit_mut_opt_jsx_closing_element(visitor, node)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMut::visit_mut_opt_jsx_code_block(visitor, node)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMut::visit_mut_opt_jsx_code_block(visitor, node)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMut::visit_mut_opt_jsx_if_alternate(visitor, node)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMut::visit_mut_opt_jsx_if_alternate(visitor, node)
             }
         }
     }
@@ -57424,6 +60686,14 @@ where
     }
 
     #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr) {
+        match self {
+            swc_visit::Either::Left(visitor) => VisitMut::visit_mut_tsrx_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => VisitMut::visit_mut_tsrx_expr(visitor, node),
+        }
+    }
+
+    #[inline]
     fn visit_mut_unary_expr(&mut self, node: &mut UnaryExpr) {
         match self {
             swc_visit::Either::Left(visitor) => VisitMut::visit_mut_unary_expr(visitor, node),
@@ -58238,6 +61508,14 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_catch_clause(&mut self, node: &mut JSXCatchClause) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_catch_clause(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_closing_element(&mut self, node: &mut JSXClosingElement) {
         if self.enabled {
             <V as VisitMut>::visit_mut_jsx_closing_element(&mut self.visitor, node)
@@ -58249,6 +61527,14 @@ where
     fn visit_mut_jsx_closing_fragment(&mut self, node: &mut JSXClosingFragment) {
         if self.enabled {
             <V as VisitMut>::visit_mut_jsx_closing_fragment(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_code_block(&mut self.visitor, node)
         } else {
         }
     }
@@ -58310,9 +61596,41 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_for_expr(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_for_kind(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment) {
         if self.enabled {
             <V as VisitMut>::visit_mut_jsx_fragment(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_if_alternate(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_if_expr(&mut self.visitor, node)
         } else {
         }
     }
@@ -58366,9 +61684,49 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_style_element(&mut self, node: &mut JSXStyleElement) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_style_element(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_case(&mut self, node: &mut JSXSwitchCase) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_switch_case(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_switch_cases(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_switch_expr(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText) {
         if self.enabled {
             <V as VisitMut>::visit_mut_jsx_text(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_jsx_try_expr(&mut self.visitor, node)
         } else {
         }
     }
@@ -58646,6 +62004,14 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_opt_for_head(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_opt_function_body(&mut self, node: &mut Option<FunctionBody>) {
         if self.enabled {
             <V as VisitMut>::visit_mut_opt_function_body(&mut self.visitor, node)
@@ -58670,9 +62036,33 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_opt_jsx_catch_clause(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>) {
         if self.enabled {
             <V as VisitMut>::visit_mut_opt_jsx_closing_element(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_opt_jsx_code_block(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_opt_jsx_if_alternate(&mut self.visitor, node)
         } else {
         }
     }
@@ -59820,6 +63210,14 @@ where
     fn visit_mut_ts_union_type(&mut self, node: &mut TsUnionType) {
         if self.enabled {
             <V as VisitMut>::visit_mut_ts_union_type(&mut self.visitor, node)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr) {
+        if self.enabled {
+            <V as VisitMut>::visit_mut_tsrx_expr(&mut self.visitor, node)
         } else {
         }
     }
@@ -61304,6 +64702,9 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for Expr {
             Expr::Invalid { 0: _field_0 } => {
                 <Invalid as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
             }
+            Expr::Tsrx { 0: _field_0 } => {
+                <Box<TsrxExpr> as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
             #[cfg(swc_ast_unknown)]
             _ => (),
         }
@@ -61902,7 +65303,12 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXAttr {
 
     fn visit_mut_children_with(&mut self, visitor: &mut V) {
         match self {
-            JSXAttr { span, name, value } => {
+            JSXAttr {
+                span,
+                name,
+                value,
+                shorthand,
+            } => {
                 {
                     <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
                 };
@@ -61979,6 +65385,36 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXAttrValue {
         }
     }
 }
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXCatchClause {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_catch_clause`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_catch_clause(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXCatchClause {
+                span,
+                param,
+                reset,
+                body,
+            } => {
+                {
+                    <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
+                };
+                {
+                    <Option<Pat> as VisitMutWith<V>>::visit_mut_with(param, visitor)
+                };
+                {
+                    <Option<Ident> as VisitMutWith<V>>::visit_mut_with(reset, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitMutWith<V>>::visit_mut_with(body, visitor)
+                };
+            }
+        }
+    }
+}
 impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXClosingElement {
     #[doc = "Calls [VisitMut`::visit_mut_jsx_closing_element`] with `self`."]
     fn visit_mut_with(&mut self, visitor: &mut V) {
@@ -62009,6 +65445,33 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXClosingFragment {
             JSXClosingFragment { span } => {
                 {
                     <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXCodeBlock {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_code_block`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_code_block(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXCodeBlock {
+                span,
+                body,
+                render,
+                is_function_body,
+            } => {
+                {
+                    <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
+                };
+                {
+                    <Vec<Stmt> as VisitMutWith<V>>::visit_mut_with(body, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitMutWith<V>>::visit_mut_with(render, visitor)
                 };
             }
         }
@@ -62067,6 +65530,9 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXElementChild {
             JSXElementChild::JSXFragment { 0: _field_0 } => {
                 <JSXFragment as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
             }
+            JSXElementChild::Tsrx { 0: _field_0 } => {
+                <Box<TsrxExpr> as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
             #[cfg(swc_ast_unknown)]
             _ => (),
         }
@@ -62088,6 +65554,9 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXElementName {
             }
             JSXElementName::JSXNamespacedName { 0: _field_0 } => {
                 <JSXNamespacedName as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
+            JSXElementName::JSXExprContainer { 0: _field_0 } => {
+                <JSXExprContainer as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
             }
             #[cfg(swc_ast_unknown)]
             _ => (),
@@ -62148,6 +65617,81 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXExprContainer {
         }
     }
 }
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXForExpr {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_for_expr`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_for_expr(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXForExpr {
+                span,
+                kind,
+                init,
+                test,
+                update,
+                left,
+                right,
+                is_await,
+                body,
+                index,
+                key,
+                empty,
+            } => {
+                {
+                    <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
+                };
+                {
+                    <JSXForKind as VisitMutWith<V>>::visit_mut_with(kind, visitor)
+                };
+                {
+                    <Option<VarDeclOrExpr> as VisitMutWith<V>>::visit_mut_with(init, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitMutWith<V>>::visit_mut_with(test, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitMutWith<V>>::visit_mut_with(update, visitor)
+                };
+                {
+                    <Option<ForHead> as VisitMutWith<V>>::visit_mut_with(left, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitMutWith<V>>::visit_mut_with(right, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitMutWith<V>>::visit_mut_with(body, visitor)
+                };
+                {
+                    <Option<Ident> as VisitMutWith<V>>::visit_mut_with(index, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitMutWith<V>>::visit_mut_with(key, visitor)
+                };
+                {
+                    <Option<JSXCodeBlock> as VisitMutWith<V>>::visit_mut_with(empty, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXForKind {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_for_kind`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_for_kind(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXForKind::ForStatement => {}
+            JSXForKind::ForInStatement => {}
+            JSXForKind::ForOfStatement => {}
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
 impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXFragment {
     #[doc = "Calls [VisitMut`::visit_mut_jsx_fragment`] with `self`."]
     fn visit_mut_with(&mut self, visitor: &mut V) {
@@ -62173,6 +65717,55 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXFragment {
                 };
                 {
                     <JSXClosingFragment as VisitMutWith<V>>::visit_mut_with(closing, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXIfAlternate {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_if_alternate`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_if_alternate(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXIfAlternate::CodeBlock { 0: _field_0 } => {
+                <JSXCodeBlock as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
+            JSXIfAlternate::If { 0: _field_0 } => {
+                <Box<JSXIfExpr> as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXIfExpr {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_if_expr`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_if_expr(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXIfExpr {
+                span,
+                test,
+                consequent,
+                alternate,
+            } => {
+                {
+                    <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
+                };
+                {
+                    <Box<Expr> as VisitMutWith<V>>::visit_mut_with(test, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitMutWith<V>>::visit_mut_with(consequent, visitor)
+                };
+                {
+                    <Option<JSXIfAlternate> as VisitMutWith<V>>::visit_mut_with(alternate, visitor)
                 };
             }
         }
@@ -62309,6 +65902,88 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXSpreadChild {
         }
     }
 }
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXStyleElement {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_style_element`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_style_element(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXStyleElement {
+                span,
+                opening,
+                css,
+                closing,
+            } => {
+                {
+                    <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
+                };
+                {
+                    <JSXOpeningElement as VisitMutWith<V>>::visit_mut_with(opening, visitor)
+                };
+                {
+                    <swc_atoms::Atom as VisitMutWith<V>>::visit_mut_with(css, visitor)
+                };
+                {
+                    <JSXClosingElement as VisitMutWith<V>>::visit_mut_with(closing, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXSwitchCase {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_switch_case`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_switch_case(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXSwitchCase {
+                span,
+                test,
+                consequent,
+            } => {
+                {
+                    <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
+                };
+                {
+                    <Option<Box<Expr>> as VisitMutWith<V>>::visit_mut_with(test, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitMutWith<V>>::visit_mut_with(consequent, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXSwitchExpr {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_switch_expr`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_switch_expr(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXSwitchExpr {
+                span,
+                discriminant,
+                cases,
+            } => {
+                {
+                    <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
+                };
+                {
+                    <Box<Expr> as VisitMutWith<V>>::visit_mut_with(discriminant, visitor)
+                };
+                {
+                    <Vec<JSXSwitchCase> as VisitMutWith<V>>::visit_mut_with(cases, visitor)
+                };
+            }
+        }
+    }
+}
 impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXText {
     #[doc = "Calls [VisitMut`::visit_mut_jsx_text`] with `self`."]
     fn visit_mut_with(&mut self, visitor: &mut V) {
@@ -62326,6 +66001,40 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXText {
                 };
                 {
                     <swc_atoms::Atom as VisitMutWith<V>>::visit_mut_with(raw, visitor)
+                };
+            }
+        }
+    }
+}
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for JSXTryExpr {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_try_expr`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_try_expr(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            JSXTryExpr {
+                span,
+                block,
+                pending,
+                handler,
+                finalizer,
+            } => {
+                {
+                    <swc_common::Span as VisitMutWith<V>>::visit_mut_with(span, visitor)
+                };
+                {
+                    <JSXCodeBlock as VisitMutWith<V>>::visit_mut_with(block, visitor)
+                };
+                {
+                    <Option<JSXCodeBlock> as VisitMutWith<V>>::visit_mut_with(pending, visitor)
+                };
+                {
+                    <Option<JSXCatchClause> as VisitMutWith<V>>::visit_mut_with(handler, visitor)
+                };
+                {
+                    <Option<BlockStmt> as VisitMutWith<V>>::visit_mut_with(finalizer, visitor)
                 };
             }
         }
@@ -65673,6 +69382,37 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for TsUnionType {
         }
     }
 }
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for TsrxExpr {
+    #[doc = "Calls [VisitMut`::visit_mut_tsrx_expr`] with `self`."]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_tsrx_expr(visitor, self)
+    }
+
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            TsrxExpr::CodeBlock { 0: _field_0 } => {
+                <JSXCodeBlock as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
+            TsrxExpr::StyleElement { 0: _field_0 } => {
+                <Box<JSXStyleElement> as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
+            TsrxExpr::If { 0: _field_0 } => {
+                <Box<JSXIfExpr> as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
+            TsrxExpr::For { 0: _field_0 } => {
+                <Box<JSXForExpr> as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
+            TsrxExpr::Switch { 0: _field_0 } => {
+                <Box<JSXSwitchExpr> as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
+            TsrxExpr::Try { 0: _field_0 } => {
+                <Box<JSXTryExpr> as VisitMutWith<V>>::visit_mut_with(_field_0, visitor);
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
 impl<V: ?Sized + VisitMut> VisitMutWith<V> for UnaryExpr {
     #[doc = "Calls [VisitMut`::visit_mut_unary_expr`] with `self`."]
     fn visit_mut_with(&mut self, visitor: &mut V) {
@@ -66081,6 +69821,19 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for Vec<JSXElementChild> {
             .for_each(|item| <JSXElementChild as VisitMutWith<V>>::visit_mut_with(item, visitor))
     }
 }
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for Vec<JSXSwitchCase> {
+    #[doc = "Calls [VisitMut`::visit_mut_jsx_switch_cases`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_jsx_switch_cases(visitor, self)
+    }
+
+    #[inline]
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        self.iter_mut()
+            .for_each(|item| <JSXSwitchCase as VisitMutWith<V>>::visit_mut_with(item, visitor))
+    }
+}
 impl<V: ?Sized + VisitMut> VisitMutWith<V> for Vec<ModuleItem> {
     #[doc = "Calls [VisitMut`::visit_mut_module_items`] with `self`. (Extra impl)"]
     #[inline]
@@ -66212,6 +69965,21 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for Option<Vec<ExprOrSpread>> {
         }
     }
 }
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for Option<ForHead> {
+    #[doc = "Calls [VisitMut`::visit_mut_opt_for_head`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_opt_for_head(visitor, self)
+    }
+
+    #[inline]
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            Some(inner) => <ForHead as VisitMutWith<V>>::visit_mut_with(inner, visitor),
+            None => {}
+        }
+    }
+}
 impl<V: ?Sized + VisitMut> VisitMutWith<V> for Option<FunctionBody> {
     #[doc = "Calls [VisitMut`::visit_mut_opt_function_body`] with `self`. (Extra impl)"]
     #[inline]
@@ -66257,6 +70025,21 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for Option<JSXAttrValue> {
         }
     }
 }
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for Option<JSXCatchClause> {
+    #[doc = "Calls [VisitMut`::visit_mut_opt_jsx_catch_clause`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_opt_jsx_catch_clause(visitor, self)
+    }
+
+    #[inline]
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            Some(inner) => <JSXCatchClause as VisitMutWith<V>>::visit_mut_with(inner, visitor),
+            None => {}
+        }
+    }
+}
 impl<V: ?Sized + VisitMut> VisitMutWith<V> for Option<JSXClosingElement> {
     #[doc = "Calls [VisitMut`::visit_mut_opt_jsx_closing_element`] with `self`. (Extra impl)"]
     #[inline]
@@ -66268,6 +70051,36 @@ impl<V: ?Sized + VisitMut> VisitMutWith<V> for Option<JSXClosingElement> {
     fn visit_mut_children_with(&mut self, visitor: &mut V) {
         match self {
             Some(inner) => <JSXClosingElement as VisitMutWith<V>>::visit_mut_with(inner, visitor),
+            None => {}
+        }
+    }
+}
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for Option<JSXCodeBlock> {
+    #[doc = "Calls [VisitMut`::visit_mut_opt_jsx_code_block`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_opt_jsx_code_block(visitor, self)
+    }
+
+    #[inline]
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            Some(inner) => <JSXCodeBlock as VisitMutWith<V>>::visit_mut_with(inner, visitor),
+            None => {}
+        }
+    }
+}
+impl<V: ?Sized + VisitMut> VisitMutWith<V> for Option<JSXIfAlternate> {
+    #[doc = "Calls [VisitMut`::visit_mut_opt_jsx_if_alternate`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with(&mut self, visitor: &mut V) {
+        <V as VisitMut>::visit_mut_opt_jsx_if_alternate(visitor, self)
+    }
+
+    #[inline]
+    fn visit_mut_children_with(&mut self, visitor: &mut V) {
+        match self {
+            Some(inner) => <JSXIfAlternate as VisitMutWith<V>>::visit_mut_with(inner, visitor),
             None => {}
         }
     }
@@ -67682,6 +71495,19 @@ pub trait VisitMutAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `JSXCatchClause`.\n\nBy default, this method calls \
+             [`JSXCatchClause::visit_mut_children_with_ast_path`]. If you want to recurse, you \
+             need to call it manually."]
+    #[inline]
+    fn visit_mut_jsx_catch_clause(
+        &mut self,
+        node: &mut JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <JSXCatchClause as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `JSXClosingElement`.\n\nBy default, this method calls \
              [`JSXClosingElement::visit_mut_children_with_ast_path`]. If you want to recurse, you \
              need to call it manually."]
@@ -67705,6 +71531,15 @@ pub trait VisitMutAstPath {
         __ast_path: &mut AstKindPath,
     ) {
         <JSXClosingFragment as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXCodeBlock`.\n\nBy default, this method calls \
+             [`JSXCodeBlock::visit_mut_children_with_ast_path`]. If you want to recurse, you need \
+             to call it manually."]
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock, __ast_path: &mut AstKindPath) {
+        <JSXCodeBlock as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
             node, self, __ast_path,
         )
     }
@@ -67787,12 +71622,52 @@ pub trait VisitMutAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `JSXForExpr`.\n\nBy default, this method calls \
+             [`JSXForExpr::visit_mut_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr, __ast_path: &mut AstKindPath) {
+        <JSXForExpr as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXForKind`.\n\nBy default, this method calls \
+             [`JSXForKind::visit_mut_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind, __ast_path: &mut AstKindPath) {
+        <JSXForKind as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `JSXFragment`.\n\nBy default, this method calls \
              [`JSXFragment::visit_mut_children_with_ast_path`]. If you want to recurse, you need \
              to call it manually."]
     #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment, __ast_path: &mut AstKindPath) {
         <JSXFragment as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXIfAlternate`.\n\nBy default, this method calls \
+             [`JSXIfAlternate::visit_mut_children_with_ast_path`]. If you want to recurse, you \
+             need to call it manually."]
+    #[inline]
+    fn visit_mut_jsx_if_alternate(
+        &mut self,
+        node: &mut JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <JSXIfAlternate as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXIfExpr`.\n\nBy default, this method calls \
+             [`JSXIfExpr::visit_mut_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr, __ast_path: &mut AstKindPath) {
+        <JSXIfExpr as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
             node, self, __ast_path,
         )
     }
@@ -67870,12 +71745,73 @@ pub trait VisitMutAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `JSXStyleElement`.\n\nBy default, this method calls \
+             [`JSXStyleElement::visit_mut_children_with_ast_path`]. If you want to recurse, you \
+             need to call it manually."]
+    #[inline]
+    fn visit_mut_jsx_style_element(
+        &mut self,
+        node: &mut JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <JSXStyleElement as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXSwitchCase`.\n\nBy default, this method calls \
+             [`JSXSwitchCase::visit_mut_children_with_ast_path`]. If you want to recurse, you need \
+             to call it manually."]
+    #[inline]
+    fn visit_mut_jsx_switch_case(
+        &mut self,
+        node: &mut JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <JSXSwitchCase as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `Vec < JSXSwitchCase >`.\n\nBy default, this method calls [`Vec \
+             < JSXSwitchCase >::visit_mut_children_with_ast_path`]. If you want to recurse, you \
+             need to call it manually."]
+    #[inline]
+    fn visit_mut_jsx_switch_cases(
+        &mut self,
+        node: &mut Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <Vec<JSXSwitchCase> as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXSwitchExpr`.\n\nBy default, this method calls \
+             [`JSXSwitchExpr::visit_mut_children_with_ast_path`]. If you want to recurse, you need \
+             to call it manually."]
+    #[inline]
+    fn visit_mut_jsx_switch_expr(
+        &mut self,
+        node: &mut JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <JSXSwitchExpr as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `JSXText`.\n\nBy default, this method calls \
              [`JSXText::visit_mut_children_with_ast_path`]. If you want to recurse, you need to \
              call it manually."]
     #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText, __ast_path: &mut AstKindPath) {
         <JSXText as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXTryExpr`.\n\nBy default, this method calls \
+             [`JSXTryExpr::visit_mut_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr, __ast_path: &mut AstKindPath) {
+        <JSXTryExpr as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
             node, self, __ast_path,
         )
     }
@@ -68221,6 +72157,15 @@ pub trait VisitMutAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `Option < ForHead >`.\n\nBy default, this method calls [`Option \
+             < ForHead >::visit_mut_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>, __ast_path: &mut AstKindPath) {
+        <Option<ForHead> as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `Option < FunctionBody >`.\n\nBy default, this method calls \
              [`Option < FunctionBody >::visit_mut_children_with_ast_path`]. If you want to \
              recurse, you need to call it manually."]
@@ -68256,6 +72201,19 @@ pub trait VisitMutAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `Option < JSXCatchClause >`.\n\nBy default, this method calls \
+             [`Option < JSXCatchClause >::visit_mut_children_with_ast_path`]. If you want to \
+             recurse, you need to call it manually."]
+    #[inline]
+    fn visit_mut_opt_jsx_catch_clause(
+        &mut self,
+        node: &mut Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <Option<JSXCatchClause> as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `Option < JSXClosingElement >`.\n\nBy default, this method calls \
              [`Option < JSXClosingElement >::visit_mut_children_with_ast_path`]. If you want to \
              recurse, you need to call it manually."]
@@ -68266,6 +72224,32 @@ pub trait VisitMutAstPath {
         __ast_path: &mut AstKindPath,
     ) {
         <Option<JSXClosingElement> as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `Option < JSXCodeBlock >`.\n\nBy default, this method calls \
+             [`Option < JSXCodeBlock >::visit_mut_children_with_ast_path`]. If you want to \
+             recurse, you need to call it manually."]
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(
+        &mut self,
+        node: &mut Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <Option<JSXCodeBlock> as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `Option < JSXIfAlternate >`.\n\nBy default, this method calls \
+             [`Option < JSXIfAlternate >::visit_mut_children_with_ast_path`]. If you want to \
+             recurse, you need to call it manually."]
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(
+        &mut self,
+        node: &mut Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <Option<JSXIfAlternate> as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
             node, self, __ast_path,
         )
     }
@@ -69843,6 +73827,15 @@ pub trait VisitMutAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `TsrxExpr`.\n\nBy default, this method calls \
+             [`TsrxExpr::visit_mut_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr, __ast_path: &mut AstKindPath) {
+        <TsrxExpr as VisitMutWithAstPath<Self>>::visit_mut_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `UnaryExpr`.\n\nBy default, this method calls \
              [`UnaryExpr::visit_mut_children_with_ast_path`]. If you want to recurse, you need to \
              call it manually."]
@@ -70512,6 +74505,15 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_catch_clause(
+        &mut self,
+        node: &mut JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_jsx_closing_element(
         &mut self,
         node: &mut JSXClosingElement,
@@ -70527,6 +74529,11 @@ where
         __ast_path: &mut AstKindPath,
     ) {
         <V as VisitMutAstPath>::visit_mut_jsx_closing_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_code_block(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -70581,8 +74588,32 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_for_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_for_kind(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment, __ast_path: &mut AstKindPath) {
         <V as VisitMutAstPath>::visit_mut_jsx_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_alternate(
+        &mut self,
+        node: &mut JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_if_alternate(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_if_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -70636,8 +74667,49 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_style_element(
+        &mut self,
+        node: &mut JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_style_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_case(
+        &mut self,
+        node: &mut JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_switch_case(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_cases(
+        &mut self,
+        node: &mut Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_switch_cases(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_expr(
+        &mut self,
+        node: &mut JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_switch_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText, __ast_path: &mut AstKindPath) {
         <V as VisitMutAstPath>::visit_mut_jsx_text(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_try_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -70851,6 +74923,11 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_opt_for_head(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_opt_function_body(
         &mut self,
         node: &mut Option<FunctionBody>,
@@ -70874,12 +74951,39 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_jsx_catch_clause(
+        &mut self,
+        node: &mut Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_opt_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_opt_jsx_closing_element(
         &mut self,
         node: &mut Option<JSXClosingElement>,
         __ast_path: &mut AstKindPath,
     ) {
         <V as VisitMutAstPath>::visit_mut_opt_jsx_closing_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(
+        &mut self,
+        node: &mut Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_opt_jsx_code_block(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(
+        &mut self,
+        node: &mut Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_opt_jsx_if_alternate(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -71899,6 +76003,11 @@ where
     #[inline]
     fn visit_mut_ts_union_type(&mut self, node: &mut TsUnionType, __ast_path: &mut AstKindPath) {
         <V as VisitMutAstPath>::visit_mut_ts_union_type(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_tsrx_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -72513,6 +76622,15 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_catch_clause(
+        &mut self,
+        node: &mut JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_jsx_closing_element(
         &mut self,
         node: &mut JSXClosingElement,
@@ -72528,6 +76646,11 @@ where
         __ast_path: &mut AstKindPath,
     ) {
         <V as VisitMutAstPath>::visit_mut_jsx_closing_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_code_block(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -72582,8 +76705,32 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_for_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_for_kind(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment, __ast_path: &mut AstKindPath) {
         <V as VisitMutAstPath>::visit_mut_jsx_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_alternate(
+        &mut self,
+        node: &mut JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_if_alternate(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_if_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -72637,8 +76784,49 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_style_element(
+        &mut self,
+        node: &mut JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_style_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_case(
+        &mut self,
+        node: &mut JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_switch_case(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_cases(
+        &mut self,
+        node: &mut Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_switch_cases(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_expr(
+        &mut self,
+        node: &mut JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_jsx_switch_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText, __ast_path: &mut AstKindPath) {
         <V as VisitMutAstPath>::visit_mut_jsx_text(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_try_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -72852,6 +77040,11 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_opt_for_head(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_opt_function_body(
         &mut self,
         node: &mut Option<FunctionBody>,
@@ -72875,12 +77068,39 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_jsx_catch_clause(
+        &mut self,
+        node: &mut Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_opt_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn visit_mut_opt_jsx_closing_element(
         &mut self,
         node: &mut Option<JSXClosingElement>,
         __ast_path: &mut AstKindPath,
     ) {
         <V as VisitMutAstPath>::visit_mut_opt_jsx_closing_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(
+        &mut self,
+        node: &mut Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_opt_jsx_code_block(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(
+        &mut self,
+        node: &mut Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        <V as VisitMutAstPath>::visit_mut_opt_jsx_if_alternate(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -73900,6 +78120,11 @@ where
     #[inline]
     fn visit_mut_ts_union_type(&mut self, node: &mut TsUnionType, __ast_path: &mut AstKindPath) {
         <V as VisitMutAstPath>::visit_mut_ts_union_type(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_tsrx_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -75124,6 +79349,22 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_catch_clause(
+        &mut self,
+        node: &mut JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_catch_clause(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_catch_clause(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_closing_element(
         &mut self,
         node: &mut JSXClosingElement,
@@ -75151,6 +79392,18 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 VisitMutAstPath::visit_mut_jsx_closing_fragment(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock, __ast_path: &mut AstKindPath) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_code_block(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_code_block(visitor, node, __ast_path)
             }
         }
     }
@@ -75256,6 +79509,30 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr, __ast_path: &mut AstKindPath) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_for_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_for_expr(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind, __ast_path: &mut AstKindPath) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_for_kind(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_for_kind(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment, __ast_path: &mut AstKindPath) {
         match self {
             swc_visit::Either::Left(visitor) => {
@@ -75263,6 +79540,34 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 VisitMutAstPath::visit_mut_jsx_fragment(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_alternate(
+        &mut self,
+        node: &mut JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_if_alternate(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_if_alternate(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr, __ast_path: &mut AstKindPath) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_if_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_if_expr(visitor, node, __ast_path)
             }
         }
     }
@@ -75360,6 +79665,70 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_style_element(
+        &mut self,
+        node: &mut JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_style_element(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_style_element(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_case(
+        &mut self,
+        node: &mut JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_switch_case(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_switch_case(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_cases(
+        &mut self,
+        node: &mut Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_switch_cases(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_switch_cases(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_expr(
+        &mut self,
+        node: &mut JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_switch_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_switch_expr(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText, __ast_path: &mut AstKindPath) {
         match self {
             swc_visit::Either::Left(visitor) => {
@@ -75367,6 +79736,18 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 VisitMutAstPath::visit_mut_jsx_text(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr, __ast_path: &mut AstKindPath) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_try_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_jsx_try_expr(visitor, node, __ast_path)
             }
         }
     }
@@ -75820,6 +80201,18 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>, __ast_path: &mut AstKindPath) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_opt_for_head(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_opt_for_head(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_mut_opt_function_body(
         &mut self,
         node: &mut Option<FunctionBody>,
@@ -75864,6 +80257,22 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_jsx_catch_clause(
+        &mut self,
+        node: &mut Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_opt_jsx_catch_clause(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_opt_jsx_catch_clause(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_mut_opt_jsx_closing_element(
         &mut self,
         node: &mut Option<JSXClosingElement>,
@@ -75875,6 +80284,38 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 VisitMutAstPath::visit_mut_opt_jsx_closing_element(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(
+        &mut self,
+        node: &mut Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_opt_jsx_code_block(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_opt_jsx_code_block(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(
+        &mut self,
+        node: &mut Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_opt_jsx_if_alternate(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_opt_jsx_if_alternate(visitor, node, __ast_path)
             }
         }
     }
@@ -77896,6 +82337,18 @@ where
     }
 
     #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr, __ast_path: &mut AstKindPath) {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                VisitMutAstPath::visit_mut_tsrx_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                VisitMutAstPath::visit_mut_tsrx_expr(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn visit_mut_unary_expr(&mut self, node: &mut UnaryExpr, __ast_path: &mut AstKindPath) {
         match self {
             swc_visit::Either::Left(visitor) => {
@@ -78914,6 +83367,18 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_catch_clause(
+        &mut self,
+        node: &mut JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_catch_clause(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_closing_element(
         &mut self,
         node: &mut JSXClosingElement,
@@ -78941,6 +83406,14 @@ where
                 node,
                 __ast_path,
             )
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock, __ast_path: &mut AstKindPath) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_code_block(&mut self.visitor, node, __ast_path)
         } else {
         }
     }
@@ -79026,9 +83499,45 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr, __ast_path: &mut AstKindPath) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_for_expr(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind, __ast_path: &mut AstKindPath) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_for_kind(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment, __ast_path: &mut AstKindPath) {
         if self.enabled {
             <V as VisitMutAstPath>::visit_mut_jsx_fragment(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_alternate(
+        &mut self,
+        node: &mut JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_if_alternate(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr, __ast_path: &mut AstKindPath) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_if_expr(&mut self.visitor, node, __ast_path)
         } else {
         }
     }
@@ -79114,9 +83623,65 @@ where
     }
 
     #[inline]
+    fn visit_mut_jsx_style_element(
+        &mut self,
+        node: &mut JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_style_element(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_case(
+        &mut self,
+        node: &mut JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_switch_case(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_cases(
+        &mut self,
+        node: &mut Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_switch_cases(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_switch_expr(
+        &mut self,
+        node: &mut JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_switch_expr(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText, __ast_path: &mut AstKindPath) {
         if self.enabled {
             <V as VisitMutAstPath>::visit_mut_jsx_text(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr, __ast_path: &mut AstKindPath) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_jsx_try_expr(&mut self.visitor, node, __ast_path)
         } else {
         }
     }
@@ -79450,6 +84015,14 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>, __ast_path: &mut AstKindPath) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_opt_for_head(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_opt_function_body(
         &mut self,
         node: &mut Option<FunctionBody>,
@@ -79486,6 +84059,22 @@ where
     }
 
     #[inline]
+    fn visit_mut_opt_jsx_catch_clause(
+        &mut self,
+        node: &mut Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_opt_jsx_catch_clause(
+                &mut self.visitor,
+                node,
+                __ast_path,
+            )
+        } else {
+        }
+    }
+
+    #[inline]
     fn visit_mut_opt_jsx_closing_element(
         &mut self,
         node: &mut Option<JSXClosingElement>,
@@ -79493,6 +84082,38 @@ where
     ) {
         if self.enabled {
             <V as VisitMutAstPath>::visit_mut_opt_jsx_closing_element(
+                &mut self.visitor,
+                node,
+                __ast_path,
+            )
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(
+        &mut self,
+        node: &mut Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_opt_jsx_code_block(
+                &mut self.visitor,
+                node,
+                __ast_path,
+            )
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(
+        &mut self,
+        node: &mut Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_opt_jsx_if_alternate(
                 &mut self.visitor,
                 node,
                 __ast_path,
@@ -81105,6 +85726,14 @@ where
     fn visit_mut_ts_union_type(&mut self, node: &mut TsUnionType, __ast_path: &mut AstKindPath) {
         if self.enabled {
             <V as VisitMutAstPath>::visit_mut_ts_union_type(&mut self.visitor, node, __ast_path)
+        } else {
+        }
+    }
+
+    #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr, __ast_path: &mut AstKindPath) {
+        if self.enabled {
+            <V as VisitMutAstPath>::visit_mut_tsrx_expr(&mut self.visitor, node, __ast_path)
         } else {
         }
     }
@@ -83873,6 +88502,15 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Expr {
                     &mut *__ast_path,
                 );
             }
+            Expr::Tsrx { 0: _field_0 } => {
+                let mut __ast_path =
+                    __ast_path.with_guard(AstParentKind::Expr(self::fields::ExprField::Tsrx));
+                <Box<TsrxExpr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
             #[cfg(swc_ast_unknown)]
             _ => (),
         }
@@ -84958,7 +89596,12 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXAttr {
 
     fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
         match self {
-            JSXAttr { span, name, value } => {
+            JSXAttr {
+                span,
+                name,
+                value,
+                shorthand,
+            } => {
                 {
                     let mut __ast_path = __ast_path
                         .with_guard(AstParentKind::JSXAttr(self::fields::JSXAttrField::Span));
@@ -85117,6 +89760,66 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXAttrValue {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXCatchClause {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_catch_clause`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_catch_clause(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXCatchClause {
+                span,
+                param,
+                reset,
+                body,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCatchClause(
+                        self::fields::JSXCatchClauseField::Span,
+                    ));
+                    <swc_common::Span as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCatchClause(
+                        self::fields::JSXCatchClauseField::Param,
+                    ));
+                    <Option<Pat> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        param,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCatchClause(
+                        self::fields::JSXCatchClauseField::Reset,
+                    ));
+                    <Option<Ident> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        reset,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCatchClause(
+                        self::fields::JSXCatchClauseField::Body,
+                    ));
+                    <JSXCodeBlock as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        body,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXClosingElement {
     #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_closing_element`] with `self`."]
     fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
@@ -85167,6 +89870,56 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXClosingFragment 
                     ));
                     <swc_common::Span as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
                         span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXCodeBlock {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_code_block`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_code_block(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXCodeBlock {
+                span,
+                body,
+                render,
+                is_function_body,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCodeBlock(
+                        self::fields::JSXCodeBlockField::Span,
+                    ));
+                    <swc_common::Span as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCodeBlock(
+                        self::fields::JSXCodeBlockField::Body(usize::MAX),
+                    ));
+                    <Vec<Stmt> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        body,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCodeBlock(
+                        self::fields::JSXCodeBlockField::Render,
+                    ));
+                    <Option<Box<Expr>> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        render,
                         visitor,
                         &mut *__ast_path,
                     )
@@ -85295,6 +90048,16 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXElementChild {
                     &mut *__ast_path,
                 );
             }
+            JSXElementChild::Tsrx { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXElementChild(
+                    self::fields::JSXElementChildField::Tsrx,
+                ));
+                <Box<TsrxExpr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
             #[cfg(swc_ast_unknown)]
             _ => (),
         }
@@ -85335,6 +90098,16 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXElementName {
                     self::fields::JSXElementNameField::JsxnamespacedName,
                 ));
                 <JSXNamespacedName as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            JSXElementName::JSXExprContainer { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXElementName(
+                    self::fields::JSXElementNameField::JsxexprContainer,
+                ));
+                <JSXExprContainer as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
                     _field_0,
                     visitor,
                     &mut *__ast_path,
@@ -85441,6 +90214,162 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXExprContainer {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXForExpr {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_for_expr`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_for_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXForExpr {
+                span,
+                kind,
+                init,
+                test,
+                update,
+                left,
+                right,
+                is_await,
+                body,
+                index,
+                key,
+                empty,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Span,
+                    ));
+                    <swc_common::Span as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Kind,
+                    ));
+                    <JSXForKind as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        kind,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Init,
+                    ));
+                    <Option<VarDeclOrExpr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        init,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Test,
+                    ));
+                    <Option<Box<Expr>> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        test,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Update,
+                    ));
+                    <Option<Box<Expr>> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        update,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Left,
+                    ));
+                    <Option<ForHead> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        left,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Right,
+                    ));
+                    <Option<Box<Expr>> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        right,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Body,
+                    ));
+                    <JSXCodeBlock as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        body,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Index,
+                    ));
+                    <Option<Ident> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        index,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Key,
+                    ));
+                    <Option<Box<Expr>> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        key,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Empty,
+                    ));
+                    <Option<JSXCodeBlock> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        empty,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXForKind {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_for_kind`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_for_kind(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXForKind::ForStatement => {}
+            JSXForKind::ForInStatement => {}
+            JSXForKind::ForOfStatement => {}
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXFragment {
     #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_fragment`] with `self`."]
     fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
@@ -85491,6 +90420,99 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXFragment {
                     ));
                     <JSXClosingFragment as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
                         closing,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXIfAlternate {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_if_alternate`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_if_alternate(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXIfAlternate::CodeBlock { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXIfAlternate(
+                    self::fields::JSXIfAlternateField::CodeBlock,
+                ));
+                <JSXCodeBlock as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            JSXIfAlternate::If { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXIfAlternate(
+                    self::fields::JSXIfAlternateField::If,
+                ));
+                <Box<JSXIfExpr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXIfExpr {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_if_expr`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_if_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXIfExpr {
+                span,
+                test,
+                consequent,
+                alternate,
+            } => {
+                {
+                    let mut __ast_path = __ast_path
+                        .with_guard(AstParentKind::JSXIfExpr(self::fields::JSXIfExprField::Span));
+                    <swc_common::Span as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path
+                        .with_guard(AstParentKind::JSXIfExpr(self::fields::JSXIfExprField::Test));
+                    <Box<Expr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        test,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXIfExpr(
+                        self::fields::JSXIfExprField::Consequent,
+                    ));
+                    <JSXCodeBlock as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        consequent,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXIfExpr(
+                        self::fields::JSXIfExprField::Alternate,
+                    ));
+                    <Option<JSXIfAlternate> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        alternate,
                         visitor,
                         &mut *__ast_path,
                     )
@@ -85743,6 +90765,164 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXSpreadChild {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXStyleElement {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_style_element`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_style_element(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXStyleElement {
+                span,
+                opening,
+                css,
+                closing,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXStyleElement(
+                        self::fields::JSXStyleElementField::Span,
+                    ));
+                    <swc_common::Span as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXStyleElement(
+                        self::fields::JSXStyleElementField::Opening,
+                    ));
+                    <JSXOpeningElement as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        opening,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXStyleElement(
+                        self::fields::JSXStyleElementField::Css,
+                    ));
+                    <swc_atoms::Atom as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        css,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXStyleElement(
+                        self::fields::JSXStyleElementField::Closing,
+                    ));
+                    <JSXClosingElement as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        closing,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXSwitchCase {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_switch_case`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_switch_case(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXSwitchCase {
+                span,
+                test,
+                consequent,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchCase(
+                        self::fields::JSXSwitchCaseField::Span,
+                    ));
+                    <swc_common::Span as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchCase(
+                        self::fields::JSXSwitchCaseField::Test,
+                    ));
+                    <Option<Box<Expr>> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        test,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchCase(
+                        self::fields::JSXSwitchCaseField::Consequent,
+                    ));
+                    <JSXCodeBlock as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        consequent,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXSwitchExpr {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_switch_expr`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_switch_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXSwitchExpr {
+                span,
+                discriminant,
+                cases,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchExpr(
+                        self::fields::JSXSwitchExprField::Span,
+                    ));
+                    <swc_common::Span as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchExpr(
+                        self::fields::JSXSwitchExprField::Discriminant,
+                    ));
+                    <Box<Expr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        discriminant,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchExpr(
+                        self::fields::JSXSwitchExprField::Cases(usize::MAX),
+                    ));
+                    <Vec<JSXSwitchCase> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        cases,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXText {
     #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_text`] with `self`."]
     fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
@@ -85775,6 +90955,77 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXText {
                         .with_guard(AstParentKind::JSXText(self::fields::JSXTextField::Raw));
                     <swc_atoms::Atom as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
                         raw,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for JSXTryExpr {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_try_expr`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_try_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            JSXTryExpr {
+                span,
+                block,
+                pending,
+                handler,
+                finalizer,
+            } => {
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Span,
+                    ));
+                    <swc_common::Span as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Block,
+                    ));
+                    <JSXCodeBlock as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        block,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Pending,
+                    ));
+                    <Option<JSXCodeBlock> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        pending,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Handler,
+                    ));
+                    <Option<JSXCatchClause> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        handler,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Finalizer,
+                    ));
+                    <Option<BlockStmt> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                        finalizer,
                         visitor,
                         &mut *__ast_path,
                     )
@@ -92140,6 +97391,77 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for TsUnionType {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for TsrxExpr {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_tsrx_expr`] with `self`."]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_tsrx_expr(visitor, self, __ast_path)
+    }
+
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            TsrxExpr::CodeBlock { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::TsrxExpr(
+                    self::fields::TsrxExprField::CodeBlock,
+                ));
+                <JSXCodeBlock as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::StyleElement { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::TsrxExpr(
+                    self::fields::TsrxExprField::StyleElement,
+                ));
+                <Box<JSXStyleElement> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::If { 0: _field_0 } => {
+                let mut __ast_path =
+                    __ast_path.with_guard(AstParentKind::TsrxExpr(self::fields::TsrxExprField::If));
+                <Box<JSXIfExpr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::For { 0: _field_0 } => {
+                let mut __ast_path = __ast_path
+                    .with_guard(AstParentKind::TsrxExpr(self::fields::TsrxExprField::For));
+                <Box<JSXForExpr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::Switch { 0: _field_0 } => {
+                let mut __ast_path = __ast_path
+                    .with_guard(AstParentKind::TsrxExpr(self::fields::TsrxExprField::Switch));
+                <Box<JSXSwitchExpr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            TsrxExpr::Try { 0: _field_0 } => {
+                let mut __ast_path = __ast_path
+                    .with_guard(AstParentKind::TsrxExpr(self::fields::TsrxExprField::Try));
+                <Box<JSXTryExpr> as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => (),
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for UnaryExpr {
     #[doc = "Calls [VisitMutAstPath`::visit_mut_unary_expr`] with `self`."]
     fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
@@ -92807,6 +98129,27 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Vec<JSXElementChild
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Vec<JSXSwitchCase> {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_jsx_switch_cases`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_jsx_switch_cases(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        self.iter_mut().enumerate().for_each(|(__idx, item)| {
+            let mut __ast_path = __ast_path.with_index_guard(__idx);
+            <JSXSwitchCase as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                item,
+                visitor,
+                &mut *__ast_path,
+            )
+        })
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Vec<ModuleItem> {
     #[doc = "Calls [VisitMutAstPath`::visit_mut_module_items`] with `self`. (Extra impl)"]
     #[inline]
@@ -92982,6 +98325,25 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Option<Vec<ExprOrSp
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Option<ForHead> {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_opt_for_head`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_opt_for_head(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            Some(inner) => <ForHead as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                inner, visitor, __ast_path,
+            ),
+            None => {}
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Option<FunctionBody> {
     #[doc = "Calls [VisitMutAstPath`::visit_mut_opt_function_body`] with `self`. (Extra impl)"]
     #[inline]
@@ -93039,6 +98401,25 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Option<JSXAttrValue
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Option<JSXCatchClause> {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_opt_jsx_catch_clause`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_opt_jsx_catch_clause(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            Some(inner) => <JSXCatchClause as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                inner, visitor, __ast_path,
+            ),
+            None => {}
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Option<JSXClosingElement> {
     #[doc = "Calls [VisitMutAstPath`::visit_mut_opt_jsx_closing_element`] with `self`. (Extra impl)"]
     #[inline]
@@ -93050,6 +98431,44 @@ impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Option<JSXClosingEl
     fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
         match self {
             Some(inner) => <JSXClosingElement as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                inner, visitor, __ast_path,
+            ),
+            None => {}
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Option<JSXCodeBlock> {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_opt_jsx_code_block`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_opt_jsx_code_block(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            Some(inner) => <JSXCodeBlock as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
+                inner, visitor, __ast_path,
+            ),
+            None => {}
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + VisitMutAstPath> VisitMutWithAstPath<V> for Option<JSXIfAlternate> {
+    #[doc = "Calls [VisitMutAstPath`::visit_mut_opt_jsx_if_alternate`] with `self`. (Extra impl)"]
+    #[inline]
+    fn visit_mut_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        <V as VisitMutAstPath>::visit_mut_opt_jsx_if_alternate(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn visit_mut_children_with_ast_path(&mut self, visitor: &mut V, __ast_path: &mut AstKindPath) {
+        match self {
+            Some(inner) => <JSXIfAlternate as VisitMutWithAstPath<V>>::visit_mut_with_ast_path(
                 inner, visitor, __ast_path,
             ),
             None => {}
@@ -94422,6 +99841,13 @@ pub trait Fold {
     fn fold_jsx_attr_value(&mut self, node: JSXAttrValue) -> JSXAttrValue {
         <JSXAttrValue as FoldWith<Self>>::fold_children_with(node, self)
     }
+    #[doc = "Visit a node of type `JSXCatchClause`.\n\nBy default, this method calls \
+             [`JSXCatchClause::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_catch_clause(&mut self, node: JSXCatchClause) -> JSXCatchClause {
+        <JSXCatchClause as FoldWith<Self>>::fold_children_with(node, self)
+    }
     #[doc = "Visit a node of type `JSXClosingElement`.\n\nBy default, this method calls \
              [`JSXClosingElement::fold_children_with`]. If you want to recurse, you need to call \
              it manually."]
@@ -94435,6 +99861,13 @@ pub trait Fold {
     #[inline]
     fn fold_jsx_closing_fragment(&mut self, node: JSXClosingFragment) -> JSXClosingFragment {
         <JSXClosingFragment as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXCodeBlock`.\n\nBy default, this method calls \
+             [`JSXCodeBlock::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_code_block(&mut self, node: JSXCodeBlock) -> JSXCodeBlock {
+        <JSXCodeBlock as FoldWith<Self>>::fold_children_with(node, self)
     }
     #[doc = "Visit a node of type `JSXElement`.\n\nBy default, this method calls \
              [`JSXElement::fold_children_with`]. If you want to recurse, you need to call it \
@@ -94484,12 +99917,40 @@ pub trait Fold {
     fn fold_jsx_expr_container(&mut self, node: JSXExprContainer) -> JSXExprContainer {
         <JSXExprContainer as FoldWith<Self>>::fold_children_with(node, self)
     }
+    #[doc = "Visit a node of type `JSXForExpr`.\n\nBy default, this method calls \
+             [`JSXForExpr::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr) -> JSXForExpr {
+        <JSXForExpr as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXForKind`.\n\nBy default, this method calls \
+             [`JSXForKind::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind) -> JSXForKind {
+        <JSXForKind as FoldWith<Self>>::fold_children_with(node, self)
+    }
     #[doc = "Visit a node of type `JSXFragment`.\n\nBy default, this method calls \
              [`JSXFragment::fold_children_with`]. If you want to recurse, you need to call it \
              manually."]
     #[inline]
     fn fold_jsx_fragment(&mut self, node: JSXFragment) -> JSXFragment {
         <JSXFragment as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXIfAlternate`.\n\nBy default, this method calls \
+             [`JSXIfAlternate::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_if_alternate(&mut self, node: JSXIfAlternate) -> JSXIfAlternate {
+        <JSXIfAlternate as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXIfExpr`.\n\nBy default, this method calls \
+             [`JSXIfExpr::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr) -> JSXIfExpr {
+        <JSXIfExpr as FoldWith<Self>>::fold_children_with(node, self)
     }
     #[doc = "Visit a node of type `JSXMemberExpr`.\n\nBy default, this method calls \
              [`JSXMemberExpr::fold_children_with`]. If you want to recurse, you need to call it \
@@ -94533,11 +99994,46 @@ pub trait Fold {
     fn fold_jsx_spread_child(&mut self, node: JSXSpreadChild) -> JSXSpreadChild {
         <JSXSpreadChild as FoldWith<Self>>::fold_children_with(node, self)
     }
+    #[doc = "Visit a node of type `JSXStyleElement`.\n\nBy default, this method calls \
+             [`JSXStyleElement::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_style_element(&mut self, node: JSXStyleElement) -> JSXStyleElement {
+        <JSXStyleElement as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXSwitchCase`.\n\nBy default, this method calls \
+             [`JSXSwitchCase::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_switch_case(&mut self, node: JSXSwitchCase) -> JSXSwitchCase {
+        <JSXSwitchCase as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `Vec < JSXSwitchCase >`.\n\nBy default, this method calls [`Vec \
+             < JSXSwitchCase >::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_switch_cases(&mut self, node: Vec<JSXSwitchCase>) -> Vec<JSXSwitchCase> {
+        <Vec<JSXSwitchCase> as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXSwitchExpr`.\n\nBy default, this method calls \
+             [`JSXSwitchExpr::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_switch_expr(&mut self, node: JSXSwitchExpr) -> JSXSwitchExpr {
+        <JSXSwitchExpr as FoldWith<Self>>::fold_children_with(node, self)
+    }
     #[doc = "Visit a node of type `JSXText`.\n\nBy default, this method calls \
              [`JSXText::fold_children_with`]. If you want to recurse, you need to call it manually."]
     #[inline]
     fn fold_jsx_text(&mut self, node: JSXText) -> JSXText {
         <JSXText as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `JSXTryExpr`.\n\nBy default, this method calls \
+             [`JSXTryExpr::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr) -> JSXTryExpr {
+        <JSXTryExpr as FoldWith<Self>>::fold_children_with(node, self)
     }
     #[doc = "Visit a node of type `Key`.\n\nBy default, this method calls \
              [`Key::fold_children_with`]. If you want to recurse, you need to call it manually."]
@@ -94773,6 +100269,13 @@ pub trait Fold {
     ) -> Option<Vec<ExprOrSpread>> {
         <Option<Vec<ExprOrSpread>> as FoldWith<Self>>::fold_children_with(node, self)
     }
+    #[doc = "Visit a node of type `Option < ForHead >`.\n\nBy default, this method calls [`Option \
+             < ForHead >::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_opt_for_head(&mut self, node: Option<ForHead>) -> Option<ForHead> {
+        <Option<ForHead> as FoldWith<Self>>::fold_children_with(node, self)
+    }
     #[doc = "Visit a node of type `Option < FunctionBody >`.\n\nBy default, this method calls \
              [`Option < FunctionBody >::fold_children_with`]. If you want to recurse, you need to \
              call it manually."]
@@ -94793,6 +100296,16 @@ pub trait Fold {
     fn fold_opt_jsx_attr_value(&mut self, node: Option<JSXAttrValue>) -> Option<JSXAttrValue> {
         <Option<JSXAttrValue> as FoldWith<Self>>::fold_children_with(node, self)
     }
+    #[doc = "Visit a node of type `Option < JSXCatchClause >`.\n\nBy default, this method calls \
+             [`Option < JSXCatchClause >::fold_children_with`]. If you want to recurse, you need \
+             to call it manually."]
+    #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+    ) -> Option<JSXCatchClause> {
+        <Option<JSXCatchClause> as FoldWith<Self>>::fold_children_with(node, self)
+    }
     #[doc = "Visit a node of type `Option < JSXClosingElement >`.\n\nBy default, this method calls \
              [`Option < JSXClosingElement >::fold_children_with`]. If you want to recurse, you \
              need to call it manually."]
@@ -94802,6 +100315,23 @@ pub trait Fold {
         node: Option<JSXClosingElement>,
     ) -> Option<JSXClosingElement> {
         <Option<JSXClosingElement> as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `Option < JSXCodeBlock >`.\n\nBy default, this method calls \
+             [`Option < JSXCodeBlock >::fold_children_with`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn fold_opt_jsx_code_block(&mut self, node: Option<JSXCodeBlock>) -> Option<JSXCodeBlock> {
+        <Option<JSXCodeBlock> as FoldWith<Self>>::fold_children_with(node, self)
+    }
+    #[doc = "Visit a node of type `Option < JSXIfAlternate >`.\n\nBy default, this method calls \
+             [`Option < JSXIfAlternate >::fold_children_with`]. If you want to recurse, you need \
+             to call it manually."]
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+    ) -> Option<JSXIfAlternate> {
+        <Option<JSXIfAlternate> as FoldWith<Self>>::fold_children_with(node, self)
     }
     #[doc = "Visit a node of type `Option < ModuleExportName >`.\n\nBy default, this method calls \
              [`Option < ModuleExportName >::fold_children_with`]. If you want to recurse, you need \
@@ -95833,6 +101363,13 @@ pub trait Fold {
     fn fold_ts_union_type(&mut self, node: TsUnionType) -> TsUnionType {
         <TsUnionType as FoldWith<Self>>::fold_children_with(node, self)
     }
+    #[doc = "Visit a node of type `TsrxExpr`.\n\nBy default, this method calls \
+             [`TsrxExpr::fold_children_with`]. If you want to recurse, you need to call it \
+             manually."]
+    #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr) -> TsrxExpr {
+        <TsrxExpr as FoldWith<Self>>::fold_children_with(node, self)
+    }
     #[doc = "Visit a node of type `UnaryExpr`.\n\nBy default, this method calls \
              [`UnaryExpr::fold_children_with`]. If you want to recurse, you need to call it \
              manually."]
@@ -96382,6 +101919,11 @@ where
     }
 
     #[inline]
+    fn fold_jsx_catch_clause(&mut self, node: JSXCatchClause) -> JSXCatchClause {
+        <V as Fold>::fold_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_jsx_closing_element(&mut self, node: JSXClosingElement) -> JSXClosingElement {
         <V as Fold>::fold_jsx_closing_element(&mut **self, node)
     }
@@ -96389,6 +101931,11 @@ where
     #[inline]
     fn fold_jsx_closing_fragment(&mut self, node: JSXClosingFragment) -> JSXClosingFragment {
         <V as Fold>::fold_jsx_closing_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_code_block(&mut self, node: JSXCodeBlock) -> JSXCodeBlock {
+        <V as Fold>::fold_jsx_code_block(&mut **self, node)
     }
 
     #[inline]
@@ -96427,8 +101974,28 @@ where
     }
 
     #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr) -> JSXForExpr {
+        <V as Fold>::fold_jsx_for_expr(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind) -> JSXForKind {
+        <V as Fold>::fold_jsx_for_kind(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_jsx_fragment(&mut self, node: JSXFragment) -> JSXFragment {
         <V as Fold>::fold_jsx_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_if_alternate(&mut self, node: JSXIfAlternate) -> JSXIfAlternate {
+        <V as Fold>::fold_jsx_if_alternate(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr) -> JSXIfExpr {
+        <V as Fold>::fold_jsx_if_expr(&mut **self, node)
     }
 
     #[inline]
@@ -96462,8 +102029,33 @@ where
     }
 
     #[inline]
+    fn fold_jsx_style_element(&mut self, node: JSXStyleElement) -> JSXStyleElement {
+        <V as Fold>::fold_jsx_style_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_case(&mut self, node: JSXSwitchCase) -> JSXSwitchCase {
+        <V as Fold>::fold_jsx_switch_case(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_cases(&mut self, node: Vec<JSXSwitchCase>) -> Vec<JSXSwitchCase> {
+        <V as Fold>::fold_jsx_switch_cases(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_expr(&mut self, node: JSXSwitchExpr) -> JSXSwitchExpr {
+        <V as Fold>::fold_jsx_switch_expr(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_jsx_text(&mut self, node: JSXText) -> JSXText {
         <V as Fold>::fold_jsx_text(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr) -> JSXTryExpr {
+        <V as Fold>::fold_jsx_try_expr(&mut **self, node)
     }
 
     #[inline]
@@ -96640,6 +102232,11 @@ where
     }
 
     #[inline]
+    fn fold_opt_for_head(&mut self, node: Option<ForHead>) -> Option<ForHead> {
+        <V as Fold>::fold_opt_for_head(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_opt_function_body(&mut self, node: Option<FunctionBody>) -> Option<FunctionBody> {
         <V as Fold>::fold_opt_function_body(&mut **self, node)
     }
@@ -96655,11 +102252,32 @@ where
     }
 
     #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+    ) -> Option<JSXCatchClause> {
+        <V as Fold>::fold_opt_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_opt_jsx_closing_element(
         &mut self,
         node: Option<JSXClosingElement>,
     ) -> Option<JSXClosingElement> {
         <V as Fold>::fold_opt_jsx_closing_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_opt_jsx_code_block(&mut self, node: Option<JSXCodeBlock>) -> Option<JSXCodeBlock> {
+        <V as Fold>::fold_opt_jsx_code_block(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+    ) -> Option<JSXIfAlternate> {
+        <V as Fold>::fold_opt_jsx_if_alternate(&mut **self, node)
     }
 
     #[inline]
@@ -97423,6 +103041,11 @@ where
     #[inline]
     fn fold_ts_union_type(&mut self, node: TsUnionType) -> TsUnionType {
         <V as Fold>::fold_ts_union_type(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr) -> TsrxExpr {
+        <V as Fold>::fold_tsrx_expr(&mut **self, node)
     }
 
     #[inline]
@@ -97947,6 +103570,11 @@ where
     }
 
     #[inline]
+    fn fold_jsx_catch_clause(&mut self, node: JSXCatchClause) -> JSXCatchClause {
+        <V as Fold>::fold_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_jsx_closing_element(&mut self, node: JSXClosingElement) -> JSXClosingElement {
         <V as Fold>::fold_jsx_closing_element(&mut **self, node)
     }
@@ -97954,6 +103582,11 @@ where
     #[inline]
     fn fold_jsx_closing_fragment(&mut self, node: JSXClosingFragment) -> JSXClosingFragment {
         <V as Fold>::fold_jsx_closing_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_code_block(&mut self, node: JSXCodeBlock) -> JSXCodeBlock {
+        <V as Fold>::fold_jsx_code_block(&mut **self, node)
     }
 
     #[inline]
@@ -97992,8 +103625,28 @@ where
     }
 
     #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr) -> JSXForExpr {
+        <V as Fold>::fold_jsx_for_expr(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind) -> JSXForKind {
+        <V as Fold>::fold_jsx_for_kind(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_jsx_fragment(&mut self, node: JSXFragment) -> JSXFragment {
         <V as Fold>::fold_jsx_fragment(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_if_alternate(&mut self, node: JSXIfAlternate) -> JSXIfAlternate {
+        <V as Fold>::fold_jsx_if_alternate(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr) -> JSXIfExpr {
+        <V as Fold>::fold_jsx_if_expr(&mut **self, node)
     }
 
     #[inline]
@@ -98027,8 +103680,33 @@ where
     }
 
     #[inline]
+    fn fold_jsx_style_element(&mut self, node: JSXStyleElement) -> JSXStyleElement {
+        <V as Fold>::fold_jsx_style_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_case(&mut self, node: JSXSwitchCase) -> JSXSwitchCase {
+        <V as Fold>::fold_jsx_switch_case(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_cases(&mut self, node: Vec<JSXSwitchCase>) -> Vec<JSXSwitchCase> {
+        <V as Fold>::fold_jsx_switch_cases(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_expr(&mut self, node: JSXSwitchExpr) -> JSXSwitchExpr {
+        <V as Fold>::fold_jsx_switch_expr(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_jsx_text(&mut self, node: JSXText) -> JSXText {
         <V as Fold>::fold_jsx_text(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr) -> JSXTryExpr {
+        <V as Fold>::fold_jsx_try_expr(&mut **self, node)
     }
 
     #[inline]
@@ -98205,6 +103883,11 @@ where
     }
 
     #[inline]
+    fn fold_opt_for_head(&mut self, node: Option<ForHead>) -> Option<ForHead> {
+        <V as Fold>::fold_opt_for_head(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_opt_function_body(&mut self, node: Option<FunctionBody>) -> Option<FunctionBody> {
         <V as Fold>::fold_opt_function_body(&mut **self, node)
     }
@@ -98220,11 +103903,32 @@ where
     }
 
     #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+    ) -> Option<JSXCatchClause> {
+        <V as Fold>::fold_opt_jsx_catch_clause(&mut **self, node)
+    }
+
+    #[inline]
     fn fold_opt_jsx_closing_element(
         &mut self,
         node: Option<JSXClosingElement>,
     ) -> Option<JSXClosingElement> {
         <V as Fold>::fold_opt_jsx_closing_element(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_opt_jsx_code_block(&mut self, node: Option<JSXCodeBlock>) -> Option<JSXCodeBlock> {
+        <V as Fold>::fold_opt_jsx_code_block(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+    ) -> Option<JSXIfAlternate> {
+        <V as Fold>::fold_opt_jsx_if_alternate(&mut **self, node)
     }
 
     #[inline]
@@ -98988,6 +104692,11 @@ where
     #[inline]
     fn fold_ts_union_type(&mut self, node: TsUnionType) -> TsUnionType {
         <V as Fold>::fold_ts_union_type(&mut **self, node)
+    }
+
+    #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr) -> TsrxExpr {
+        <V as Fold>::fold_tsrx_expr(&mut **self, node)
     }
 
     #[inline]
@@ -99778,6 +105487,14 @@ where
     }
 
     #[inline]
+    fn fold_jsx_catch_clause(&mut self, node: JSXCatchClause) -> JSXCatchClause {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_catch_clause(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_catch_clause(visitor, node),
+        }
+    }
+
+    #[inline]
     fn fold_jsx_closing_element(&mut self, node: JSXClosingElement) -> JSXClosingElement {
         match self {
             swc_visit::Either::Left(visitor) => Fold::fold_jsx_closing_element(visitor, node),
@@ -99790,6 +105507,14 @@ where
         match self {
             swc_visit::Either::Left(visitor) => Fold::fold_jsx_closing_fragment(visitor, node),
             swc_visit::Either::Right(visitor) => Fold::fold_jsx_closing_fragment(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_code_block(&mut self, node: JSXCodeBlock) -> JSXCodeBlock {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_code_block(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_code_block(visitor, node),
         }
     }
 
@@ -99850,10 +105575,42 @@ where
     }
 
     #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr) -> JSXForExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_for_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_for_expr(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind) -> JSXForKind {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_for_kind(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_for_kind(visitor, node),
+        }
+    }
+
+    #[inline]
     fn fold_jsx_fragment(&mut self, node: JSXFragment) -> JSXFragment {
         match self {
             swc_visit::Either::Left(visitor) => Fold::fold_jsx_fragment(visitor, node),
             swc_visit::Either::Right(visitor) => Fold::fold_jsx_fragment(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_if_alternate(&mut self, node: JSXIfAlternate) -> JSXIfAlternate {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_if_alternate(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_if_alternate(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr) -> JSXIfExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_if_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_if_expr(visitor, node),
         }
     }
 
@@ -99906,10 +105663,50 @@ where
     }
 
     #[inline]
+    fn fold_jsx_style_element(&mut self, node: JSXStyleElement) -> JSXStyleElement {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_style_element(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_style_element(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_case(&mut self, node: JSXSwitchCase) -> JSXSwitchCase {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_switch_case(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_switch_case(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_cases(&mut self, node: Vec<JSXSwitchCase>) -> Vec<JSXSwitchCase> {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_switch_cases(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_switch_cases(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_expr(&mut self, node: JSXSwitchExpr) -> JSXSwitchExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_switch_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_switch_expr(visitor, node),
+        }
+    }
+
+    #[inline]
     fn fold_jsx_text(&mut self, node: JSXText) -> JSXText {
         match self {
             swc_visit::Either::Left(visitor) => Fold::fold_jsx_text(visitor, node),
             swc_visit::Either::Right(visitor) => Fold::fold_jsx_text(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr) -> JSXTryExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_jsx_try_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_jsx_try_expr(visitor, node),
         }
     }
 
@@ -100189,6 +105986,14 @@ where
     }
 
     #[inline]
+    fn fold_opt_for_head(&mut self, node: Option<ForHead>) -> Option<ForHead> {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_opt_for_head(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_opt_for_head(visitor, node),
+        }
+    }
+
+    #[inline]
     fn fold_opt_function_body(&mut self, node: Option<FunctionBody>) -> Option<FunctionBody> {
         match self {
             swc_visit::Either::Left(visitor) => Fold::fold_opt_function_body(visitor, node),
@@ -100213,6 +106018,17 @@ where
     }
 
     #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+    ) -> Option<JSXCatchClause> {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_opt_jsx_catch_clause(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_opt_jsx_catch_clause(visitor, node),
+        }
+    }
+
+    #[inline]
     fn fold_opt_jsx_closing_element(
         &mut self,
         node: Option<JSXClosingElement>,
@@ -100220,6 +106036,25 @@ where
         match self {
             swc_visit::Either::Left(visitor) => Fold::fold_opt_jsx_closing_element(visitor, node),
             swc_visit::Either::Right(visitor) => Fold::fold_opt_jsx_closing_element(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_opt_jsx_code_block(&mut self, node: Option<JSXCodeBlock>) -> Option<JSXCodeBlock> {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_opt_jsx_code_block(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_opt_jsx_code_block(visitor, node),
+        }
+    }
+
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+    ) -> Option<JSXIfAlternate> {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_opt_jsx_if_alternate(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_opt_jsx_if_alternate(visitor, node),
         }
     }
 
@@ -101438,6 +107273,14 @@ where
     }
 
     #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr) -> TsrxExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => Fold::fold_tsrx_expr(visitor, node),
+            swc_visit::Either::Right(visitor) => Fold::fold_tsrx_expr(visitor, node),
+        }
+    }
+
+    #[inline]
     fn fold_unary_expr(&mut self, node: UnaryExpr) -> UnaryExpr {
         match self {
             swc_visit::Either::Left(visitor) => Fold::fold_unary_expr(visitor, node),
@@ -102349,6 +108192,15 @@ where
     }
 
     #[inline]
+    fn fold_jsx_catch_clause(&mut self, node: JSXCatchClause) -> JSXCatchClause {
+        if self.enabled {
+            <V as Fold>::fold_jsx_catch_clause(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_jsx_closing_element(&mut self, node: JSXClosingElement) -> JSXClosingElement {
         if self.enabled {
             <V as Fold>::fold_jsx_closing_element(&mut self.visitor, node)
@@ -102361,6 +108213,15 @@ where
     fn fold_jsx_closing_fragment(&mut self, node: JSXClosingFragment) -> JSXClosingFragment {
         if self.enabled {
             <V as Fold>::fold_jsx_closing_fragment(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_code_block(&mut self, node: JSXCodeBlock) -> JSXCodeBlock {
+        if self.enabled {
+            <V as Fold>::fold_jsx_code_block(&mut self.visitor, node)
         } else {
             node
         }
@@ -102430,9 +108291,45 @@ where
     }
 
     #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr) -> JSXForExpr {
+        if self.enabled {
+            <V as Fold>::fold_jsx_for_expr(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind) -> JSXForKind {
+        if self.enabled {
+            <V as Fold>::fold_jsx_for_kind(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_jsx_fragment(&mut self, node: JSXFragment) -> JSXFragment {
         if self.enabled {
             <V as Fold>::fold_jsx_fragment(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_if_alternate(&mut self, node: JSXIfAlternate) -> JSXIfAlternate {
+        if self.enabled {
+            <V as Fold>::fold_jsx_if_alternate(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr) -> JSXIfExpr {
+        if self.enabled {
+            <V as Fold>::fold_jsx_if_expr(&mut self.visitor, node)
         } else {
             node
         }
@@ -102493,9 +108390,54 @@ where
     }
 
     #[inline]
+    fn fold_jsx_style_element(&mut self, node: JSXStyleElement) -> JSXStyleElement {
+        if self.enabled {
+            <V as Fold>::fold_jsx_style_element(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_case(&mut self, node: JSXSwitchCase) -> JSXSwitchCase {
+        if self.enabled {
+            <V as Fold>::fold_jsx_switch_case(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_cases(&mut self, node: Vec<JSXSwitchCase>) -> Vec<JSXSwitchCase> {
+        if self.enabled {
+            <V as Fold>::fold_jsx_switch_cases(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_expr(&mut self, node: JSXSwitchExpr) -> JSXSwitchExpr {
+        if self.enabled {
+            <V as Fold>::fold_jsx_switch_expr(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_jsx_text(&mut self, node: JSXText) -> JSXText {
         if self.enabled {
             <V as Fold>::fold_jsx_text(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr) -> JSXTryExpr {
+        if self.enabled {
+            <V as Fold>::fold_jsx_try_expr(&mut self.visitor, node)
         } else {
             node
         }
@@ -102811,6 +108753,15 @@ where
     }
 
     #[inline]
+    fn fold_opt_for_head(&mut self, node: Option<ForHead>) -> Option<ForHead> {
+        if self.enabled {
+            <V as Fold>::fold_opt_for_head(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_opt_function_body(&mut self, node: Option<FunctionBody>) -> Option<FunctionBody> {
         if self.enabled {
             <V as Fold>::fold_opt_function_body(&mut self.visitor, node)
@@ -102838,12 +108789,45 @@ where
     }
 
     #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+    ) -> Option<JSXCatchClause> {
+        if self.enabled {
+            <V as Fold>::fold_opt_jsx_catch_clause(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_opt_jsx_closing_element(
         &mut self,
         node: Option<JSXClosingElement>,
     ) -> Option<JSXClosingElement> {
         if self.enabled {
             <V as Fold>::fold_opt_jsx_closing_element(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_opt_jsx_code_block(&mut self, node: Option<JSXCodeBlock>) -> Option<JSXCodeBlock> {
+        if self.enabled {
+            <V as Fold>::fold_opt_jsx_code_block(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+    ) -> Option<JSXIfAlternate> {
+        if self.enabled {
+            <V as Fold>::fold_opt_jsx_if_alternate(&mut self.visitor, node)
         } else {
             node
         }
@@ -104179,6 +110163,15 @@ where
     fn fold_ts_union_type(&mut self, node: TsUnionType) -> TsUnionType {
         if self.enabled {
             <V as Fold>::fold_ts_union_type(&mut self.visitor, node)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr) -> TsrxExpr {
+        if self.enabled {
+            <V as Fold>::fold_tsrx_expr(&mut self.visitor, node)
         } else {
             node
         }
@@ -105664,6 +111657,10 @@ impl<V: ?Sized + Fold> FoldWith<V> for Expr {
                 let _field_0 = <Invalid as FoldWith<V>>::fold_with(_field_0, visitor);
                 Expr::Invalid { 0: _field_0 }
             }
+            Expr::Tsrx { 0: _field_0 } => {
+                let _field_0 = <Box<TsrxExpr> as FoldWith<V>>::fold_with(_field_0, visitor);
+                Expr::Tsrx { 0: _field_0 }
+            }
             #[cfg(swc_ast_unknown)]
             _ => self,
         }
@@ -106224,11 +112221,21 @@ impl<V: ?Sized + Fold> FoldWith<V> for JSXAttr {
 
     fn fold_children_with(self, visitor: &mut V) -> Self {
         match self {
-            JSXAttr { span, name, value } => {
+            JSXAttr {
+                span,
+                name,
+                value,
+                shorthand,
+            } => {
                 let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
                 let name = { <JSXAttrName as FoldWith<V>>::fold_with(name, visitor) };
                 let value = { <Option<JSXAttrValue> as FoldWith<V>>::fold_with(value, visitor) };
-                JSXAttr { span, name, value }
+                JSXAttr {
+                    span,
+                    name,
+                    value,
+                    shorthand,
+                }
             }
         }
     }
@@ -106304,6 +112311,34 @@ impl<V: ?Sized + Fold> FoldWith<V> for JSXAttrValue {
         }
     }
 }
+impl<V: ?Sized + Fold> FoldWith<V> for JSXCatchClause {
+    #[doc = "Calls [Fold`::fold_jsx_catch_clause`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_catch_clause(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXCatchClause {
+                span,
+                param,
+                reset,
+                body,
+            } => {
+                let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
+                let param = { <Option<Pat> as FoldWith<V>>::fold_with(param, visitor) };
+                let reset = { <Option<Ident> as FoldWith<V>>::fold_with(reset, visitor) };
+                let body = { <JSXCodeBlock as FoldWith<V>>::fold_with(body, visitor) };
+                JSXCatchClause {
+                    span,
+                    param,
+                    reset,
+                    body,
+                }
+            }
+        }
+    }
+}
 impl<V: ?Sized + Fold> FoldWith<V> for JSXClosingElement {
     #[doc = "Calls [Fold`::fold_jsx_closing_element`] with `self`."]
     fn fold_with(self, visitor: &mut V) -> Self {
@@ -106331,6 +112366,33 @@ impl<V: ?Sized + Fold> FoldWith<V> for JSXClosingFragment {
             JSXClosingFragment { span } => {
                 let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
                 JSXClosingFragment { span }
+            }
+        }
+    }
+}
+impl<V: ?Sized + Fold> FoldWith<V> for JSXCodeBlock {
+    #[doc = "Calls [Fold`::fold_jsx_code_block`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_code_block(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXCodeBlock {
+                span,
+                body,
+                render,
+                is_function_body,
+            } => {
+                let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
+                let body = { <Vec<Stmt> as FoldWith<V>>::fold_with(body, visitor) };
+                let render = { <Option<Box<Expr>> as FoldWith<V>>::fold_with(render, visitor) };
+                JSXCodeBlock {
+                    span,
+                    body,
+                    render,
+                    is_function_body,
+                }
             }
         }
     }
@@ -106393,6 +112455,10 @@ impl<V: ?Sized + Fold> FoldWith<V> for JSXElementChild {
                 let _field_0 = <JSXFragment as FoldWith<V>>::fold_with(_field_0, visitor);
                 JSXElementChild::JSXFragment { 0: _field_0 }
             }
+            JSXElementChild::Tsrx { 0: _field_0 } => {
+                let _field_0 = <Box<TsrxExpr> as FoldWith<V>>::fold_with(_field_0, visitor);
+                JSXElementChild::Tsrx { 0: _field_0 }
+            }
             #[cfg(swc_ast_unknown)]
             _ => self,
         }
@@ -106417,6 +112483,10 @@ impl<V: ?Sized + Fold> FoldWith<V> for JSXElementName {
             JSXElementName::JSXNamespacedName { 0: _field_0 } => {
                 let _field_0 = <JSXNamespacedName as FoldWith<V>>::fold_with(_field_0, visitor);
                 JSXElementName::JSXNamespacedName { 0: _field_0 }
+            }
+            JSXElementName::JSXExprContainer { 0: _field_0 } => {
+                let _field_0 = <JSXExprContainer as FoldWith<V>>::fold_with(_field_0, visitor);
+                JSXElementName::JSXExprContainer { 0: _field_0 }
             }
             #[cfg(swc_ast_unknown)]
             _ => self,
@@ -106475,6 +112545,73 @@ impl<V: ?Sized + Fold> FoldWith<V> for JSXExprContainer {
         }
     }
 }
+impl<V: ?Sized + Fold> FoldWith<V> for JSXForExpr {
+    #[doc = "Calls [Fold`::fold_jsx_for_expr`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_for_expr(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXForExpr {
+                span,
+                kind,
+                init,
+                test,
+                update,
+                left,
+                right,
+                is_await,
+                body,
+                index,
+                key,
+                empty,
+            } => {
+                let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
+                let kind = { <JSXForKind as FoldWith<V>>::fold_with(kind, visitor) };
+                let init = { <Option<VarDeclOrExpr> as FoldWith<V>>::fold_with(init, visitor) };
+                let test = { <Option<Box<Expr>> as FoldWith<V>>::fold_with(test, visitor) };
+                let update = { <Option<Box<Expr>> as FoldWith<V>>::fold_with(update, visitor) };
+                let left = { <Option<ForHead> as FoldWith<V>>::fold_with(left, visitor) };
+                let right = { <Option<Box<Expr>> as FoldWith<V>>::fold_with(right, visitor) };
+                let body = { <JSXCodeBlock as FoldWith<V>>::fold_with(body, visitor) };
+                let index = { <Option<Ident> as FoldWith<V>>::fold_with(index, visitor) };
+                let key = { <Option<Box<Expr>> as FoldWith<V>>::fold_with(key, visitor) };
+                let empty = { <Option<JSXCodeBlock> as FoldWith<V>>::fold_with(empty, visitor) };
+                JSXForExpr {
+                    span,
+                    kind,
+                    init,
+                    test,
+                    update,
+                    left,
+                    right,
+                    is_await,
+                    body,
+                    index,
+                    key,
+                    empty,
+                }
+            }
+        }
+    }
+}
+impl<V: ?Sized + Fold> FoldWith<V> for JSXForKind {
+    #[doc = "Calls [Fold`::fold_jsx_for_kind`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_for_kind(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXForKind::ForStatement => JSXForKind::ForStatement,
+            JSXForKind::ForInStatement => JSXForKind::ForInStatement,
+            JSXForKind::ForOfStatement => JSXForKind::ForOfStatement,
+            #[cfg(swc_ast_unknown)]
+            _ => self,
+        }
+    }
+}
 impl<V: ?Sized + Fold> FoldWith<V> for JSXFragment {
     #[doc = "Calls [Fold`::fold_jsx_fragment`] with `self`."]
     fn fold_with(self, visitor: &mut V) -> Self {
@@ -106499,6 +112636,56 @@ impl<V: ?Sized + Fold> FoldWith<V> for JSXFragment {
                     opening,
                     children,
                     closing,
+                }
+            }
+        }
+    }
+}
+impl<V: ?Sized + Fold> FoldWith<V> for JSXIfAlternate {
+    #[doc = "Calls [Fold`::fold_jsx_if_alternate`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_if_alternate(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXIfAlternate::CodeBlock { 0: _field_0 } => {
+                let _field_0 = <JSXCodeBlock as FoldWith<V>>::fold_with(_field_0, visitor);
+                JSXIfAlternate::CodeBlock { 0: _field_0 }
+            }
+            JSXIfAlternate::If { 0: _field_0 } => {
+                let _field_0 = <Box<JSXIfExpr> as FoldWith<V>>::fold_with(_field_0, visitor);
+                JSXIfAlternate::If { 0: _field_0 }
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => self,
+        }
+    }
+}
+impl<V: ?Sized + Fold> FoldWith<V> for JSXIfExpr {
+    #[doc = "Calls [Fold`::fold_jsx_if_expr`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_if_expr(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXIfExpr {
+                span,
+                test,
+                consequent,
+                alternate,
+            } => {
+                let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
+                let test = { <Box<Expr> as FoldWith<V>>::fold_with(test, visitor) };
+                let consequent = { <JSXCodeBlock as FoldWith<V>>::fold_with(consequent, visitor) };
+                let alternate =
+                    { <Option<JSXIfAlternate> as FoldWith<V>>::fold_with(alternate, visitor) };
+                JSXIfExpr {
+                    span,
+                    test,
+                    consequent,
+                    alternate,
                 }
             }
         }
@@ -106624,6 +112811,84 @@ impl<V: ?Sized + Fold> FoldWith<V> for JSXSpreadChild {
         }
     }
 }
+impl<V: ?Sized + Fold> FoldWith<V> for JSXStyleElement {
+    #[doc = "Calls [Fold`::fold_jsx_style_element`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_style_element(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXStyleElement {
+                span,
+                opening,
+                css,
+                closing,
+            } => {
+                let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
+                let opening = { <JSXOpeningElement as FoldWith<V>>::fold_with(opening, visitor) };
+                let css = { <swc_atoms::Atom as FoldWith<V>>::fold_with(css, visitor) };
+                let closing = { <JSXClosingElement as FoldWith<V>>::fold_with(closing, visitor) };
+                JSXStyleElement {
+                    span,
+                    opening,
+                    css,
+                    closing,
+                }
+            }
+        }
+    }
+}
+impl<V: ?Sized + Fold> FoldWith<V> for JSXSwitchCase {
+    #[doc = "Calls [Fold`::fold_jsx_switch_case`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_switch_case(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXSwitchCase {
+                span,
+                test,
+                consequent,
+            } => {
+                let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
+                let test = { <Option<Box<Expr>> as FoldWith<V>>::fold_with(test, visitor) };
+                let consequent = { <JSXCodeBlock as FoldWith<V>>::fold_with(consequent, visitor) };
+                JSXSwitchCase {
+                    span,
+                    test,
+                    consequent,
+                }
+            }
+        }
+    }
+}
+impl<V: ?Sized + Fold> FoldWith<V> for JSXSwitchExpr {
+    #[doc = "Calls [Fold`::fold_jsx_switch_expr`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_switch_expr(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXSwitchExpr {
+                span,
+                discriminant,
+                cases,
+            } => {
+                let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
+                let discriminant = { <Box<Expr> as FoldWith<V>>::fold_with(discriminant, visitor) };
+                let cases = { <Vec<JSXSwitchCase> as FoldWith<V>>::fold_with(cases, visitor) };
+                JSXSwitchExpr {
+                    span,
+                    discriminant,
+                    cases,
+                }
+            }
+        }
+    }
+}
 impl<V: ?Sized + Fold> FoldWith<V> for JSXText {
     #[doc = "Calls [Fold`::fold_jsx_text`] with `self`."]
     fn fold_with(self, visitor: &mut V) -> Self {
@@ -106637,6 +112902,40 @@ impl<V: ?Sized + Fold> FoldWith<V> for JSXText {
                 let value = { <swc_atoms::Wtf8Atom as FoldWith<V>>::fold_with(value, visitor) };
                 let raw = { <swc_atoms::Atom as FoldWith<V>>::fold_with(raw, visitor) };
                 JSXText { span, value, raw }
+            }
+        }
+    }
+}
+impl<V: ?Sized + Fold> FoldWith<V> for JSXTryExpr {
+    #[doc = "Calls [Fold`::fold_jsx_try_expr`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_try_expr(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            JSXTryExpr {
+                span,
+                block,
+                pending,
+                handler,
+                finalizer,
+            } => {
+                let span = { <swc_common::Span as FoldWith<V>>::fold_with(span, visitor) };
+                let block = { <JSXCodeBlock as FoldWith<V>>::fold_with(block, visitor) };
+                let pending =
+                    { <Option<JSXCodeBlock> as FoldWith<V>>::fold_with(pending, visitor) };
+                let handler =
+                    { <Option<JSXCatchClause> as FoldWith<V>>::fold_with(handler, visitor) };
+                let finalizer =
+                    { <Option<BlockStmt> as FoldWith<V>>::fold_with(finalizer, visitor) };
+                JSXTryExpr {
+                    span,
+                    block,
+                    pending,
+                    handler,
+                    finalizer,
+                }
             }
         }
     }
@@ -109959,6 +116258,43 @@ impl<V: ?Sized + Fold> FoldWith<V> for TsUnionType {
         }
     }
 }
+impl<V: ?Sized + Fold> FoldWith<V> for TsrxExpr {
+    #[doc = "Calls [Fold`::fold_tsrx_expr`] with `self`."]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_tsrx_expr(visitor, self)
+    }
+
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        match self {
+            TsrxExpr::CodeBlock { 0: _field_0 } => {
+                let _field_0 = <JSXCodeBlock as FoldWith<V>>::fold_with(_field_0, visitor);
+                TsrxExpr::CodeBlock { 0: _field_0 }
+            }
+            TsrxExpr::StyleElement { 0: _field_0 } => {
+                let _field_0 = <Box<JSXStyleElement> as FoldWith<V>>::fold_with(_field_0, visitor);
+                TsrxExpr::StyleElement { 0: _field_0 }
+            }
+            TsrxExpr::If { 0: _field_0 } => {
+                let _field_0 = <Box<JSXIfExpr> as FoldWith<V>>::fold_with(_field_0, visitor);
+                TsrxExpr::If { 0: _field_0 }
+            }
+            TsrxExpr::For { 0: _field_0 } => {
+                let _field_0 = <Box<JSXForExpr> as FoldWith<V>>::fold_with(_field_0, visitor);
+                TsrxExpr::For { 0: _field_0 }
+            }
+            TsrxExpr::Switch { 0: _field_0 } => {
+                let _field_0 = <Box<JSXSwitchExpr> as FoldWith<V>>::fold_with(_field_0, visitor);
+                TsrxExpr::Switch { 0: _field_0 }
+            }
+            TsrxExpr::Try { 0: _field_0 } => {
+                let _field_0 = <Box<JSXTryExpr> as FoldWith<V>>::fold_with(_field_0, visitor);
+                TsrxExpr::Try { 0: _field_0 }
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => self,
+        }
+    }
+}
 impl<V: ?Sized + Fold> FoldWith<V> for UnaryExpr {
     #[doc = "Calls [Fold`::fold_unary_expr`] with `self`."]
     fn fold_with(self, visitor: &mut V) -> Self {
@@ -110364,6 +116700,20 @@ impl<V: ?Sized + Fold> FoldWith<V> for Vec<JSXElementChild> {
         })
     }
 }
+impl<V: ?Sized + Fold> FoldWith<V> for Vec<JSXSwitchCase> {
+    #[doc = "Calls [Fold`::fold_jsx_switch_cases`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_jsx_switch_cases(visitor, self)
+    }
+
+    #[inline]
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        swc_visit::util::move_map::MoveMap::move_map(self, |item| {
+            <JSXSwitchCase as FoldWith<V>>::fold_with(item, visitor)
+        })
+    }
+}
 impl<V: ?Sized + Fold> FoldWith<V> for Vec<ModuleItem> {
     #[doc = "Calls [Fold`::fold_module_items`] with `self`. (Extra impl)"]
     #[inline]
@@ -110476,6 +116826,18 @@ impl<V: ?Sized + Fold> FoldWith<V> for Option<Vec<ExprOrSpread>> {
         self.map(|inner| <Vec<ExprOrSpread> as FoldWith<V>>::fold_with(inner, visitor))
     }
 }
+impl<V: ?Sized + Fold> FoldWith<V> for Option<ForHead> {
+    #[doc = "Calls [Fold`::fold_opt_for_head`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_opt_for_head(visitor, self)
+    }
+
+    #[inline]
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        self.map(|inner| <ForHead as FoldWith<V>>::fold_with(inner, visitor))
+    }
+}
 impl<V: ?Sized + Fold> FoldWith<V> for Option<FunctionBody> {
     #[doc = "Calls [Fold`::fold_opt_function_body`] with `self`. (Extra impl)"]
     #[inline]
@@ -110512,6 +116874,18 @@ impl<V: ?Sized + Fold> FoldWith<V> for Option<JSXAttrValue> {
         self.map(|inner| <JSXAttrValue as FoldWith<V>>::fold_with(inner, visitor))
     }
 }
+impl<V: ?Sized + Fold> FoldWith<V> for Option<JSXCatchClause> {
+    #[doc = "Calls [Fold`::fold_opt_jsx_catch_clause`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_opt_jsx_catch_clause(visitor, self)
+    }
+
+    #[inline]
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        self.map(|inner| <JSXCatchClause as FoldWith<V>>::fold_with(inner, visitor))
+    }
+}
 impl<V: ?Sized + Fold> FoldWith<V> for Option<JSXClosingElement> {
     #[doc = "Calls [Fold`::fold_opt_jsx_closing_element`] with `self`. (Extra impl)"]
     #[inline]
@@ -110522,6 +116896,30 @@ impl<V: ?Sized + Fold> FoldWith<V> for Option<JSXClosingElement> {
     #[inline]
     fn fold_children_with(self, visitor: &mut V) -> Self {
         self.map(|inner| <JSXClosingElement as FoldWith<V>>::fold_with(inner, visitor))
+    }
+}
+impl<V: ?Sized + Fold> FoldWith<V> for Option<JSXCodeBlock> {
+    #[doc = "Calls [Fold`::fold_opt_jsx_code_block`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_opt_jsx_code_block(visitor, self)
+    }
+
+    #[inline]
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        self.map(|inner| <JSXCodeBlock as FoldWith<V>>::fold_with(inner, visitor))
+    }
+}
+impl<V: ?Sized + Fold> FoldWith<V> for Option<JSXIfAlternate> {
+    #[doc = "Calls [Fold`::fold_opt_jsx_if_alternate`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with(self, visitor: &mut V) -> Self {
+        <V as Fold>::fold_opt_jsx_if_alternate(visitor, self)
+    }
+
+    #[inline]
+    fn fold_children_with(self, visitor: &mut V) -> Self {
+        self.map(|inner| <JSXIfAlternate as FoldWith<V>>::fold_with(inner, visitor))
     }
 }
 impl<V: ?Sized + Fold> FoldWith<V> for Option<ModuleExportName> {
@@ -111848,6 +118246,19 @@ pub trait FoldAstPath {
     ) -> JSXAttrValue {
         <JSXAttrValue as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
     }
+    #[doc = "Visit a node of type `JSXCatchClause`.\n\nBy default, this method calls \
+             [`JSXCatchClause::fold_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn fold_jsx_catch_clause(
+        &mut self,
+        node: JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCatchClause {
+        <JSXCatchClause as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `JSXClosingElement`.\n\nBy default, this method calls \
              [`JSXClosingElement::fold_children_with_ast_path`]. If you want to recurse, you need \
              to call it manually."]
@@ -111873,6 +118284,17 @@ pub trait FoldAstPath {
         <JSXClosingFragment as FoldWithAstPath<Self>>::fold_children_with_ast_path(
             node, self, __ast_path,
         )
+    }
+    #[doc = "Visit a node of type `JSXCodeBlock`.\n\nBy default, this method calls \
+             [`JSXCodeBlock::fold_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn fold_jsx_code_block(
+        &mut self,
+        node: JSXCodeBlock,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCodeBlock {
+        <JSXCodeBlock as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
     }
     #[doc = "Visit a node of type `JSXElement`.\n\nBy default, this method calls \
              [`JSXElement::fold_children_with_ast_path`]. If you want to recurse, you need to call \
@@ -111951,6 +118373,20 @@ pub trait FoldAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `JSXForExpr`.\n\nBy default, this method calls \
+             [`JSXForExpr::fold_children_with_ast_path`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr, __ast_path: &mut AstKindPath) -> JSXForExpr {
+        <JSXForExpr as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
+    }
+    #[doc = "Visit a node of type `JSXForKind`.\n\nBy default, this method calls \
+             [`JSXForKind::fold_children_with_ast_path`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind, __ast_path: &mut AstKindPath) -> JSXForKind {
+        <JSXForKind as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
+    }
     #[doc = "Visit a node of type `JSXFragment`.\n\nBy default, this method calls \
              [`JSXFragment::fold_children_with_ast_path`]. If you want to recurse, you need to \
              call it manually."]
@@ -111961,6 +118397,26 @@ pub trait FoldAstPath {
         __ast_path: &mut AstKindPath,
     ) -> JSXFragment {
         <JSXFragment as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
+    }
+    #[doc = "Visit a node of type `JSXIfAlternate`.\n\nBy default, this method calls \
+             [`JSXIfAlternate::fold_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn fold_jsx_if_alternate(
+        &mut self,
+        node: JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXIfAlternate {
+        <JSXIfAlternate as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXIfExpr`.\n\nBy default, this method calls \
+             [`JSXIfExpr::fold_children_with_ast_path`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr, __ast_path: &mut AstKindPath) -> JSXIfExpr {
+        <JSXIfExpr as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
     }
     #[doc = "Visit a node of type `JSXMemberExpr`.\n\nBy default, this method calls \
              [`JSXMemberExpr::fold_children_with_ast_path`]. If you want to recurse, you need to \
@@ -112034,12 +118490,71 @@ pub trait FoldAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `JSXStyleElement`.\n\nBy default, this method calls \
+             [`JSXStyleElement::fold_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn fold_jsx_style_element(
+        &mut self,
+        node: JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXStyleElement {
+        <JSXStyleElement as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXSwitchCase`.\n\nBy default, this method calls \
+             [`JSXSwitchCase::fold_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn fold_jsx_switch_case(
+        &mut self,
+        node: JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchCase {
+        <JSXSwitchCase as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `Vec < JSXSwitchCase >`.\n\nBy default, this method calls [`Vec \
+             < JSXSwitchCase >::fold_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn fold_jsx_switch_cases(
+        &mut self,
+        node: Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) -> Vec<JSXSwitchCase> {
+        <Vec<JSXSwitchCase> as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `JSXSwitchExpr`.\n\nBy default, this method calls \
+             [`JSXSwitchExpr::fold_children_with_ast_path`]. If you want to recurse, you need to \
+             call it manually."]
+    #[inline]
+    fn fold_jsx_switch_expr(
+        &mut self,
+        node: JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchExpr {
+        <JSXSwitchExpr as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `JSXText`.\n\nBy default, this method calls \
              [`JSXText::fold_children_with_ast_path`]. If you want to recurse, you need to call it \
              manually."]
     #[inline]
     fn fold_jsx_text(&mut self, node: JSXText, __ast_path: &mut AstKindPath) -> JSXText {
         <JSXText as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
+    }
+    #[doc = "Visit a node of type `JSXTryExpr`.\n\nBy default, this method calls \
+             [`JSXTryExpr::fold_children_with_ast_path`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr, __ast_path: &mut AstKindPath) -> JSXTryExpr {
+        <JSXTryExpr as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
     }
     #[doc = "Visit a node of type `Key`.\n\nBy default, this method calls \
              [`Key::fold_children_with_ast_path`]. If you want to recurse, you need to call it \
@@ -112379,6 +118894,19 @@ pub trait FoldAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `Option < ForHead >`.\n\nBy default, this method calls [`Option \
+             < ForHead >::fold_children_with_ast_path`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn fold_opt_for_head(
+        &mut self,
+        node: Option<ForHead>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<ForHead> {
+        <Option<ForHead> as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `Option < FunctionBody >`.\n\nBy default, this method calls \
              [`Option < FunctionBody >::fold_children_with_ast_path`]. If you want to recurse, you \
              need to call it manually."]
@@ -112418,6 +118946,19 @@ pub trait FoldAstPath {
             node, self, __ast_path,
         )
     }
+    #[doc = "Visit a node of type `Option < JSXCatchClause >`.\n\nBy default, this method calls \
+             [`Option < JSXCatchClause >::fold_children_with_ast_path`]. If you want to recurse, \
+             you need to call it manually."]
+    #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCatchClause> {
+        <Option<JSXCatchClause> as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
     #[doc = "Visit a node of type `Option < JSXClosingElement >`.\n\nBy default, this method calls \
              [`Option < JSXClosingElement >::fold_children_with_ast_path`]. If you want to \
              recurse, you need to call it manually."]
@@ -112428,6 +118969,32 @@ pub trait FoldAstPath {
         __ast_path: &mut AstKindPath,
     ) -> Option<JSXClosingElement> {
         <Option<JSXClosingElement> as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `Option < JSXCodeBlock >`.\n\nBy default, this method calls \
+             [`Option < JSXCodeBlock >::fold_children_with_ast_path`]. If you want to recurse, you \
+             need to call it manually."]
+    #[inline]
+    fn fold_opt_jsx_code_block(
+        &mut self,
+        node: Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCodeBlock> {
+        <Option<JSXCodeBlock> as FoldWithAstPath<Self>>::fold_children_with_ast_path(
+            node, self, __ast_path,
+        )
+    }
+    #[doc = "Visit a node of type `Option < JSXIfAlternate >`.\n\nBy default, this method calls \
+             [`Option < JSXIfAlternate >::fold_children_with_ast_path`]. If you want to recurse, \
+             you need to call it manually."]
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXIfAlternate> {
+        <Option<JSXIfAlternate> as FoldWithAstPath<Self>>::fold_children_with_ast_path(
             node, self, __ast_path,
         )
     }
@@ -114009,6 +120576,13 @@ pub trait FoldAstPath {
     ) -> TsUnionType {
         <TsUnionType as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
     }
+    #[doc = "Visit a node of type `TsrxExpr`.\n\nBy default, this method calls \
+             [`TsrxExpr::fold_children_with_ast_path`]. If you want to recurse, you need to call \
+             it manually."]
+    #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr, __ast_path: &mut AstKindPath) -> TsrxExpr {
+        <TsrxExpr as FoldWithAstPath<Self>>::fold_children_with_ast_path(node, self, __ast_path)
+    }
     #[doc = "Visit a node of type `UnaryExpr`.\n\nBy default, this method calls \
              [`UnaryExpr::fold_children_with_ast_path`]. If you want to recurse, you need to call \
              it manually."]
@@ -114742,6 +121316,15 @@ where
     }
 
     #[inline]
+    fn fold_jsx_catch_clause(
+        &mut self,
+        node: JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCatchClause {
+        <V as FoldAstPath>::fold_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_jsx_closing_element(
         &mut self,
         node: JSXClosingElement,
@@ -114757,6 +121340,15 @@ where
         __ast_path: &mut AstKindPath,
     ) -> JSXClosingFragment {
         <V as FoldAstPath>::fold_jsx_closing_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_code_block(
+        &mut self,
+        node: JSXCodeBlock,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCodeBlock {
+        <V as FoldAstPath>::fold_jsx_code_block(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -114815,12 +121407,36 @@ where
     }
 
     #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr, __ast_path: &mut AstKindPath) -> JSXForExpr {
+        <V as FoldAstPath>::fold_jsx_for_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind, __ast_path: &mut AstKindPath) -> JSXForKind {
+        <V as FoldAstPath>::fold_jsx_for_kind(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_jsx_fragment(
         &mut self,
         node: JSXFragment,
         __ast_path: &mut AstKindPath,
     ) -> JSXFragment {
         <V as FoldAstPath>::fold_jsx_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_if_alternate(
+        &mut self,
+        node: JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXIfAlternate {
+        <V as FoldAstPath>::fold_jsx_if_alternate(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr, __ast_path: &mut AstKindPath) -> JSXIfExpr {
+        <V as FoldAstPath>::fold_jsx_if_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -114874,8 +121490,49 @@ where
     }
 
     #[inline]
+    fn fold_jsx_style_element(
+        &mut self,
+        node: JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXStyleElement {
+        <V as FoldAstPath>::fold_jsx_style_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_case(
+        &mut self,
+        node: JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchCase {
+        <V as FoldAstPath>::fold_jsx_switch_case(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_cases(
+        &mut self,
+        node: Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) -> Vec<JSXSwitchCase> {
+        <V as FoldAstPath>::fold_jsx_switch_cases(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_expr(
+        &mut self,
+        node: JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchExpr {
+        <V as FoldAstPath>::fold_jsx_switch_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_jsx_text(&mut self, node: JSXText, __ast_path: &mut AstKindPath) -> JSXText {
         <V as FoldAstPath>::fold_jsx_text(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr, __ast_path: &mut AstKindPath) -> JSXTryExpr {
+        <V as FoldAstPath>::fold_jsx_try_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -115125,6 +121782,15 @@ where
     }
 
     #[inline]
+    fn fold_opt_for_head(
+        &mut self,
+        node: Option<ForHead>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<ForHead> {
+        <V as FoldAstPath>::fold_opt_for_head(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_opt_function_body(
         &mut self,
         node: Option<FunctionBody>,
@@ -115152,12 +121818,39 @@ where
     }
 
     #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCatchClause> {
+        <V as FoldAstPath>::fold_opt_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_opt_jsx_closing_element(
         &mut self,
         node: Option<JSXClosingElement>,
         __ast_path: &mut AstKindPath,
     ) -> Option<JSXClosingElement> {
         <V as FoldAstPath>::fold_opt_jsx_closing_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_opt_jsx_code_block(
+        &mut self,
+        node: Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCodeBlock> {
+        <V as FoldAstPath>::fold_opt_jsx_code_block(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXIfAlternate> {
+        <V as FoldAstPath>::fold_opt_jsx_if_alternate(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -116285,6 +122978,11 @@ where
         __ast_path: &mut AstKindPath,
     ) -> TsUnionType {
         <V as FoldAstPath>::fold_ts_union_type(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr, __ast_path: &mut AstKindPath) -> TsrxExpr {
+        <V as FoldAstPath>::fold_tsrx_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -116983,6 +123681,15 @@ where
     }
 
     #[inline]
+    fn fold_jsx_catch_clause(
+        &mut self,
+        node: JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCatchClause {
+        <V as FoldAstPath>::fold_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_jsx_closing_element(
         &mut self,
         node: JSXClosingElement,
@@ -116998,6 +123705,15 @@ where
         __ast_path: &mut AstKindPath,
     ) -> JSXClosingFragment {
         <V as FoldAstPath>::fold_jsx_closing_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_code_block(
+        &mut self,
+        node: JSXCodeBlock,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCodeBlock {
+        <V as FoldAstPath>::fold_jsx_code_block(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -117056,12 +123772,36 @@ where
     }
 
     #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr, __ast_path: &mut AstKindPath) -> JSXForExpr {
+        <V as FoldAstPath>::fold_jsx_for_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind, __ast_path: &mut AstKindPath) -> JSXForKind {
+        <V as FoldAstPath>::fold_jsx_for_kind(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_jsx_fragment(
         &mut self,
         node: JSXFragment,
         __ast_path: &mut AstKindPath,
     ) -> JSXFragment {
         <V as FoldAstPath>::fold_jsx_fragment(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_if_alternate(
+        &mut self,
+        node: JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXIfAlternate {
+        <V as FoldAstPath>::fold_jsx_if_alternate(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr, __ast_path: &mut AstKindPath) -> JSXIfExpr {
+        <V as FoldAstPath>::fold_jsx_if_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -117115,8 +123855,49 @@ where
     }
 
     #[inline]
+    fn fold_jsx_style_element(
+        &mut self,
+        node: JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXStyleElement {
+        <V as FoldAstPath>::fold_jsx_style_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_case(
+        &mut self,
+        node: JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchCase {
+        <V as FoldAstPath>::fold_jsx_switch_case(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_cases(
+        &mut self,
+        node: Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) -> Vec<JSXSwitchCase> {
+        <V as FoldAstPath>::fold_jsx_switch_cases(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_switch_expr(
+        &mut self,
+        node: JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchExpr {
+        <V as FoldAstPath>::fold_jsx_switch_expr(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_jsx_text(&mut self, node: JSXText, __ast_path: &mut AstKindPath) -> JSXText {
         <V as FoldAstPath>::fold_jsx_text(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr, __ast_path: &mut AstKindPath) -> JSXTryExpr {
+        <V as FoldAstPath>::fold_jsx_try_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -117366,6 +124147,15 @@ where
     }
 
     #[inline]
+    fn fold_opt_for_head(
+        &mut self,
+        node: Option<ForHead>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<ForHead> {
+        <V as FoldAstPath>::fold_opt_for_head(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_opt_function_body(
         &mut self,
         node: Option<FunctionBody>,
@@ -117393,12 +124183,39 @@ where
     }
 
     #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCatchClause> {
+        <V as FoldAstPath>::fold_opt_jsx_catch_clause(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
     fn fold_opt_jsx_closing_element(
         &mut self,
         node: Option<JSXClosingElement>,
         __ast_path: &mut AstKindPath,
     ) -> Option<JSXClosingElement> {
         <V as FoldAstPath>::fold_opt_jsx_closing_element(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_opt_jsx_code_block(
+        &mut self,
+        node: Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCodeBlock> {
+        <V as FoldAstPath>::fold_opt_jsx_code_block(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXIfAlternate> {
+        <V as FoldAstPath>::fold_opt_jsx_if_alternate(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -118526,6 +125343,11 @@ where
         __ast_path: &mut AstKindPath,
     ) -> TsUnionType {
         <V as FoldAstPath>::fold_ts_union_type(&mut **self, node, __ast_path)
+    }
+
+    #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr, __ast_path: &mut AstKindPath) -> TsrxExpr {
+        <V as FoldAstPath>::fold_tsrx_expr(&mut **self, node, __ast_path)
     }
 
     #[inline]
@@ -119802,6 +126624,22 @@ where
     }
 
     #[inline]
+    fn fold_jsx_catch_clause(
+        &mut self,
+        node: JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCatchClause {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_catch_clause(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_catch_clause(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn fold_jsx_closing_element(
         &mut self,
         node: JSXClosingElement,
@@ -119829,6 +126667,22 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 FoldAstPath::fold_jsx_closing_fragment(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_code_block(
+        &mut self,
+        node: JSXCodeBlock,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCodeBlock {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_code_block(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_code_block(visitor, node, __ast_path)
             }
         }
     }
@@ -119938,6 +126792,30 @@ where
     }
 
     #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr, __ast_path: &mut AstKindPath) -> JSXForExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_for_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_for_expr(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind, __ast_path: &mut AstKindPath) -> JSXForKind {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_for_kind(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_for_kind(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn fold_jsx_fragment(
         &mut self,
         node: JSXFragment,
@@ -119949,6 +126827,34 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 FoldAstPath::fold_jsx_fragment(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_if_alternate(
+        &mut self,
+        node: JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXIfAlternate {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_if_alternate(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_if_alternate(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr, __ast_path: &mut AstKindPath) -> JSXIfExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_if_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_if_expr(visitor, node, __ast_path)
             }
         }
     }
@@ -120046,6 +126952,70 @@ where
     }
 
     #[inline]
+    fn fold_jsx_style_element(
+        &mut self,
+        node: JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXStyleElement {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_style_element(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_style_element(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_case(
+        &mut self,
+        node: JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchCase {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_switch_case(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_switch_case(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_cases(
+        &mut self,
+        node: Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) -> Vec<JSXSwitchCase> {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_switch_cases(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_switch_cases(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_expr(
+        &mut self,
+        node: JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_switch_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_switch_expr(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn fold_jsx_text(&mut self, node: JSXText, __ast_path: &mut AstKindPath) -> JSXText {
         match self {
             swc_visit::Either::Left(visitor) => {
@@ -120053,6 +127023,18 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 FoldAstPath::fold_jsx_text(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr, __ast_path: &mut AstKindPath) -> JSXTryExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_jsx_try_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_jsx_try_expr(visitor, node, __ast_path)
             }
         }
     }
@@ -120526,6 +127508,22 @@ where
     }
 
     #[inline]
+    fn fold_opt_for_head(
+        &mut self,
+        node: Option<ForHead>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<ForHead> {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_opt_for_head(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_opt_for_head(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn fold_opt_function_body(
         &mut self,
         node: Option<FunctionBody>,
@@ -120574,6 +127572,22 @@ where
     }
 
     #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCatchClause> {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_opt_jsx_catch_clause(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_opt_jsx_catch_clause(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn fold_opt_jsx_closing_element(
         &mut self,
         node: Option<JSXClosingElement>,
@@ -120585,6 +127599,38 @@ where
             }
             swc_visit::Either::Right(visitor) => {
                 FoldAstPath::fold_opt_jsx_closing_element(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_opt_jsx_code_block(
+        &mut self,
+        node: Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCodeBlock> {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_opt_jsx_code_block(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_opt_jsx_code_block(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXIfAlternate> {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_opt_jsx_if_alternate(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_opt_jsx_if_alternate(visitor, node, __ast_path)
             }
         }
     }
@@ -122668,6 +129714,18 @@ where
     }
 
     #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr, __ast_path: &mut AstKindPath) -> TsrxExpr {
+        match self {
+            swc_visit::Either::Left(visitor) => {
+                FoldAstPath::fold_tsrx_expr(visitor, node, __ast_path)
+            }
+            swc_visit::Either::Right(visitor) => {
+                FoldAstPath::fold_tsrx_expr(visitor, node, __ast_path)
+            }
+        }
+    }
+
+    #[inline]
     fn fold_unary_expr(&mut self, node: UnaryExpr, __ast_path: &mut AstKindPath) -> UnaryExpr {
         match self {
             swc_visit::Either::Left(visitor) => {
@@ -123809,6 +130867,19 @@ where
     }
 
     #[inline]
+    fn fold_jsx_catch_clause(
+        &mut self,
+        node: JSXCatchClause,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCatchClause {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_catch_clause(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_jsx_closing_element(
         &mut self,
         node: JSXClosingElement,
@@ -123829,6 +130900,19 @@ where
     ) -> JSXClosingFragment {
         if self.enabled {
             <V as FoldAstPath>::fold_jsx_closing_fragment(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_code_block(
+        &mut self,
+        node: JSXCodeBlock,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXCodeBlock {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_code_block(&mut self.visitor, node, __ast_path)
         } else {
             node
         }
@@ -123918,6 +131002,24 @@ where
     }
 
     #[inline]
+    fn fold_jsx_for_expr(&mut self, node: JSXForExpr, __ast_path: &mut AstKindPath) -> JSXForExpr {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_for_expr(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_for_kind(&mut self, node: JSXForKind, __ast_path: &mut AstKindPath) -> JSXForKind {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_for_kind(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_jsx_fragment(
         &mut self,
         node: JSXFragment,
@@ -123925,6 +131027,28 @@ where
     ) -> JSXFragment {
         if self.enabled {
             <V as FoldAstPath>::fold_jsx_fragment(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_if_alternate(
+        &mut self,
+        node: JSXIfAlternate,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXIfAlternate {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_if_alternate(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_if_expr(&mut self, node: JSXIfExpr, __ast_path: &mut AstKindPath) -> JSXIfExpr {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_if_expr(&mut self.visitor, node, __ast_path)
         } else {
             node
         }
@@ -124005,9 +131129,70 @@ where
     }
 
     #[inline]
+    fn fold_jsx_style_element(
+        &mut self,
+        node: JSXStyleElement,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXStyleElement {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_style_element(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_case(
+        &mut self,
+        node: JSXSwitchCase,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchCase {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_switch_case(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_cases(
+        &mut self,
+        node: Vec<JSXSwitchCase>,
+        __ast_path: &mut AstKindPath,
+    ) -> Vec<JSXSwitchCase> {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_switch_cases(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_switch_expr(
+        &mut self,
+        node: JSXSwitchExpr,
+        __ast_path: &mut AstKindPath,
+    ) -> JSXSwitchExpr {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_switch_expr(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_jsx_text(&mut self, node: JSXText, __ast_path: &mut AstKindPath) -> JSXText {
         if self.enabled {
             <V as FoldAstPath>::fold_jsx_text(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_jsx_try_expr(&mut self, node: JSXTryExpr, __ast_path: &mut AstKindPath) -> JSXTryExpr {
+        if self.enabled {
+            <V as FoldAstPath>::fold_jsx_try_expr(&mut self.visitor, node, __ast_path)
         } else {
             node
         }
@@ -124396,6 +131581,19 @@ where
     }
 
     #[inline]
+    fn fold_opt_for_head(
+        &mut self,
+        node: Option<ForHead>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<ForHead> {
+        if self.enabled {
+            <V as FoldAstPath>::fold_opt_for_head(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_opt_function_body(
         &mut self,
         node: Option<FunctionBody>,
@@ -124435,6 +131633,19 @@ where
     }
 
     #[inline]
+    fn fold_opt_jsx_catch_clause(
+        &mut self,
+        node: Option<JSXCatchClause>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCatchClause> {
+        if self.enabled {
+            <V as FoldAstPath>::fold_opt_jsx_catch_clause(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
     fn fold_opt_jsx_closing_element(
         &mut self,
         node: Option<JSXClosingElement>,
@@ -124442,6 +131653,32 @@ where
     ) -> Option<JSXClosingElement> {
         if self.enabled {
             <V as FoldAstPath>::fold_opt_jsx_closing_element(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_opt_jsx_code_block(
+        &mut self,
+        node: Option<JSXCodeBlock>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXCodeBlock> {
+        if self.enabled {
+            <V as FoldAstPath>::fold_opt_jsx_code_block(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_opt_jsx_if_alternate(
+        &mut self,
+        node: Option<JSXIfAlternate>,
+        __ast_path: &mut AstKindPath,
+    ) -> Option<JSXIfAlternate> {
+        if self.enabled {
+            <V as FoldAstPath>::fold_opt_jsx_if_alternate(&mut self.visitor, node, __ast_path)
         } else {
             node
         }
@@ -126157,6 +133394,15 @@ where
     ) -> TsUnionType {
         if self.enabled {
             <V as FoldAstPath>::fold_ts_union_type(&mut self.visitor, node, __ast_path)
+        } else {
+            node
+        }
+    }
+
+    #[inline]
+    fn fold_tsrx_expr(&mut self, node: TsrxExpr, __ast_path: &mut AstKindPath) -> TsrxExpr {
+        if self.enabled {
+            <V as FoldAstPath>::fold_tsrx_expr(&mut self.visitor, node, __ast_path)
         } else {
             node
         }
@@ -129158,6 +136404,16 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Expr {
                 );
                 Expr::Invalid { 0: _field_0 }
             }
+            Expr::Tsrx { 0: _field_0 } => {
+                let mut __ast_path =
+                    __ast_path.with_guard(AstParentKind::Expr(self::fields::ExprField::Tsrx));
+                let _field_0 = <Box<TsrxExpr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                Expr::Tsrx { 0: _field_0 }
+            }
             #[cfg(swc_ast_unknown)]
             _ => self,
         }
@@ -130332,7 +137588,12 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXAttr {
 
     fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
         match self {
-            JSXAttr { span, name, value } => {
+            JSXAttr {
+                span,
+                name,
+                value,
+                shorthand,
+            } => {
                 let span = {
                     let mut __ast_path = __ast_path
                         .with_guard(AstParentKind::JSXAttr(self::fields::JSXAttrField::Span));
@@ -130360,7 +137621,12 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXAttr {
                         &mut *__ast_path,
                     )
                 };
-                JSXAttr { span, name, value }
+                JSXAttr {
+                    span,
+                    name,
+                    value,
+                    shorthand,
+                }
             }
         }
     }
@@ -130500,6 +137766,72 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXAttrValue {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXCatchClause {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_catch_clause`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_catch_clause(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXCatchClause {
+                span,
+                param,
+                reset,
+                body,
+            } => {
+                let span = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCatchClause(
+                        self::fields::JSXCatchClauseField::Span,
+                    ));
+                    <swc_common::Span as FoldWithAstPath<V>>::fold_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let param = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCatchClause(
+                        self::fields::JSXCatchClauseField::Param,
+                    ));
+                    <Option<Pat> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        param,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let reset = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCatchClause(
+                        self::fields::JSXCatchClauseField::Reset,
+                    ));
+                    <Option<Ident> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        reset,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let body = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCatchClause(
+                        self::fields::JSXCatchClauseField::Body,
+                    ));
+                    <JSXCodeBlock as FoldWithAstPath<V>>::fold_with_ast_path(
+                        body,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                JSXCatchClause {
+                    span,
+                    param,
+                    reset,
+                    body,
+                }
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXClosingElement {
     #[doc = "Calls [FoldAstPath`::fold_jsx_closing_element`] with `self`."]
     fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
@@ -130556,6 +137888,62 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXClosingFragment {
                     )
                 };
                 JSXClosingFragment { span }
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXCodeBlock {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_code_block`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_code_block(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXCodeBlock {
+                span,
+                body,
+                render,
+                is_function_body,
+            } => {
+                let span = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCodeBlock(
+                        self::fields::JSXCodeBlockField::Span,
+                    ));
+                    <swc_common::Span as FoldWithAstPath<V>>::fold_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let body = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCodeBlock(
+                        self::fields::JSXCodeBlockField::Body(usize::MAX),
+                    ));
+                    <Vec<Stmt> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        body,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let render = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXCodeBlock(
+                        self::fields::JSXCodeBlockField::Render,
+                    ));
+                    <Option<Box<Expr>> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        render,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                JSXCodeBlock {
+                    span,
+                    body,
+                    render,
+                    is_function_body,
+                }
             }
         }
     }
@@ -130691,6 +138079,17 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXElementChild {
                 );
                 JSXElementChild::JSXFragment { 0: _field_0 }
             }
+            JSXElementChild::Tsrx { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXElementChild(
+                    self::fields::JSXElementChildField::Tsrx,
+                ));
+                let _field_0 = <Box<TsrxExpr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                JSXElementChild::Tsrx { 0: _field_0 }
+            }
             #[cfg(swc_ast_unknown)]
             _ => self,
         }
@@ -130738,6 +138137,17 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXElementName {
                     &mut *__ast_path,
                 );
                 JSXElementName::JSXNamespacedName { 0: _field_0 }
+            }
+            JSXElementName::JSXExprContainer { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXElementName(
+                    self::fields::JSXElementNameField::JsxexprContainer,
+                ));
+                let _field_0 = <JSXExprContainer as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                JSXElementName::JSXExprContainer { 0: _field_0 }
             }
             #[cfg(swc_ast_unknown)]
             _ => self,
@@ -130844,6 +138254,176 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXExprContainer {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXForExpr {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_for_expr`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_for_expr(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXForExpr {
+                span,
+                kind,
+                init,
+                test,
+                update,
+                left,
+                right,
+                is_await,
+                body,
+                index,
+                key,
+                empty,
+            } => {
+                let span = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Span,
+                    ));
+                    <swc_common::Span as FoldWithAstPath<V>>::fold_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let kind = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Kind,
+                    ));
+                    <JSXForKind as FoldWithAstPath<V>>::fold_with_ast_path(
+                        kind,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let init = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Init,
+                    ));
+                    <Option<VarDeclOrExpr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        init,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let test = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Test,
+                    ));
+                    <Option<Box<Expr>> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        test,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let update = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Update,
+                    ));
+                    <Option<Box<Expr>> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        update,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let left = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Left,
+                    ));
+                    <Option<ForHead> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        left,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let right = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Right,
+                    ));
+                    <Option<Box<Expr>> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        right,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let body = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Body,
+                    ));
+                    <JSXCodeBlock as FoldWithAstPath<V>>::fold_with_ast_path(
+                        body,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let index = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Index,
+                    ));
+                    <Option<Ident> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        index,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let key = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Key,
+                    ));
+                    <Option<Box<Expr>> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        key,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let empty = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXForExpr(
+                        self::fields::JSXForExprField::Empty,
+                    ));
+                    <Option<JSXCodeBlock> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        empty,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                JSXForExpr {
+                    span,
+                    kind,
+                    init,
+                    test,
+                    update,
+                    left,
+                    right,
+                    is_await,
+                    body,
+                    index,
+                    key,
+                    empty,
+                }
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXForKind {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_for_kind`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_for_kind(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXForKind::ForStatement => JSXForKind::ForStatement,
+            JSXForKind::ForInStatement => JSXForKind::ForInStatement,
+            JSXForKind::ForOfStatement => JSXForKind::ForOfStatement,
+            #[cfg(swc_ast_unknown)]
+            _ => self,
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXFragment {
     #[doc = "Calls [FoldAstPath`::fold_jsx_fragment`] with `self`."]
     fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
@@ -130903,6 +138483,107 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXFragment {
                     opening,
                     children,
                     closing,
+                }
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXIfAlternate {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_if_alternate`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_if_alternate(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXIfAlternate::CodeBlock { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXIfAlternate(
+                    self::fields::JSXIfAlternateField::CodeBlock,
+                ));
+                let _field_0 = <JSXCodeBlock as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                JSXIfAlternate::CodeBlock { 0: _field_0 }
+            }
+            JSXIfAlternate::If { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXIfAlternate(
+                    self::fields::JSXIfAlternateField::If,
+                ));
+                let _field_0 = <Box<JSXIfExpr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                JSXIfAlternate::If { 0: _field_0 }
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => self,
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXIfExpr {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_if_expr`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_if_expr(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXIfExpr {
+                span,
+                test,
+                consequent,
+                alternate,
+            } => {
+                let span = {
+                    let mut __ast_path = __ast_path
+                        .with_guard(AstParentKind::JSXIfExpr(self::fields::JSXIfExprField::Span));
+                    <swc_common::Span as FoldWithAstPath<V>>::fold_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let test = {
+                    let mut __ast_path = __ast_path
+                        .with_guard(AstParentKind::JSXIfExpr(self::fields::JSXIfExprField::Test));
+                    <Box<Expr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        test,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let consequent = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXIfExpr(
+                        self::fields::JSXIfExprField::Consequent,
+                    ));
+                    <JSXCodeBlock as FoldWithAstPath<V>>::fold_with_ast_path(
+                        consequent,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let alternate = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXIfExpr(
+                        self::fields::JSXIfExprField::Alternate,
+                    ));
+                    <Option<JSXIfAlternate> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        alternate,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                JSXIfExpr {
+                    span,
+                    test,
+                    consequent,
+                    alternate,
                 }
             }
         }
@@ -131165,6 +138846,180 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXSpreadChild {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXStyleElement {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_style_element`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_style_element(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXStyleElement {
+                span,
+                opening,
+                css,
+                closing,
+            } => {
+                let span = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXStyleElement(
+                        self::fields::JSXStyleElementField::Span,
+                    ));
+                    <swc_common::Span as FoldWithAstPath<V>>::fold_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let opening = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXStyleElement(
+                        self::fields::JSXStyleElementField::Opening,
+                    ));
+                    <JSXOpeningElement as FoldWithAstPath<V>>::fold_with_ast_path(
+                        opening,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let css = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXStyleElement(
+                        self::fields::JSXStyleElementField::Css,
+                    ));
+                    <swc_atoms::Atom as FoldWithAstPath<V>>::fold_with_ast_path(
+                        css,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let closing = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXStyleElement(
+                        self::fields::JSXStyleElementField::Closing,
+                    ));
+                    <JSXClosingElement as FoldWithAstPath<V>>::fold_with_ast_path(
+                        closing,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                JSXStyleElement {
+                    span,
+                    opening,
+                    css,
+                    closing,
+                }
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXSwitchCase {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_switch_case`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_switch_case(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXSwitchCase {
+                span,
+                test,
+                consequent,
+            } => {
+                let span = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchCase(
+                        self::fields::JSXSwitchCaseField::Span,
+                    ));
+                    <swc_common::Span as FoldWithAstPath<V>>::fold_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let test = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchCase(
+                        self::fields::JSXSwitchCaseField::Test,
+                    ));
+                    <Option<Box<Expr>> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        test,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let consequent = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchCase(
+                        self::fields::JSXSwitchCaseField::Consequent,
+                    ));
+                    <JSXCodeBlock as FoldWithAstPath<V>>::fold_with_ast_path(
+                        consequent,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                JSXSwitchCase {
+                    span,
+                    test,
+                    consequent,
+                }
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXSwitchExpr {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_switch_expr`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_switch_expr(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXSwitchExpr {
+                span,
+                discriminant,
+                cases,
+            } => {
+                let span = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchExpr(
+                        self::fields::JSXSwitchExprField::Span,
+                    ));
+                    <swc_common::Span as FoldWithAstPath<V>>::fold_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let discriminant = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchExpr(
+                        self::fields::JSXSwitchExprField::Discriminant,
+                    ));
+                    <Box<Expr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        discriminant,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let cases = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXSwitchExpr(
+                        self::fields::JSXSwitchExprField::Cases(usize::MAX),
+                    ));
+                    <Vec<JSXSwitchCase> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        cases,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                JSXSwitchExpr {
+                    span,
+                    discriminant,
+                    cases,
+                }
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXText {
     #[doc = "Calls [FoldAstPath`::fold_jsx_text`] with `self`."]
     fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
@@ -131202,6 +139057,84 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXText {
                     )
                 };
                 JSXText { span, value, raw }
+            }
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for JSXTryExpr {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_try_expr`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_try_expr(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            JSXTryExpr {
+                span,
+                block,
+                pending,
+                handler,
+                finalizer,
+            } => {
+                let span = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Span,
+                    ));
+                    <swc_common::Span as FoldWithAstPath<V>>::fold_with_ast_path(
+                        span,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let block = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Block,
+                    ));
+                    <JSXCodeBlock as FoldWithAstPath<V>>::fold_with_ast_path(
+                        block,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let pending = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Pending,
+                    ));
+                    <Option<JSXCodeBlock> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        pending,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let handler = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Handler,
+                    ));
+                    <Option<JSXCatchClause> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        handler,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                let finalizer = {
+                    let mut __ast_path = __ast_path.with_guard(AstParentKind::JSXTryExpr(
+                        self::fields::JSXTryExprField::Finalizer,
+                    ));
+                    <Option<BlockStmt> as FoldWithAstPath<V>>::fold_with_ast_path(
+                        finalizer,
+                        visitor,
+                        &mut *__ast_path,
+                    )
+                };
+                JSXTryExpr {
+                    span,
+                    block,
+                    pending,
+                    handler,
+                    finalizer,
+                }
             }
         }
     }
@@ -138065,6 +145998,83 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for TsUnionType {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for TsrxExpr {
+    #[doc = "Calls [FoldAstPath`::fold_tsrx_expr`] with `self`."]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_tsrx_expr(visitor, self, __ast_path)
+    }
+
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        match self {
+            TsrxExpr::CodeBlock { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::TsrxExpr(
+                    self::fields::TsrxExprField::CodeBlock,
+                ));
+                let _field_0 = <JSXCodeBlock as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                TsrxExpr::CodeBlock { 0: _field_0 }
+            }
+            TsrxExpr::StyleElement { 0: _field_0 } => {
+                let mut __ast_path = __ast_path.with_guard(AstParentKind::TsrxExpr(
+                    self::fields::TsrxExprField::StyleElement,
+                ));
+                let _field_0 = <Box<JSXStyleElement> as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                TsrxExpr::StyleElement { 0: _field_0 }
+            }
+            TsrxExpr::If { 0: _field_0 } => {
+                let mut __ast_path =
+                    __ast_path.with_guard(AstParentKind::TsrxExpr(self::fields::TsrxExprField::If));
+                let _field_0 = <Box<JSXIfExpr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                TsrxExpr::If { 0: _field_0 }
+            }
+            TsrxExpr::For { 0: _field_0 } => {
+                let mut __ast_path = __ast_path
+                    .with_guard(AstParentKind::TsrxExpr(self::fields::TsrxExprField::For));
+                let _field_0 = <Box<JSXForExpr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                TsrxExpr::For { 0: _field_0 }
+            }
+            TsrxExpr::Switch { 0: _field_0 } => {
+                let mut __ast_path = __ast_path
+                    .with_guard(AstParentKind::TsrxExpr(self::fields::TsrxExprField::Switch));
+                let _field_0 = <Box<JSXSwitchExpr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                TsrxExpr::Switch { 0: _field_0 }
+            }
+            TsrxExpr::Try { 0: _field_0 } => {
+                let mut __ast_path = __ast_path
+                    .with_guard(AstParentKind::TsrxExpr(self::fields::TsrxExprField::Try));
+                let _field_0 = <Box<JSXTryExpr> as FoldWithAstPath<V>>::fold_with_ast_path(
+                    _field_0,
+                    visitor,
+                    &mut *__ast_path,
+                );
+                TsrxExpr::Try { 0: _field_0 }
+            }
+            #[cfg(swc_ast_unknown)]
+            _ => self,
+        }
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for UnaryExpr {
     #[doc = "Calls [FoldAstPath`::fold_unary_expr`] with `self`."]
     fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
@@ -138789,6 +146799,30 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Vec<JSXElementChild> {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Vec<JSXSwitchCase> {
+    #[doc = "Calls [FoldAstPath`::fold_jsx_switch_cases`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_jsx_switch_cases(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        self.into_iter()
+            .enumerate()
+            .map(|(__idx, item)| {
+                let mut __ast_path = __ast_path.with_index_guard(__idx);
+                <JSXSwitchCase as FoldWithAstPath<V>>::fold_with_ast_path(
+                    item,
+                    visitor,
+                    &mut *__ast_path,
+                )
+            })
+            .collect()
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Vec<ModuleItem> {
     #[doc = "Calls [FoldAstPath`::fold_module_items`] with `self`. (Extra impl)"]
     #[inline]
@@ -138951,6 +146985,22 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Option<Vec<ExprOrSpread>> {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Option<ForHead> {
+    #[doc = "Calls [FoldAstPath`::fold_opt_for_head`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_opt_for_head(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        self.map(|inner| {
+            <ForHead as FoldWithAstPath<V>>::fold_with_ast_path(inner, visitor, __ast_path)
+        })
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Option<FunctionBody> {
     #[doc = "Calls [FoldAstPath`::fold_opt_function_body`] with `self`. (Extra impl)"]
     #[inline]
@@ -138999,6 +147049,22 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Option<JSXAttrValue> {
 }
 #[cfg(any(docsrs, feature = "path"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Option<JSXCatchClause> {
+    #[doc = "Calls [FoldAstPath`::fold_opt_jsx_catch_clause`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_opt_jsx_catch_clause(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        self.map(|inner| {
+            <JSXCatchClause as FoldWithAstPath<V>>::fold_with_ast_path(inner, visitor, __ast_path)
+        })
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
 impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Option<JSXClosingElement> {
     #[doc = "Calls [FoldAstPath`::fold_opt_jsx_closing_element`] with `self`. (Extra impl)"]
     #[inline]
@@ -139012,6 +147078,38 @@ impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Option<JSXClosingElement> {
             <JSXClosingElement as FoldWithAstPath<V>>::fold_with_ast_path(
                 inner, visitor, __ast_path,
             )
+        })
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Option<JSXCodeBlock> {
+    #[doc = "Calls [FoldAstPath`::fold_opt_jsx_code_block`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_opt_jsx_code_block(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        self.map(|inner| {
+            <JSXCodeBlock as FoldWithAstPath<V>>::fold_with_ast_path(inner, visitor, __ast_path)
+        })
+    }
+}
+#[cfg(any(docsrs, feature = "path"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "path")))]
+impl<V: ?Sized + FoldAstPath> FoldWithAstPath<V> for Option<JSXIfAlternate> {
+    #[doc = "Calls [FoldAstPath`::fold_opt_jsx_if_alternate`] with `self`. (Extra impl)"]
+    #[inline]
+    fn fold_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        <V as FoldAstPath>::fold_opt_jsx_if_alternate(visitor, self, __ast_path)
+    }
+
+    #[inline]
+    fn fold_children_with_ast_path(self, visitor: &mut V, __ast_path: &mut AstKindPath) -> Self {
+        self.map(|inner| {
+            <JSXIfAlternate as FoldWithAstPath<V>>::fold_with_ast_path(inner, visitor, __ast_path)
         })
     }
 }
@@ -140846,6 +148944,8 @@ pub mod fields {
         OptChain,
         #[doc = "Represents [`Expr::Invalid`]"]
         Invalid,
+        #[doc = "Represents [`Expr::Tsrx`]"]
+        Tsrx,
     }
     impl ExprOrSpreadField {
         pub(crate) fn set_index(&mut self, index: usize) {
@@ -141300,6 +149400,8 @@ pub mod fields {
         Name,
         #[doc = "Represents [`JSXAttr::value`]"]
         Value,
+        #[doc = "Represents [`JSXAttr::shorthand`]"]
+        Shorthand,
     }
     impl JSXAttrNameField {
         #[inline(always)]
@@ -141347,6 +149449,25 @@ pub mod fields {
         #[doc = "Represents [`JSXAttrValue::JSXFragment`]"]
         Jsxfragment,
     }
+    impl JSXCatchClauseField {
+        pub(crate) fn set_index(&mut self, index: usize) {
+            match self {
+                _ => swc_visit::wrong_ast_path(),
+            }
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXCatchClauseField {
+        #[doc = "Represents [`JSXCatchClause::span`]"]
+        Span,
+        #[doc = "Represents [`JSXCatchClause::param`]"]
+        Param,
+        #[doc = "Represents [`JSXCatchClause::reset`]"]
+        Reset,
+        #[doc = "Represents [`JSXCatchClause::body`]"]
+        Body,
+    }
     impl JSXClosingElementField {
         pub(crate) fn set_index(&mut self, index: usize) {
             match self {
@@ -141374,6 +149495,29 @@ pub mod fields {
     pub enum JSXClosingFragmentField {
         #[doc = "Represents [`JSXClosingFragment::span`]"]
         Span,
+    }
+    impl JSXCodeBlockField {
+        pub(crate) fn set_index(&mut self, index: usize) {
+            match self {
+                Self::Body(idx) => {
+                    assert_initial_index(*idx, index);
+                    *idx = index;
+                }
+                _ => swc_visit::wrong_ast_path(),
+            }
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXCodeBlockField {
+        #[doc = "Represents [`JSXCodeBlock::span`]"]
+        Span,
+        #[doc = "Represents [`JSXCodeBlock::body`]"]
+        Body(usize),
+        #[doc = "Represents [`JSXCodeBlock::render`]"]
+        Render,
+        #[doc = "Represents [`JSXCodeBlock::is_function_body`]"]
+        IsFunctionBody,
     }
     impl JSXElementField {
         pub(crate) fn set_index(&mut self, index: usize) {
@@ -141417,6 +149561,8 @@ pub mod fields {
         Jsxelement,
         #[doc = "Represents [`JSXElementChild::JSXFragment`]"]
         Jsxfragment,
+        #[doc = "Represents [`JSXElementChild::Tsrx`]"]
+        Tsrx,
     }
     impl JSXElementNameField {
         #[inline(always)]
@@ -141433,6 +149579,8 @@ pub mod fields {
         JsxmemberExpr,
         #[doc = "Represents [`JSXElementName::JSXNamespacedName`]"]
         JsxnamespacedName,
+        #[doc = "Represents [`JSXElementName::JSXExprContainer`]"]
+        JsxexprContainer,
     }
     impl JSXEmptyExprField {
         pub(crate) fn set_index(&mut self, index: usize) {
@@ -141476,6 +149624,57 @@ pub mod fields {
         #[doc = "Represents [`JSXExprContainer::expr`]"]
         Expr,
     }
+    impl JSXForExprField {
+        pub(crate) fn set_index(&mut self, index: usize) {
+            match self {
+                _ => swc_visit::wrong_ast_path(),
+            }
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXForExprField {
+        #[doc = "Represents [`JSXForExpr::span`]"]
+        Span,
+        #[doc = "Represents [`JSXForExpr::kind`]"]
+        Kind,
+        #[doc = "Represents [`JSXForExpr::init`]"]
+        Init,
+        #[doc = "Represents [`JSXForExpr::test`]"]
+        Test,
+        #[doc = "Represents [`JSXForExpr::update`]"]
+        Update,
+        #[doc = "Represents [`JSXForExpr::left`]"]
+        Left,
+        #[doc = "Represents [`JSXForExpr::right`]"]
+        Right,
+        #[doc = "Represents [`JSXForExpr::is_await`]"]
+        IsAwait,
+        #[doc = "Represents [`JSXForExpr::body`]"]
+        Body,
+        #[doc = "Represents [`JSXForExpr::index`]"]
+        Index,
+        #[doc = "Represents [`JSXForExpr::key`]"]
+        Key,
+        #[doc = "Represents [`JSXForExpr::empty`]"]
+        Empty,
+    }
+    impl JSXForKindField {
+        #[inline(always)]
+        pub(crate) fn set_index(&mut self, _: usize) {
+            swc_visit::wrong_ast_path();
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXForKindField {
+        #[doc = "Represents [`JSXForKind::ForStatement`]"]
+        ForStatement,
+        #[doc = "Represents [`JSXForKind::ForInStatement`]"]
+        ForInStatement,
+        #[doc = "Represents [`JSXForKind::ForOfStatement`]"]
+        ForOfStatement,
+    }
     impl JSXFragmentField {
         pub(crate) fn set_index(&mut self, index: usize) {
             match self {
@@ -141498,6 +149697,39 @@ pub mod fields {
         Children(usize),
         #[doc = "Represents [`JSXFragment::closing`]"]
         Closing,
+    }
+    impl JSXIfAlternateField {
+        #[inline(always)]
+        pub(crate) fn set_index(&mut self, _: usize) {
+            swc_visit::wrong_ast_path();
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXIfAlternateField {
+        #[doc = "Represents [`JSXIfAlternate::CodeBlock`]"]
+        CodeBlock,
+        #[doc = "Represents [`JSXIfAlternate::If`]"]
+        If,
+    }
+    impl JSXIfExprField {
+        pub(crate) fn set_index(&mut self, index: usize) {
+            match self {
+                _ => swc_visit::wrong_ast_path(),
+            }
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXIfExprField {
+        #[doc = "Represents [`JSXIfExpr::span`]"]
+        Span,
+        #[doc = "Represents [`JSXIfExpr::test`]"]
+        Test,
+        #[doc = "Represents [`JSXIfExpr::consequent`]"]
+        Consequent,
+        #[doc = "Represents [`JSXIfExpr::alternate`]"]
+        Alternate,
     }
     impl JSXMemberExprField {
         pub(crate) fn set_index(&mut self, index: usize) {
@@ -141600,6 +149832,63 @@ pub mod fields {
         #[doc = "Represents [`JSXSpreadChild::expr`]"]
         Expr,
     }
+    impl JSXStyleElementField {
+        pub(crate) fn set_index(&mut self, index: usize) {
+            match self {
+                _ => swc_visit::wrong_ast_path(),
+            }
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXStyleElementField {
+        #[doc = "Represents [`JSXStyleElement::span`]"]
+        Span,
+        #[doc = "Represents [`JSXStyleElement::opening`]"]
+        Opening,
+        #[doc = "Represents [`JSXStyleElement::css`]"]
+        Css,
+        #[doc = "Represents [`JSXStyleElement::closing`]"]
+        Closing,
+    }
+    impl JSXSwitchCaseField {
+        pub(crate) fn set_index(&mut self, index: usize) {
+            match self {
+                _ => swc_visit::wrong_ast_path(),
+            }
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXSwitchCaseField {
+        #[doc = "Represents [`JSXSwitchCase::span`]"]
+        Span,
+        #[doc = "Represents [`JSXSwitchCase::test`]"]
+        Test,
+        #[doc = "Represents [`JSXSwitchCase::consequent`]"]
+        Consequent,
+    }
+    impl JSXSwitchExprField {
+        pub(crate) fn set_index(&mut self, index: usize) {
+            match self {
+                Self::Cases(idx) => {
+                    assert_initial_index(*idx, index);
+                    *idx = index;
+                }
+                _ => swc_visit::wrong_ast_path(),
+            }
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXSwitchExprField {
+        #[doc = "Represents [`JSXSwitchExpr::span`]"]
+        Span,
+        #[doc = "Represents [`JSXSwitchExpr::discriminant`]"]
+        Discriminant,
+        #[doc = "Represents [`JSXSwitchExpr::cases`]"]
+        Cases(usize),
+    }
     impl JSXTextField {
         pub(crate) fn set_index(&mut self, index: usize) {
             match self {
@@ -141616,6 +149905,27 @@ pub mod fields {
         Value,
         #[doc = "Represents [`JSXText::raw`]"]
         Raw,
+    }
+    impl JSXTryExprField {
+        pub(crate) fn set_index(&mut self, index: usize) {
+            match self {
+                _ => swc_visit::wrong_ast_path(),
+            }
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum JSXTryExprField {
+        #[doc = "Represents [`JSXTryExpr::span`]"]
+        Span,
+        #[doc = "Represents [`JSXTryExpr::block`]"]
+        Block,
+        #[doc = "Represents [`JSXTryExpr::pending`]"]
+        Pending,
+        #[doc = "Represents [`JSXTryExpr::handler`]"]
+        Handler,
+        #[doc = "Represents [`JSXTryExpr::finalizer`]"]
+        Finalizer,
     }
     impl KeyField {
         #[inline(always)]
@@ -144154,6 +152464,28 @@ pub mod fields {
         #[doc = "Represents [`TsUnionType::types`]"]
         Types(usize),
     }
+    impl TsrxExprField {
+        #[inline(always)]
+        pub(crate) fn set_index(&mut self, _: usize) {
+            swc_visit::wrong_ast_path();
+        }
+    }
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[cfg_attr(feature = "serde-impl", derive(serde::Serialize, serde::Deserialize))]
+    pub enum TsrxExprField {
+        #[doc = "Represents [`TsrxExpr::CodeBlock`]"]
+        CodeBlock,
+        #[doc = "Represents [`TsrxExpr::StyleElement`]"]
+        StyleElement,
+        #[doc = "Represents [`TsrxExpr::If`]"]
+        If,
+        #[doc = "Represents [`TsrxExpr::For`]"]
+        For,
+        #[doc = "Represents [`TsrxExpr::Switch`]"]
+        Switch,
+        #[doc = "Represents [`TsrxExpr::Try`]"]
+        Try,
+    }
     impl UnaryExprField {
         pub(crate) fn set_index(&mut self, index: usize) {
             match self {
@@ -144454,22 +152786,32 @@ pub mod fields {
         JSXAttrName(JSXAttrNameField),
         JSXAttrOrSpread(JSXAttrOrSpreadField),
         JSXAttrValue(JSXAttrValueField),
+        JSXCatchClause(JSXCatchClauseField),
         JSXClosingElement(JSXClosingElementField),
         JSXClosingFragment(JSXClosingFragmentField),
+        JSXCodeBlock(JSXCodeBlockField),
         JSXElement(JSXElementField),
         JSXElementChild(JSXElementChildField),
         JSXElementName(JSXElementNameField),
         JSXEmptyExpr(JSXEmptyExprField),
         JSXExpr(JSXExprField),
         JSXExprContainer(JSXExprContainerField),
+        JSXForExpr(JSXForExprField),
+        JSXForKind(JSXForKindField),
         JSXFragment(JSXFragmentField),
+        JSXIfAlternate(JSXIfAlternateField),
+        JSXIfExpr(JSXIfExprField),
         JSXMemberExpr(JSXMemberExprField),
         JSXNamespacedName(JSXNamespacedNameField),
         JSXObject(JSXObjectField),
         JSXOpeningElement(JSXOpeningElementField),
         JSXOpeningFragment(JSXOpeningFragmentField),
         JSXSpreadChild(JSXSpreadChildField),
+        JSXStyleElement(JSXStyleElementField),
+        JSXSwitchCase(JSXSwitchCaseField),
+        JSXSwitchExpr(JSXSwitchExprField),
         JSXText(JSXTextField),
+        JSXTryExpr(JSXTryExprField),
         Key(KeyField),
         KeyValuePatProp(KeyValuePatPropField),
         KeyValueProp(KeyValuePropField),
@@ -144603,6 +152945,7 @@ pub mod fields {
         TsTypeRef(TsTypeRefField),
         TsUnionOrIntersectionType(TsUnionOrIntersectionTypeField),
         TsUnionType(TsUnionTypeField),
+        TsrxExpr(TsrxExprField),
         UnaryExpr(UnaryExprField),
         UnaryOp(UnaryOpField),
         UpdateExpr(UpdateExprField),
@@ -144697,22 +153040,32 @@ pub mod fields {
                 Self::JSXAttrName(v) => v.set_index(index),
                 Self::JSXAttrOrSpread(v) => v.set_index(index),
                 Self::JSXAttrValue(v) => v.set_index(index),
+                Self::JSXCatchClause(v) => v.set_index(index),
                 Self::JSXClosingElement(v) => v.set_index(index),
                 Self::JSXClosingFragment(v) => v.set_index(index),
+                Self::JSXCodeBlock(v) => v.set_index(index),
                 Self::JSXElement(v) => v.set_index(index),
                 Self::JSXElementChild(v) => v.set_index(index),
                 Self::JSXElementName(v) => v.set_index(index),
                 Self::JSXEmptyExpr(v) => v.set_index(index),
                 Self::JSXExpr(v) => v.set_index(index),
                 Self::JSXExprContainer(v) => v.set_index(index),
+                Self::JSXForExpr(v) => v.set_index(index),
+                Self::JSXForKind(v) => v.set_index(index),
                 Self::JSXFragment(v) => v.set_index(index),
+                Self::JSXIfAlternate(v) => v.set_index(index),
+                Self::JSXIfExpr(v) => v.set_index(index),
                 Self::JSXMemberExpr(v) => v.set_index(index),
                 Self::JSXNamespacedName(v) => v.set_index(index),
                 Self::JSXObject(v) => v.set_index(index),
                 Self::JSXOpeningElement(v) => v.set_index(index),
                 Self::JSXOpeningFragment(v) => v.set_index(index),
                 Self::JSXSpreadChild(v) => v.set_index(index),
+                Self::JSXStyleElement(v) => v.set_index(index),
+                Self::JSXSwitchCase(v) => v.set_index(index),
+                Self::JSXSwitchExpr(v) => v.set_index(index),
                 Self::JSXText(v) => v.set_index(index),
+                Self::JSXTryExpr(v) => v.set_index(index),
                 Self::Key(v) => v.set_index(index),
                 Self::KeyValuePatProp(v) => v.set_index(index),
                 Self::KeyValueProp(v) => v.set_index(index),
@@ -144846,6 +153199,7 @@ pub mod fields {
                 Self::TsTypeRef(v) => v.set_index(index),
                 Self::TsUnionOrIntersectionType(v) => v.set_index(index),
                 Self::TsUnionType(v) => v.set_index(index),
+                Self::TsrxExpr(v) => v.set_index(index),
                 Self::UnaryExpr(v) => v.set_index(index),
                 Self::UnaryOp(v) => v.set_index(index),
                 Self::UpdateExpr(v) => v.set_index(index),
@@ -144943,22 +153297,32 @@ pub mod fields {
         JSXAttrName(&'ast JSXAttrName, JSXAttrNameField),
         JSXAttrOrSpread(&'ast JSXAttrOrSpread, JSXAttrOrSpreadField),
         JSXAttrValue(&'ast JSXAttrValue, JSXAttrValueField),
+        JSXCatchClause(&'ast JSXCatchClause, JSXCatchClauseField),
         JSXClosingElement(&'ast JSXClosingElement, JSXClosingElementField),
         JSXClosingFragment(&'ast JSXClosingFragment, JSXClosingFragmentField),
+        JSXCodeBlock(&'ast JSXCodeBlock, JSXCodeBlockField),
         JSXElement(&'ast JSXElement, JSXElementField),
         JSXElementChild(&'ast JSXElementChild, JSXElementChildField),
         JSXElementName(&'ast JSXElementName, JSXElementNameField),
         JSXEmptyExpr(&'ast JSXEmptyExpr, JSXEmptyExprField),
         JSXExpr(&'ast JSXExpr, JSXExprField),
         JSXExprContainer(&'ast JSXExprContainer, JSXExprContainerField),
+        JSXForExpr(&'ast JSXForExpr, JSXForExprField),
+        JSXForKind(&'ast JSXForKind, JSXForKindField),
         JSXFragment(&'ast JSXFragment, JSXFragmentField),
+        JSXIfAlternate(&'ast JSXIfAlternate, JSXIfAlternateField),
+        JSXIfExpr(&'ast JSXIfExpr, JSXIfExprField),
         JSXMemberExpr(&'ast JSXMemberExpr, JSXMemberExprField),
         JSXNamespacedName(&'ast JSXNamespacedName, JSXNamespacedNameField),
         JSXObject(&'ast JSXObject, JSXObjectField),
         JSXOpeningElement(&'ast JSXOpeningElement, JSXOpeningElementField),
         JSXOpeningFragment(&'ast JSXOpeningFragment, JSXOpeningFragmentField),
         JSXSpreadChild(&'ast JSXSpreadChild, JSXSpreadChildField),
+        JSXStyleElement(&'ast JSXStyleElement, JSXStyleElementField),
+        JSXSwitchCase(&'ast JSXSwitchCase, JSXSwitchCaseField),
+        JSXSwitchExpr(&'ast JSXSwitchExpr, JSXSwitchExprField),
         JSXText(&'ast JSXText, JSXTextField),
+        JSXTryExpr(&'ast JSXTryExpr, JSXTryExprField),
         Key(&'ast Key, KeyField),
         KeyValuePatProp(&'ast KeyValuePatProp, KeyValuePatPropField),
         KeyValueProp(&'ast KeyValueProp, KeyValuePropField),
@@ -145101,6 +153465,7 @@ pub mod fields {
             TsUnionOrIntersectionTypeField,
         ),
         TsUnionType(&'ast TsUnionType, TsUnionTypeField),
+        TsrxExpr(&'ast TsrxExpr, TsrxExprField),
         UnaryExpr(&'ast UnaryExpr, UnaryExprField),
         UnaryOp(&'ast UnaryOp, UnaryOpField),
         UpdateExpr(&'ast UpdateExpr, UpdateExprField),
@@ -145201,22 +153566,32 @@ pub mod fields {
                 Self::JSXAttrName(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXAttrOrSpread(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXAttrValue(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXCatchClause(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXClosingElement(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXClosingFragment(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXCodeBlock(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXElement(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXElementChild(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXElementName(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXEmptyExpr(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXExpr(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXExprContainer(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXForExpr(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXForKind(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXFragment(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXIfAlternate(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXIfExpr(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXMemberExpr(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXNamespacedName(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXObject(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXOpeningElement(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXOpeningFragment(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXSpreadChild(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXStyleElement(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXSwitchCase(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXSwitchExpr(_, __field_kind) => __field_kind.set_index(index),
                 Self::JSXText(_, __field_kind) => __field_kind.set_index(index),
+                Self::JSXTryExpr(_, __field_kind) => __field_kind.set_index(index),
                 Self::Key(_, __field_kind) => __field_kind.set_index(index),
                 Self::KeyValuePatProp(_, __field_kind) => __field_kind.set_index(index),
                 Self::KeyValueProp(_, __field_kind) => __field_kind.set_index(index),
@@ -145350,6 +153725,7 @@ pub mod fields {
                 Self::TsTypeRef(_, __field_kind) => __field_kind.set_index(index),
                 Self::TsUnionOrIntersectionType(_, __field_kind) => __field_kind.set_index(index),
                 Self::TsUnionType(_, __field_kind) => __field_kind.set_index(index),
+                Self::TsrxExpr(_, __field_kind) => __field_kind.set_index(index),
                 Self::UnaryExpr(_, __field_kind) => __field_kind.set_index(index),
                 Self::UnaryOp(_, __field_kind) => __field_kind.set_index(index),
                 Self::UpdateExpr(_, __field_kind) => __field_kind.set_index(index),
@@ -145477,12 +153853,16 @@ pub mod fields {
                     AstParentKind::JSXAttrOrSpread(*__field_kind)
                 }
                 Self::JSXAttrValue(_, __field_kind) => AstParentKind::JSXAttrValue(*__field_kind),
+                Self::JSXCatchClause(_, __field_kind) => {
+                    AstParentKind::JSXCatchClause(*__field_kind)
+                }
                 Self::JSXClosingElement(_, __field_kind) => {
                     AstParentKind::JSXClosingElement(*__field_kind)
                 }
                 Self::JSXClosingFragment(_, __field_kind) => {
                     AstParentKind::JSXClosingFragment(*__field_kind)
                 }
+                Self::JSXCodeBlock(_, __field_kind) => AstParentKind::JSXCodeBlock(*__field_kind),
                 Self::JSXElement(_, __field_kind) => AstParentKind::JSXElement(*__field_kind),
                 Self::JSXElementChild(_, __field_kind) => {
                     AstParentKind::JSXElementChild(*__field_kind)
@@ -145495,7 +153875,13 @@ pub mod fields {
                 Self::JSXExprContainer(_, __field_kind) => {
                     AstParentKind::JSXExprContainer(*__field_kind)
                 }
+                Self::JSXForExpr(_, __field_kind) => AstParentKind::JSXForExpr(*__field_kind),
+                Self::JSXForKind(_, __field_kind) => AstParentKind::JSXForKind(*__field_kind),
                 Self::JSXFragment(_, __field_kind) => AstParentKind::JSXFragment(*__field_kind),
+                Self::JSXIfAlternate(_, __field_kind) => {
+                    AstParentKind::JSXIfAlternate(*__field_kind)
+                }
+                Self::JSXIfExpr(_, __field_kind) => AstParentKind::JSXIfExpr(*__field_kind),
                 Self::JSXMemberExpr(_, __field_kind) => AstParentKind::JSXMemberExpr(*__field_kind),
                 Self::JSXNamespacedName(_, __field_kind) => {
                     AstParentKind::JSXNamespacedName(*__field_kind)
@@ -145510,7 +153896,13 @@ pub mod fields {
                 Self::JSXSpreadChild(_, __field_kind) => {
                     AstParentKind::JSXSpreadChild(*__field_kind)
                 }
+                Self::JSXStyleElement(_, __field_kind) => {
+                    AstParentKind::JSXStyleElement(*__field_kind)
+                }
+                Self::JSXSwitchCase(_, __field_kind) => AstParentKind::JSXSwitchCase(*__field_kind),
+                Self::JSXSwitchExpr(_, __field_kind) => AstParentKind::JSXSwitchExpr(*__field_kind),
                 Self::JSXText(_, __field_kind) => AstParentKind::JSXText(*__field_kind),
+                Self::JSXTryExpr(_, __field_kind) => AstParentKind::JSXTryExpr(*__field_kind),
                 Self::Key(_, __field_kind) => AstParentKind::Key(*__field_kind),
                 Self::KeyValuePatProp(_, __field_kind) => {
                     AstParentKind::KeyValuePatProp(*__field_kind)
@@ -145736,6 +154128,7 @@ pub mod fields {
                     AstParentKind::TsUnionOrIntersectionType(*__field_kind)
                 }
                 Self::TsUnionType(_, __field_kind) => AstParentKind::TsUnionType(*__field_kind),
+                Self::TsrxExpr(_, __field_kind) => AstParentKind::TsrxExpr(*__field_kind),
                 Self::UnaryExpr(_, __field_kind) => AstParentKind::UnaryExpr(*__field_kind),
                 Self::UnaryOp(_, __field_kind) => AstParentKind::UnaryOp(*__field_kind),
                 Self::UpdateExpr(_, __field_kind) => AstParentKind::UpdateExpr(*__field_kind),
@@ -146137,6 +154530,11 @@ impl<'ast> From<&'ast JSXAttrValue> for NodeRef<'ast> {
         NodeRef::JSXAttrValue(node)
     }
 }
+impl<'ast> From<&'ast JSXCatchClause> for NodeRef<'ast> {
+    fn from(node: &'ast JSXCatchClause) -> Self {
+        NodeRef::JSXCatchClause(node)
+    }
+}
 impl<'ast> From<&'ast JSXClosingElement> for NodeRef<'ast> {
     fn from(node: &'ast JSXClosingElement) -> Self {
         NodeRef::JSXClosingElement(node)
@@ -146145,6 +154543,11 @@ impl<'ast> From<&'ast JSXClosingElement> for NodeRef<'ast> {
 impl<'ast> From<&'ast JSXClosingFragment> for NodeRef<'ast> {
     fn from(node: &'ast JSXClosingFragment) -> Self {
         NodeRef::JSXClosingFragment(node)
+    }
+}
+impl<'ast> From<&'ast JSXCodeBlock> for NodeRef<'ast> {
+    fn from(node: &'ast JSXCodeBlock) -> Self {
+        NodeRef::JSXCodeBlock(node)
     }
 }
 impl<'ast> From<&'ast JSXElement> for NodeRef<'ast> {
@@ -146177,9 +154580,29 @@ impl<'ast> From<&'ast JSXExprContainer> for NodeRef<'ast> {
         NodeRef::JSXExprContainer(node)
     }
 }
+impl<'ast> From<&'ast JSXForExpr> for NodeRef<'ast> {
+    fn from(node: &'ast JSXForExpr) -> Self {
+        NodeRef::JSXForExpr(node)
+    }
+}
+impl<'ast> From<&'ast JSXForKind> for NodeRef<'ast> {
+    fn from(node: &'ast JSXForKind) -> Self {
+        NodeRef::JSXForKind(node)
+    }
+}
 impl<'ast> From<&'ast JSXFragment> for NodeRef<'ast> {
     fn from(node: &'ast JSXFragment) -> Self {
         NodeRef::JSXFragment(node)
+    }
+}
+impl<'ast> From<&'ast JSXIfAlternate> for NodeRef<'ast> {
+    fn from(node: &'ast JSXIfAlternate) -> Self {
+        NodeRef::JSXIfAlternate(node)
+    }
+}
+impl<'ast> From<&'ast JSXIfExpr> for NodeRef<'ast> {
+    fn from(node: &'ast JSXIfExpr) -> Self {
+        NodeRef::JSXIfExpr(node)
     }
 }
 impl<'ast> From<&'ast JSXMemberExpr> for NodeRef<'ast> {
@@ -146212,9 +154635,29 @@ impl<'ast> From<&'ast JSXSpreadChild> for NodeRef<'ast> {
         NodeRef::JSXSpreadChild(node)
     }
 }
+impl<'ast> From<&'ast JSXStyleElement> for NodeRef<'ast> {
+    fn from(node: &'ast JSXStyleElement) -> Self {
+        NodeRef::JSXStyleElement(node)
+    }
+}
+impl<'ast> From<&'ast JSXSwitchCase> for NodeRef<'ast> {
+    fn from(node: &'ast JSXSwitchCase) -> Self {
+        NodeRef::JSXSwitchCase(node)
+    }
+}
+impl<'ast> From<&'ast JSXSwitchExpr> for NodeRef<'ast> {
+    fn from(node: &'ast JSXSwitchExpr) -> Self {
+        NodeRef::JSXSwitchExpr(node)
+    }
+}
 impl<'ast> From<&'ast JSXText> for NodeRef<'ast> {
     fn from(node: &'ast JSXText) -> Self {
         NodeRef::JSXText(node)
+    }
+}
+impl<'ast> From<&'ast JSXTryExpr> for NodeRef<'ast> {
+    fn from(node: &'ast JSXTryExpr) -> Self {
+        NodeRef::JSXTryExpr(node)
     }
 }
 impl<'ast> From<&'ast Key> for NodeRef<'ast> {
@@ -146882,6 +155325,11 @@ impl<'ast> From<&'ast TsUnionType> for NodeRef<'ast> {
         NodeRef::TsUnionType(node)
     }
 }
+impl<'ast> From<&'ast TsrxExpr> for NodeRef<'ast> {
+    fn from(node: &'ast TsrxExpr) -> Self {
+        NodeRef::TsrxExpr(node)
+    }
+}
 impl<'ast> From<&'ast UnaryExpr> for NodeRef<'ast> {
     fn from(node: &'ast UnaryExpr) -> Self {
         NodeRef::UnaryExpr(node)
@@ -147021,22 +155469,32 @@ pub enum NodeRef<'ast> {
     JSXAttrName(&'ast JSXAttrName),
     JSXAttrOrSpread(&'ast JSXAttrOrSpread),
     JSXAttrValue(&'ast JSXAttrValue),
+    JSXCatchClause(&'ast JSXCatchClause),
     JSXClosingElement(&'ast JSXClosingElement),
     JSXClosingFragment(&'ast JSXClosingFragment),
+    JSXCodeBlock(&'ast JSXCodeBlock),
     JSXElement(&'ast JSXElement),
     JSXElementChild(&'ast JSXElementChild),
     JSXElementName(&'ast JSXElementName),
     JSXEmptyExpr(&'ast JSXEmptyExpr),
     JSXExpr(&'ast JSXExpr),
     JSXExprContainer(&'ast JSXExprContainer),
+    JSXForExpr(&'ast JSXForExpr),
+    JSXForKind(&'ast JSXForKind),
     JSXFragment(&'ast JSXFragment),
+    JSXIfAlternate(&'ast JSXIfAlternate),
+    JSXIfExpr(&'ast JSXIfExpr),
     JSXMemberExpr(&'ast JSXMemberExpr),
     JSXNamespacedName(&'ast JSXNamespacedName),
     JSXObject(&'ast JSXObject),
     JSXOpeningElement(&'ast JSXOpeningElement),
     JSXOpeningFragment(&'ast JSXOpeningFragment),
     JSXSpreadChild(&'ast JSXSpreadChild),
+    JSXStyleElement(&'ast JSXStyleElement),
+    JSXSwitchCase(&'ast JSXSwitchCase),
+    JSXSwitchExpr(&'ast JSXSwitchExpr),
     JSXText(&'ast JSXText),
+    JSXTryExpr(&'ast JSXTryExpr),
     Key(&'ast Key),
     KeyValuePatProp(&'ast KeyValuePatProp),
     KeyValueProp(&'ast KeyValueProp),
@@ -147170,6 +155628,7 @@ pub enum NodeRef<'ast> {
     TsTypeRef(&'ast TsTypeRef),
     TsUnionOrIntersectionType(&'ast TsUnionOrIntersectionType),
     TsUnionType(&'ast TsUnionType),
+    TsrxExpr(&'ast TsrxExpr),
     UnaryExpr(&'ast UnaryExpr),
     UnaryOp(&'ast UnaryOp),
     UpdateExpr(&'ast UpdateExpr),
@@ -147724,6 +156183,7 @@ impl<'ast> NodeRef<'ast> {
                 Expr::PrivateName(v0) => Box::new(::std::iter::once(NodeRef::PrivateName(v0))),
                 Expr::OptChain(v0) => Box::new(::std::iter::once(NodeRef::OptChainExpr(v0))),
                 Expr::Invalid(v0) => Box::new(::std::iter::once(NodeRef::Invalid(v0))),
+                Expr::Tsrx(v0) => Box::new(::std::iter::once(NodeRef::TsrxExpr(v0))),
                 _ => Box::new(::std::iter::empty::<NodeRef<'ast>>()),
             },
             NodeRef::ExprOrSpread(node) => {
@@ -148000,6 +156460,21 @@ impl<'ast> NodeRef<'ast> {
                 }
                 _ => Box::new(::std::iter::empty::<NodeRef<'ast>>()),
             },
+            NodeRef::JSXCatchClause(node) => {
+                let iterator = ::std::iter::empty::<NodeRef<'ast>>()
+                    .chain(
+                        node.param
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::Pat(&item))),
+                    )
+                    .chain(
+                        node.reset
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::Ident(&item))),
+                    )
+                    .chain(::std::iter::once(NodeRef::JSXCodeBlock(&node.body)));
+                Box::new(iterator)
+            }
             NodeRef::JSXClosingElement(node) => {
                 let iterator = ::std::iter::empty::<NodeRef<'ast>>()
                     .chain(::std::iter::once(NodeRef::JSXElementName(&node.name)));
@@ -148007,6 +156482,19 @@ impl<'ast> NodeRef<'ast> {
             }
             NodeRef::JSXClosingFragment(node) => {
                 let iterator = ::std::iter::empty::<NodeRef<'ast>>();
+                Box::new(iterator)
+            }
+            NodeRef::JSXCodeBlock(node) => {
+                let iterator = ::std::iter::empty::<NodeRef<'ast>>()
+                    .chain(
+                        node.body
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::Stmt(&item))),
+                    )
+                    .chain(node.render.iter().flat_map(|item| {
+                        let item = &*item;
+                        ::std::iter::once(NodeRef::Expr(&item))
+                    }));
                 Box::new(iterator)
             }
             NodeRef::JSXElement(node) => {
@@ -148038,6 +156526,7 @@ impl<'ast> NodeRef<'ast> {
                 JSXElementChild::JSXFragment(v0) => {
                     Box::new(::std::iter::once(NodeRef::JSXFragment(v0)))
                 }
+                JSXElementChild::Tsrx(v0) => Box::new(::std::iter::once(NodeRef::TsrxExpr(v0))),
                 _ => Box::new(::std::iter::empty::<NodeRef<'ast>>()),
             },
             NodeRef::JSXElementName(node) => match node {
@@ -148047,6 +156536,9 @@ impl<'ast> NodeRef<'ast> {
                 }
                 JSXElementName::JSXNamespacedName(v0) => {
                     Box::new(::std::iter::once(NodeRef::JSXNamespacedName(v0)))
+                }
+                JSXElementName::JSXExprContainer(v0) => {
+                    Box::new(::std::iter::once(NodeRef::JSXExprContainer(v0)))
                 }
                 _ => Box::new(::std::iter::empty::<NodeRef<'ast>>()),
             },
@@ -148064,6 +156556,51 @@ impl<'ast> NodeRef<'ast> {
                     .chain(::std::iter::once(NodeRef::JSXExpr(&node.expr)));
                 Box::new(iterator)
             }
+            NodeRef::JSXForExpr(node) => {
+                let iterator = ::std::iter::empty::<NodeRef<'ast>>()
+                    .chain(::std::iter::once(NodeRef::JSXForKind(&node.kind)))
+                    .chain(
+                        node.init
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::VarDeclOrExpr(&item))),
+                    )
+                    .chain(node.test.iter().flat_map(|item| {
+                        let item = &*item;
+                        ::std::iter::once(NodeRef::Expr(&item))
+                    }))
+                    .chain(node.update.iter().flat_map(|item| {
+                        let item = &*item;
+                        ::std::iter::once(NodeRef::Expr(&item))
+                    }))
+                    .chain(
+                        node.left
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::ForHead(&item))),
+                    )
+                    .chain(node.right.iter().flat_map(|item| {
+                        let item = &*item;
+                        ::std::iter::once(NodeRef::Expr(&item))
+                    }))
+                    .chain(::std::iter::once(NodeRef::JSXCodeBlock(&node.body)))
+                    .chain(
+                        node.index
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::Ident(&item))),
+                    )
+                    .chain(node.key.iter().flat_map(|item| {
+                        let item = &*item;
+                        ::std::iter::once(NodeRef::Expr(&item))
+                    }))
+                    .chain(
+                        node.empty
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::JSXCodeBlock(&item))),
+                    );
+                Box::new(iterator)
+            }
+            NodeRef::JSXForKind(node) => match node {
+                _ => Box::new(::std::iter::empty::<NodeRef<'ast>>()),
+            },
             NodeRef::JSXFragment(node) => {
                 let iterator = ::std::iter::empty::<NodeRef<'ast>>()
                     .chain(::std::iter::once(NodeRef::JSXOpeningFragment(
@@ -148077,6 +156614,27 @@ impl<'ast> NodeRef<'ast> {
                     .chain(::std::iter::once(NodeRef::JSXClosingFragment(
                         &node.closing,
                     )));
+                Box::new(iterator)
+            }
+            NodeRef::JSXIfAlternate(node) => match node {
+                JSXIfAlternate::CodeBlock(v0) => {
+                    Box::new(::std::iter::once(NodeRef::JSXCodeBlock(v0)))
+                }
+                JSXIfAlternate::If(v0) => Box::new(::std::iter::once(NodeRef::JSXIfExpr(v0))),
+                _ => Box::new(::std::iter::empty::<NodeRef<'ast>>()),
+            },
+            NodeRef::JSXIfExpr(node) => {
+                let iterator = ::std::iter::empty::<NodeRef<'ast>>()
+                    .chain({
+                        let item = &*node.test;
+                        ::std::iter::once(NodeRef::Expr(&item))
+                    })
+                    .chain(::std::iter::once(NodeRef::JSXCodeBlock(&node.consequent)))
+                    .chain(
+                        node.alternate
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::JSXIfAlternate(&item))),
+                    );
                 Box::new(iterator)
             }
             NodeRef::JSXMemberExpr(node) => {
@@ -148123,8 +156681,56 @@ impl<'ast> NodeRef<'ast> {
                 });
                 Box::new(iterator)
             }
+            NodeRef::JSXStyleElement(node) => {
+                let iterator = ::std::iter::empty::<NodeRef<'ast>>()
+                    .chain(::std::iter::once(NodeRef::JSXOpeningElement(&node.opening)))
+                    .chain(::std::iter::once(NodeRef::JSXClosingElement(&node.closing)));
+                Box::new(iterator)
+            }
+            NodeRef::JSXSwitchCase(node) => {
+                let iterator = ::std::iter::empty::<NodeRef<'ast>>()
+                    .chain(node.test.iter().flat_map(|item| {
+                        let item = &*item;
+                        ::std::iter::once(NodeRef::Expr(&item))
+                    }))
+                    .chain(::std::iter::once(NodeRef::JSXCodeBlock(&node.consequent)));
+                Box::new(iterator)
+            }
+            NodeRef::JSXSwitchExpr(node) => {
+                let iterator = ::std::iter::empty::<NodeRef<'ast>>()
+                    .chain({
+                        let item = &*node.discriminant;
+                        ::std::iter::once(NodeRef::Expr(&item))
+                    })
+                    .chain(
+                        node.cases
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::JSXSwitchCase(&item))),
+                    );
+                Box::new(iterator)
+            }
             NodeRef::JSXText(node) => {
                 let iterator = ::std::iter::empty::<NodeRef<'ast>>();
+                Box::new(iterator)
+            }
+            NodeRef::JSXTryExpr(node) => {
+                let iterator = ::std::iter::empty::<NodeRef<'ast>>()
+                    .chain(::std::iter::once(NodeRef::JSXCodeBlock(&node.block)))
+                    .chain(
+                        node.pending
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::JSXCodeBlock(&item))),
+                    )
+                    .chain(
+                        node.handler
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::JSXCatchClause(&item))),
+                    )
+                    .chain(
+                        node.finalizer
+                            .iter()
+                            .flat_map(|item| ::std::iter::once(NodeRef::BlockStmt(&item))),
+                    );
                 Box::new(iterator)
             }
             NodeRef::Key(node) => match node {
@@ -149451,6 +158057,17 @@ impl<'ast> NodeRef<'ast> {
                 );
                 Box::new(iterator)
             }
+            NodeRef::TsrxExpr(node) => match node {
+                TsrxExpr::CodeBlock(v0) => Box::new(::std::iter::once(NodeRef::JSXCodeBlock(v0))),
+                TsrxExpr::StyleElement(v0) => {
+                    Box::new(::std::iter::once(NodeRef::JSXStyleElement(v0)))
+                }
+                TsrxExpr::If(v0) => Box::new(::std::iter::once(NodeRef::JSXIfExpr(v0))),
+                TsrxExpr::For(v0) => Box::new(::std::iter::once(NodeRef::JSXForExpr(v0))),
+                TsrxExpr::Switch(v0) => Box::new(::std::iter::once(NodeRef::JSXSwitchExpr(v0))),
+                TsrxExpr::Try(v0) => Box::new(::std::iter::once(NodeRef::JSXTryExpr(v0))),
+                _ => Box::new(::std::iter::empty::<NodeRef<'ast>>()),
+            },
             NodeRef::UnaryExpr(node) => {
                 let iterator = ::std::iter::empty::<NodeRef<'ast>>()
                     .chain(::std::iter::once(NodeRef::UnaryOp(&node.op)))

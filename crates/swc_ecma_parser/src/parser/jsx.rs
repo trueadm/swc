@@ -1,5 +1,5 @@
 use swc_atoms::Atom;
-use swc_common::{BytePos, Span, Spanned};
+use swc_common::{BytePos, EqIgnoreSpan, Span, Spanned};
 use swc_ecma_ast::*;
 
 use super::{input::Tokens, Parser};
@@ -112,6 +112,11 @@ impl<I: Tokens> Parser<I> {
     fn parse_jsx_element_name(&mut self) -> PResult<JSXElementName> {
         debug_assert!(self.input().syntax().jsx());
         trace_cur!(self, parse_jsx_element_name);
+        if self.input().syntax().tsrx() && self.input().is(Token::LBrace) {
+            return self
+                .parse_jsx_expr_container()
+                .map(JSXElementName::JSXExprContainer);
+        }
         let start = self.input().cur_pos();
         let mut node = match self.parse_jsx_tag_name()? {
             JSXAttrName::Ident(i) => JSXElementName::Ident(i.into()),
@@ -157,7 +162,7 @@ impl<I: Tokens> Parser<I> {
             self.input_mut().scan_jsx_token();
         }
 
-        if get_qualified_jsx_name(open_name) != get_qualified_jsx_name(&tagname) {
+        if !open_name.eq_ignore_span(&tagname) {
             syntax_error!(
                 self,
                 tagname.span(),
@@ -251,6 +256,15 @@ impl<I: Tokens> Parser<I> {
                     }
                 }
             }
+            Token::At if self.input().syntax().tsrx() => Ok(Some({
+                let expr = self.parse_tsrx_expr()?;
+                let end = expr.span_hi();
+                let Expr::Tsrx(expr) = *expr else {
+                    unreachable!("TSRX parser returned a non-TSRX expression")
+                };
+                self.input_mut().rescan_jsx_token_from(end);
+                JSXElementChild::Tsrx(expr)
+            })),
             Token::JSXText => Ok(Some(JSXElementChild::JSXText(self.parse_jsx_text()))),
             Token::Eof => {
                 unexpected!(self, "< (jsx tag start), jsx text or {")
@@ -313,7 +327,24 @@ impl<I: Tokens> Parser<I> {
     fn parse_jsx_attr(&mut self) -> PResult<JSXAttrOrSpread> {
         debug_assert!(self.input().syntax().jsx());
         trace_cur!(self, parse_jsx_attr);
-        if self.input_mut().eat(Token::LBrace) {
+        if self.input().is(Token::LBrace) {
+            let start = self.input().cur_pos();
+            self.bump();
+            if self.input().syntax().tsrx() && !self.input().is(Token::DotDotDot) {
+                let ident = self.parse_binding_ident(false)?.id;
+                let expr = Box::new(Expr::Ident(ident.clone()));
+                expect!(self, Token::RBrace);
+                let span = self.span(start);
+                return Ok(JSXAttrOrSpread::JSXAttr(JSXAttr {
+                    span,
+                    name: JSXAttrName::Ident(ident.into()),
+                    value: Some(JSXAttrValue::JSXExprContainer(JSXExprContainer {
+                        span,
+                        expr: JSXExpr::Expr(expr),
+                    })),
+                    shorthand: true,
+                }));
+            }
             let dot3_start = self.input().cur_pos();
             self.expect(Token::DotDotDot)?;
             let dot3_token = self.span(dot3_start);
@@ -334,6 +365,7 @@ impl<I: Tokens> Parser<I> {
                 span: self.span(start),
                 name,
                 value,
+                shorthand: false,
             }))
         }
     }
@@ -485,6 +517,7 @@ fn get_qualified_jsx_name(name: &JSXElementName) -> Atom {
         JSXElementName::JSXMemberExpr(JSXMemberExpr {
             ref obj, ref prop, ..
         }) => format!("{}.{}", get_qualified_obj_name(obj), prop.sym).into(),
+        JSXElementName::JSXExprContainer(ref expr) => format!("{{{:?}}}", expr.expr).into(),
         #[cfg(swc_ast_unknown)]
         _ => unreachable!(),
     }
@@ -570,6 +603,7 @@ mod tests {
                             value: atom!("w < w").into(),
                             raw: Some(atom!("\"w &lt; w\"")),
                         })),
+                        shorthand: false,
                     })],
                     name: JSXElementName::Ident(Ident::new_no_ctxt(atom!("div"), span)),
                     self_closing: true,
@@ -601,6 +635,7 @@ mod tests {
                                 raw: Some(atom!("4"))
                             }))))
                         })),
+                        shorthand: false,
                     })],
                     self_closing: true,
                     type_args: None,

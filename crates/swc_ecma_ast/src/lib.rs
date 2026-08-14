@@ -55,6 +55,10 @@ pub use self::{
         ExprStmt, ForHead, ForInStmt, ForOfStmt, ForStmt, IfStmt, LabeledStmt, ReturnStmt, Stmt,
         SwitchCase, SwitchStmt, ThrowStmt, TryStmt, VarDeclOrExpr, WhileStmt, WithStmt,
     },
+    tsrx::{
+        JSXCatchClause, JSXCodeBlock, JSXForExpr, JSXForKind, JSXIfAlternate, JSXIfExpr,
+        JSXStyleElement, JSXSwitchCase, JSXSwitchExpr, JSXTryExpr, TsrxExpr,
+    },
     typescript::{
         Accessibility, TruePlusMinus, TsArrayType, TsAsExpr, TsCallSignatureDecl,
         TsConditionalType, TsConstAssertion, TsConstructSignatureDecl, TsConstructorType,
@@ -91,6 +95,7 @@ mod pat;
 mod prop;
 mod source_map;
 mod stmt;
+mod tsrx;
 mod typescript;
 
 /// A map from the [Program] to the [Program].

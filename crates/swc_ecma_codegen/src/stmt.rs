@@ -82,6 +82,18 @@ impl MacroNode for BlockStmt {
 #[node_impl]
 impl MacroNode for FunctionBody {
     fn emit(&mut self, emitter: &mut Macro) -> Result {
+        if let [Stmt::Expr(ExprStmt { expr, .. })] = self.stmts.as_slice() {
+            if let Expr::Tsrx(tsrx) = &**expr {
+                if let TsrxExpr::CodeBlock(block) = &**tsrx {
+                    if block.is_function_body {
+                        punct!(emitter, "@");
+                        emit!(block);
+                        return Ok(());
+                    }
+                }
+            }
+        }
+
         emitter.emit_function_body_inner(self, false)?;
 
         Ok(())

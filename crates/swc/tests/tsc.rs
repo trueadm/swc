@@ -387,6 +387,7 @@ fn matrix(input: &Path) -> Vec<TestUnitData> {
                         jsc: JscConfig {
                             syntax: Some(Syntax::Typescript(TsSyntax {
                                 tsx: is_jsx,
+                                tsrx: false,
                                 decorators,
                                 dts: false,
                                 no_early_errors: false,

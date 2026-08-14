@@ -21,7 +21,7 @@ use crate::{
         TsTypeAssertion, TsTypeParamDecl, TsTypeParamInstantiation,
     },
     ArrayPat, BindingIdent, ComputedPropName, Id, IdentName, ImportPhase, Invalid, KeyValueProp,
-    Number, ObjectPat, PropName, Str,
+    Number, ObjectPat, PropName, Str, TsrxExpr,
 };
 
 #[ast_node(no_clone)]
@@ -165,6 +165,9 @@ pub enum Expr {
 
     #[tag("Invalid")]
     Invalid(Invalid),
+
+    #[tag("*")]
+    Tsrx(Box<TsrxExpr>),
 }
 
 bridge_from!(Box<Expr>, Box<JSXElement>, JSXElement);
@@ -413,6 +416,14 @@ impl Expr {
             Expr::JSXEmpty(e) => e.span = span,
             Expr::JSXElement(e) => e.span = span,
             Expr::JSXFragment(e) => e.span = span,
+            Expr::Tsrx(e) => match &mut **e {
+                TsrxExpr::CodeBlock(e) => e.span = span,
+                TsrxExpr::StyleElement(e) => e.span = span,
+                TsrxExpr::If(e) => e.span = span,
+                TsrxExpr::For(e) => e.span = span,
+                TsrxExpr::Switch(e) => e.span = span,
+                TsrxExpr::Try(e) => e.span = span,
+            },
             Expr::PrivateName(e) => e.span = span,
             Expr::OptChain(e) => e.span = span,
             Expr::Lit(e) => e.set_span(span),
@@ -459,6 +470,7 @@ impl Clone for Expr {
             JSXEmpty(e) => JSXEmpty(e.clone()),
             JSXElement(e) => JSXElement(e.clone()),
             JSXFragment(e) => JSXFragment(e.clone()),
+            Tsrx(e) => Tsrx(e.clone()),
             TsTypeAssertion(e) => TsTypeAssertion(e.clone()),
             TsConstAssertion(e) => TsConstAssertion(e.clone()),
             TsNonNull(e) => TsNonNull(e.clone()),
@@ -524,6 +536,7 @@ boxed_expr!(JSXNamespacedName);
 boxed_expr!(JSXEmptyExpr);
 boxed_expr!(Box<JSXElement>);
 boxed_expr!(JSXFragment);
+boxed_expr!(Box<TsrxExpr>);
 boxed_expr!(TsTypeAssertion);
 boxed_expr!(TsSatisfiesExpr);
 boxed_expr!(TsConstAssertion);

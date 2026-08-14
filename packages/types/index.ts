@@ -754,6 +754,11 @@ export interface TsParserConfig {
      */
     tsx?: boolean;
     /**
+     * Enable TSRX syntax. This also enables TSX parsing.
+     * Defaults to `false`.
+     */
+    tsrx?: boolean;
+    /**
      * Defaults to `false`.
      */
     decorators?: boolean;

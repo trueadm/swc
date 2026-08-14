@@ -932,6 +932,7 @@ impl Swcify for JSXAttribute {
             span: ctx.span(&self.base),
             name: self.name.swcify(ctx),
             value: self.value.swcify(ctx),
+            shorthand: false,
         }
     }
 }

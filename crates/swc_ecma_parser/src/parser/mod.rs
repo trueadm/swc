@@ -41,6 +41,7 @@ mod state;
 mod stmt;
 #[cfg(test)]
 mod tests;
+mod tsrx;
 #[cfg(feature = "typescript")]
 mod typescript;
 #[cfg(not(feature = "typescript"))]

@@ -253,6 +253,8 @@ impl StartsWithAlphaNum for Expr {
 
             Expr::OptChain(e) => e.starts_with_alpha_num(),
 
+            Expr::Tsrx(..) => false,
+
             Expr::Invalid(..) => true,
             #[cfg(swc_ast_unknown)]
             _ => false,

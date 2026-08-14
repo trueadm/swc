@@ -1056,6 +1056,7 @@ where
                 spread: Some(span),
                 expr,
             },
+            JSXElementChild::Tsrx(expr) => Expr::Tsrx(expr).as_arg(),
             #[cfg(swc_ast_unknown)]
             _ => panic!("unable to access unknown nodes"),
         })
@@ -1532,6 +1533,14 @@ where
                 }
                 .into()
             }
+            JSXElementName::JSXExprContainer(JSXExprContainer {
+                expr: JSXExpr::Expr(expr),
+                ..
+            }) => expr,
+            JSXElementName::JSXExprContainer(JSXExprContainer {
+                expr: JSXExpr::JSXEmptyExpr(..),
+                ..
+            }) => Invalid { span }.into(),
             #[cfg(swc_ast_unknown)]
             _ => panic!("unable to access unknown nodes"),
         }

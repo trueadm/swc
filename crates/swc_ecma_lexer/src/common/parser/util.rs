@@ -68,6 +68,7 @@ pub fn get_qualified_jsx_name(name: &JSXElementName) -> Atom {
         JSXElementName::JSXMemberExpr(JSXMemberExpr {
             ref obj, ref prop, ..
         }) => format!("{}.{}", get_qualified_obj_name(obj), prop.sym).into(),
+        JSXElementName::JSXExprContainer(ref expr) => format!("{{{:?}}}", expr.expr).into(),
         #[cfg(swc_ast_unknown)]
         _ => unreachable!(),
     }

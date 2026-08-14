@@ -625,6 +625,7 @@ export const DEFAULT_EXTENSIONS = Object.freeze([
     ".mjs",
     ".ts",
     ".tsx",
+    ".tsrx",
     ".cts",
     ".mts",
 ]);

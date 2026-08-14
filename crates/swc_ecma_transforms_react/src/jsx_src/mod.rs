@@ -68,6 +68,7 @@ impl VisitMutHook<()> for JsxSrc {
                     .into(),
                 )),
             })),
+            shorthand: false,
         }));
     }
 }

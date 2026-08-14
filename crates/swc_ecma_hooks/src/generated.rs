@@ -726,6 +726,14 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_attr_value(&mut self, node: &JSXAttrValue, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXCatchClause` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_catch_clause(&mut self, node: &JSXCatchClause, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXCatchClause` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_catch_clause(&mut self, node: &JSXCatchClause, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXClosingElement` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -742,6 +750,14 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_closing_fragment(&mut self, node: &JSXClosingFragment, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXCodeBlock` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_code_block(&mut self, node: &JSXCodeBlock, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXCodeBlock` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_code_block(&mut self, node: &JSXCodeBlock, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXElement` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -800,6 +816,22 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_expr_container(&mut self, node: &JSXExprContainer, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXForExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_for_expr(&mut self, node: &JSXForExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXForExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_for_expr(&mut self, node: &JSXForExpr, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXForKind` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_for_kind(&mut self, node: &JSXForKind, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXForKind` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_for_kind(&mut self, node: &JSXForKind, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXFragment` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -808,6 +840,22 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_fragment(&mut self, node: &JSXFragment, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXIfAlternate` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_if_alternate(&mut self, node: &JSXIfAlternate, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXIfAlternate` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_if_alternate(&mut self, node: &JSXIfAlternate, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXIfExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_if_expr(&mut self, node: &JSXIfExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXIfExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_if_expr(&mut self, node: &JSXIfExpr, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXMemberExpr` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -856,6 +904,40 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_spread_child(&mut self, node: &JSXSpreadChild, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXStyleElement` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_style_element(&mut self, node: &JSXStyleElement, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXStyleElement` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_style_element(&mut self, node: &JSXStyleElement, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXSwitchCase` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_switch_case(&mut self, node: &JSXSwitchCase, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXSwitchCase` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_switch_case(&mut self, node: &JSXSwitchCase, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Vec < JSXSwitchCase >` before visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_switch_cases(&mut self, node: &[JSXSwitchCase], ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Vec < JSXSwitchCase >` after visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase], ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXSwitchExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_switch_expr(&mut self, node: &JSXSwitchExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXSwitchExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXText` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -864,6 +946,14 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_text(&mut self, node: &JSXText, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXTryExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_try_expr(&mut self, node: &JSXTryExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXTryExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_try_expr(&mut self, node: &JSXTryExpr, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `Key` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -1151,6 +1241,14 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_opt_expr_or_spreads(&mut self, node: &Option<Vec<ExprOrSpread>>, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Option < ForHead >` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_opt_for_head(&mut self, node: &Option<ForHead>, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Option < ForHead >` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_opt_for_head(&mut self, node: &Option<ForHead>, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `Option < FunctionBody >` before visiting its \
              children."]
     #[inline]
@@ -1179,6 +1277,16 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_opt_jsx_attr_value(&mut self, node: &Option<JSXAttrValue>, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Option < JSXCatchClause >` before visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Option < JSXCatchClause >` after visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `Option < JSXClosingElement >` before visiting \
              its children."]
     #[inline]
@@ -1189,6 +1297,26 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Option < JSXCodeBlock >` before visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Option < JSXCodeBlock >` after visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Option < JSXIfAlternate >` before visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Option < JSXIfAlternate >` after visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `Option < ModuleExportName >` before visiting its \
              children."]
     #[inline]
@@ -2426,6 +2554,14 @@ pub trait VisitHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_ts_union_type(&mut self, node: &TsUnionType, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `TsrxExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_tsrx_expr(&mut self, node: &TsrxExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `TsrxExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_tsrx_expr(&mut self, node: &TsrxExpr, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `UnaryExpr` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -3602,6 +3738,18 @@ where
     }
 
     #[inline]
+    fn enter_jsx_catch_clause(&mut self, node: &JSXCatchClause, ctx: &mut C) {
+        self.first.enter_jsx_catch_clause(node, ctx);
+        self.second.enter_jsx_catch_clause(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_catch_clause(&mut self, node: &JSXCatchClause, ctx: &mut C) {
+        self.second.exit_jsx_catch_clause(node, ctx);
+        self.first.exit_jsx_catch_clause(node, ctx);
+    }
+
+    #[inline]
     fn enter_jsx_closing_element(&mut self, node: &JSXClosingElement, ctx: &mut C) {
         self.first.enter_jsx_closing_element(node, ctx);
         self.second.enter_jsx_closing_element(node, ctx);
@@ -3623,6 +3771,18 @@ where
     fn exit_jsx_closing_fragment(&mut self, node: &JSXClosingFragment, ctx: &mut C) {
         self.second.exit_jsx_closing_fragment(node, ctx);
         self.first.exit_jsx_closing_fragment(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_code_block(&mut self, node: &JSXCodeBlock, ctx: &mut C) {
+        self.first.enter_jsx_code_block(node, ctx);
+        self.second.enter_jsx_code_block(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_code_block(&mut self, node: &JSXCodeBlock, ctx: &mut C) {
+        self.second.exit_jsx_code_block(node, ctx);
+        self.first.exit_jsx_code_block(node, ctx);
     }
 
     #[inline]
@@ -3710,6 +3870,30 @@ where
     }
 
     #[inline]
+    fn enter_jsx_for_expr(&mut self, node: &JSXForExpr, ctx: &mut C) {
+        self.first.enter_jsx_for_expr(node, ctx);
+        self.second.enter_jsx_for_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_for_expr(&mut self, node: &JSXForExpr, ctx: &mut C) {
+        self.second.exit_jsx_for_expr(node, ctx);
+        self.first.exit_jsx_for_expr(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_for_kind(&mut self, node: &JSXForKind, ctx: &mut C) {
+        self.first.enter_jsx_for_kind(node, ctx);
+        self.second.enter_jsx_for_kind(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_for_kind(&mut self, node: &JSXForKind, ctx: &mut C) {
+        self.second.exit_jsx_for_kind(node, ctx);
+        self.first.exit_jsx_for_kind(node, ctx);
+    }
+
+    #[inline]
     fn enter_jsx_fragment(&mut self, node: &JSXFragment, ctx: &mut C) {
         self.first.enter_jsx_fragment(node, ctx);
         self.second.enter_jsx_fragment(node, ctx);
@@ -3719,6 +3903,30 @@ where
     fn exit_jsx_fragment(&mut self, node: &JSXFragment, ctx: &mut C) {
         self.second.exit_jsx_fragment(node, ctx);
         self.first.exit_jsx_fragment(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_if_alternate(&mut self, node: &JSXIfAlternate, ctx: &mut C) {
+        self.first.enter_jsx_if_alternate(node, ctx);
+        self.second.enter_jsx_if_alternate(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_if_alternate(&mut self, node: &JSXIfAlternate, ctx: &mut C) {
+        self.second.exit_jsx_if_alternate(node, ctx);
+        self.first.exit_jsx_if_alternate(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_if_expr(&mut self, node: &JSXIfExpr, ctx: &mut C) {
+        self.first.enter_jsx_if_expr(node, ctx);
+        self.second.enter_jsx_if_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_if_expr(&mut self, node: &JSXIfExpr, ctx: &mut C) {
+        self.second.exit_jsx_if_expr(node, ctx);
+        self.first.exit_jsx_if_expr(node, ctx);
     }
 
     #[inline]
@@ -3794,6 +4002,54 @@ where
     }
 
     #[inline]
+    fn enter_jsx_style_element(&mut self, node: &JSXStyleElement, ctx: &mut C) {
+        self.first.enter_jsx_style_element(node, ctx);
+        self.second.enter_jsx_style_element(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_style_element(&mut self, node: &JSXStyleElement, ctx: &mut C) {
+        self.second.exit_jsx_style_element(node, ctx);
+        self.first.exit_jsx_style_element(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_switch_case(&mut self, node: &JSXSwitchCase, ctx: &mut C) {
+        self.first.enter_jsx_switch_case(node, ctx);
+        self.second.enter_jsx_switch_case(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_switch_case(&mut self, node: &JSXSwitchCase, ctx: &mut C) {
+        self.second.exit_jsx_switch_case(node, ctx);
+        self.first.exit_jsx_switch_case(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_switch_cases(&mut self, node: &[JSXSwitchCase], ctx: &mut C) {
+        self.first.enter_jsx_switch_cases(node, ctx);
+        self.second.enter_jsx_switch_cases(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase], ctx: &mut C) {
+        self.second.exit_jsx_switch_cases(node, ctx);
+        self.first.exit_jsx_switch_cases(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_switch_expr(&mut self, node: &JSXSwitchExpr, ctx: &mut C) {
+        self.first.enter_jsx_switch_expr(node, ctx);
+        self.second.enter_jsx_switch_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr, ctx: &mut C) {
+        self.second.exit_jsx_switch_expr(node, ctx);
+        self.first.exit_jsx_switch_expr(node, ctx);
+    }
+
+    #[inline]
     fn enter_jsx_text(&mut self, node: &JSXText, ctx: &mut C) {
         self.first.enter_jsx_text(node, ctx);
         self.second.enter_jsx_text(node, ctx);
@@ -3803,6 +4059,18 @@ where
     fn exit_jsx_text(&mut self, node: &JSXText, ctx: &mut C) {
         self.second.exit_jsx_text(node, ctx);
         self.first.exit_jsx_text(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_try_expr(&mut self, node: &JSXTryExpr, ctx: &mut C) {
+        self.first.enter_jsx_try_expr(node, ctx);
+        self.second.enter_jsx_try_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_try_expr(&mut self, node: &JSXTryExpr, ctx: &mut C) {
+        self.second.exit_jsx_try_expr(node, ctx);
+        self.first.exit_jsx_try_expr(node, ctx);
     }
 
     #[inline]
@@ -4214,6 +4482,18 @@ where
     }
 
     #[inline]
+    fn enter_opt_for_head(&mut self, node: &Option<ForHead>, ctx: &mut C) {
+        self.first.enter_opt_for_head(node, ctx);
+        self.second.enter_opt_for_head(node, ctx);
+    }
+
+    #[inline]
+    fn exit_opt_for_head(&mut self, node: &Option<ForHead>, ctx: &mut C) {
+        self.second.exit_opt_for_head(node, ctx);
+        self.first.exit_opt_for_head(node, ctx);
+    }
+
+    #[inline]
     fn enter_opt_function_body(&mut self, node: &Option<FunctionBody>, ctx: &mut C) {
         self.first.enter_opt_function_body(node, ctx);
         self.second.enter_opt_function_body(node, ctx);
@@ -4250,6 +4530,18 @@ where
     }
 
     #[inline]
+    fn enter_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>, ctx: &mut C) {
+        self.first.enter_opt_jsx_catch_clause(node, ctx);
+        self.second.enter_opt_jsx_catch_clause(node, ctx);
+    }
+
+    #[inline]
+    fn exit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>, ctx: &mut C) {
+        self.second.exit_opt_jsx_catch_clause(node, ctx);
+        self.first.exit_opt_jsx_catch_clause(node, ctx);
+    }
+
+    #[inline]
     fn enter_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>, ctx: &mut C) {
         self.first.enter_opt_jsx_closing_element(node, ctx);
         self.second.enter_opt_jsx_closing_element(node, ctx);
@@ -4259,6 +4551,30 @@ where
     fn exit_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>, ctx: &mut C) {
         self.second.exit_opt_jsx_closing_element(node, ctx);
         self.first.exit_opt_jsx_closing_element(node, ctx);
+    }
+
+    #[inline]
+    fn enter_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>, ctx: &mut C) {
+        self.first.enter_opt_jsx_code_block(node, ctx);
+        self.second.enter_opt_jsx_code_block(node, ctx);
+    }
+
+    #[inline]
+    fn exit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>, ctx: &mut C) {
+        self.second.exit_opt_jsx_code_block(node, ctx);
+        self.first.exit_opt_jsx_code_block(node, ctx);
+    }
+
+    #[inline]
+    fn enter_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>, ctx: &mut C) {
+        self.first.enter_opt_jsx_if_alternate(node, ctx);
+        self.second.enter_opt_jsx_if_alternate(node, ctx);
+    }
+
+    #[inline]
+    fn exit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>, ctx: &mut C) {
+        self.second.exit_opt_jsx_if_alternate(node, ctx);
+        self.first.exit_opt_jsx_if_alternate(node, ctx);
     }
 
     #[inline]
@@ -5998,6 +6314,18 @@ where
     }
 
     #[inline]
+    fn enter_tsrx_expr(&mut self, node: &TsrxExpr, ctx: &mut C) {
+        self.first.enter_tsrx_expr(node, ctx);
+        self.second.enter_tsrx_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_tsrx_expr(&mut self, node: &TsrxExpr, ctx: &mut C) {
+        self.second.exit_tsrx_expr(node, ctx);
+        self.first.exit_tsrx_expr(node, ctx);
+    }
+
+    #[inline]
     fn enter_unary_expr(&mut self, node: &UnaryExpr, ctx: &mut C) {
         self.first.enter_unary_expr(node, ctx);
         self.second.enter_unary_expr(node, ctx);
@@ -7563,6 +7891,22 @@ where
     }
 
     #[inline]
+    fn enter_jsx_catch_clause(&mut self, node: &JSXCatchClause, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_catch_clause(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_catch_clause(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_catch_clause(&mut self, node: &JSXCatchClause, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_catch_clause(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_catch_clause(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_jsx_closing_element(&mut self, node: &JSXClosingElement, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_jsx_closing_element(node, ctx),
@@ -7591,6 +7935,22 @@ where
         match self {
             Self::Left(hook) => hook.exit_jsx_closing_fragment(node, ctx),
             Self::Right(hook) => hook.exit_jsx_closing_fragment(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_code_block(&mut self, node: &JSXCodeBlock, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_code_block(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_code_block(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_code_block(&mut self, node: &JSXCodeBlock, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_code_block(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_code_block(node, ctx),
         }
     }
 
@@ -7707,6 +8067,38 @@ where
     }
 
     #[inline]
+    fn enter_jsx_for_expr(&mut self, node: &JSXForExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_for_expr(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_for_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_for_expr(&mut self, node: &JSXForExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_for_expr(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_for_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_for_kind(&mut self, node: &JSXForKind, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_for_kind(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_for_kind(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_for_kind(&mut self, node: &JSXForKind, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_for_kind(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_for_kind(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_jsx_fragment(&mut self, node: &JSXFragment, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_jsx_fragment(node, ctx),
@@ -7719,6 +8111,38 @@ where
         match self {
             Self::Left(hook) => hook.exit_jsx_fragment(node, ctx),
             Self::Right(hook) => hook.exit_jsx_fragment(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_if_alternate(&mut self, node: &JSXIfAlternate, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_if_alternate(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_if_alternate(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_if_alternate(&mut self, node: &JSXIfAlternate, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_if_alternate(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_if_alternate(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_if_expr(&mut self, node: &JSXIfExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_if_expr(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_if_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_if_expr(&mut self, node: &JSXIfExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_if_expr(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_if_expr(node, ctx),
         }
     }
 
@@ -7819,6 +8243,70 @@ where
     }
 
     #[inline]
+    fn enter_jsx_style_element(&mut self, node: &JSXStyleElement, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_style_element(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_style_element(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_style_element(&mut self, node: &JSXStyleElement, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_style_element(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_style_element(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_case(&mut self, node: &JSXSwitchCase, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_switch_case(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_switch_case(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_case(&mut self, node: &JSXSwitchCase, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_switch_case(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_switch_case(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_cases(&mut self, node: &[JSXSwitchCase], ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_switch_cases(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_switch_cases(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase], ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_switch_cases(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_switch_cases(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_expr(&mut self, node: &JSXSwitchExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_switch_expr(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_switch_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_switch_expr(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_switch_expr(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_jsx_text(&mut self, node: &JSXText, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_jsx_text(node, ctx),
@@ -7831,6 +8319,22 @@ where
         match self {
             Self::Left(hook) => hook.exit_jsx_text(node, ctx),
             Self::Right(hook) => hook.exit_jsx_text(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_try_expr(&mut self, node: &JSXTryExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_try_expr(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_try_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_try_expr(&mut self, node: &JSXTryExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_try_expr(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_try_expr(node, ctx),
         }
     }
 
@@ -8379,6 +8883,22 @@ where
     }
 
     #[inline]
+    fn enter_opt_for_head(&mut self, node: &Option<ForHead>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_opt_for_head(node, ctx),
+            Self::Right(hook) => hook.enter_opt_for_head(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_opt_for_head(&mut self, node: &Option<ForHead>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_opt_for_head(node, ctx),
+            Self::Right(hook) => hook.exit_opt_for_head(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_opt_function_body(&mut self, node: &Option<FunctionBody>, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_opt_function_body(node, ctx),
@@ -8427,6 +8947,22 @@ where
     }
 
     #[inline]
+    fn enter_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_opt_jsx_catch_clause(node, ctx),
+            Self::Right(hook) => hook.enter_opt_jsx_catch_clause(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_opt_jsx_catch_clause(node, ctx),
+            Self::Right(hook) => hook.exit_opt_jsx_catch_clause(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_opt_jsx_closing_element(node, ctx),
@@ -8439,6 +8975,38 @@ where
         match self {
             Self::Left(hook) => hook.exit_opt_jsx_closing_element(node, ctx),
             Self::Right(hook) => hook.exit_opt_jsx_closing_element(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_opt_jsx_code_block(node, ctx),
+            Self::Right(hook) => hook.enter_opt_jsx_code_block(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_opt_jsx_code_block(node, ctx),
+            Self::Right(hook) => hook.exit_opt_jsx_code_block(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_opt_jsx_if_alternate(node, ctx),
+            Self::Right(hook) => hook.enter_opt_jsx_if_alternate(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_opt_jsx_if_alternate(node, ctx),
+            Self::Right(hook) => hook.exit_opt_jsx_if_alternate(node, ctx),
         }
     }
 
@@ -10751,6 +11319,22 @@ where
     }
 
     #[inline]
+    fn enter_tsrx_expr(&mut self, node: &TsrxExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_tsrx_expr(node, ctx),
+            Self::Right(hook) => hook.enter_tsrx_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_tsrx_expr(&mut self, node: &TsrxExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_tsrx_expr(node, ctx),
+            Self::Right(hook) => hook.exit_tsrx_expr(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_unary_expr(&mut self, node: &UnaryExpr, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_unary_expr(node, ctx),
@@ -12197,6 +12781,20 @@ where
     }
 
     #[inline]
+    fn enter_jsx_catch_clause(&mut self, node: &JSXCatchClause, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_catch_clause(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_catch_clause(&mut self, node: &JSXCatchClause, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_catch_clause(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_jsx_closing_element(&mut self, node: &JSXClosingElement, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_jsx_closing_element(node, ctx);
@@ -12221,6 +12819,20 @@ where
     fn exit_jsx_closing_fragment(&mut self, node: &JSXClosingFragment, ctx: &mut C) {
         if let Some(hook) = self {
             hook.exit_jsx_closing_fragment(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_code_block(&mut self, node: &JSXCodeBlock, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_code_block(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_code_block(&mut self, node: &JSXCodeBlock, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_code_block(node, ctx);
         }
     }
 
@@ -12323,6 +12935,34 @@ where
     }
 
     #[inline]
+    fn enter_jsx_for_expr(&mut self, node: &JSXForExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_for_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_for_expr(&mut self, node: &JSXForExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_for_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_for_kind(&mut self, node: &JSXForKind, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_for_kind(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_for_kind(&mut self, node: &JSXForKind, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_for_kind(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_jsx_fragment(&mut self, node: &JSXFragment, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_jsx_fragment(node, ctx);
@@ -12333,6 +12973,34 @@ where
     fn exit_jsx_fragment(&mut self, node: &JSXFragment, ctx: &mut C) {
         if let Some(hook) = self {
             hook.exit_jsx_fragment(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_if_alternate(&mut self, node: &JSXIfAlternate, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_if_alternate(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_if_alternate(&mut self, node: &JSXIfAlternate, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_if_alternate(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_if_expr(&mut self, node: &JSXIfExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_if_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_if_expr(&mut self, node: &JSXIfExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_if_expr(node, ctx);
         }
     }
 
@@ -12421,6 +13089,62 @@ where
     }
 
     #[inline]
+    fn enter_jsx_style_element(&mut self, node: &JSXStyleElement, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_style_element(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_style_element(&mut self, node: &JSXStyleElement, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_style_element(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_case(&mut self, node: &JSXSwitchCase, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_switch_case(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_case(&mut self, node: &JSXSwitchCase, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_switch_case(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_cases(&mut self, node: &[JSXSwitchCase], ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_switch_cases(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase], ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_switch_cases(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_expr(&mut self, node: &JSXSwitchExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_switch_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_switch_expr(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_jsx_text(&mut self, node: &JSXText, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_jsx_text(node, ctx);
@@ -12431,6 +13155,20 @@ where
     fn exit_jsx_text(&mut self, node: &JSXText, ctx: &mut C) {
         if let Some(hook) = self {
             hook.exit_jsx_text(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_try_expr(&mut self, node: &JSXTryExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_try_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_try_expr(&mut self, node: &JSXTryExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_try_expr(node, ctx);
         }
     }
 
@@ -12911,6 +13649,20 @@ where
     }
 
     #[inline]
+    fn enter_opt_for_head(&mut self, node: &Option<ForHead>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_opt_for_head(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_opt_for_head(&mut self, node: &Option<ForHead>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_opt_for_head(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_opt_function_body(&mut self, node: &Option<FunctionBody>, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_opt_function_body(node, ctx);
@@ -12953,6 +13705,20 @@ where
     }
 
     #[inline]
+    fn enter_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_opt_jsx_catch_clause(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_opt_jsx_catch_clause(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_opt_jsx_closing_element(node, ctx);
@@ -12963,6 +13729,34 @@ where
     fn exit_opt_jsx_closing_element(&mut self, node: &Option<JSXClosingElement>, ctx: &mut C) {
         if let Some(hook) = self {
             hook.exit_opt_jsx_closing_element(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_opt_jsx_code_block(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_opt_jsx_code_block(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_opt_jsx_if_alternate(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_opt_jsx_if_alternate(node, ctx);
         }
     }
 
@@ -14989,6 +15783,20 @@ where
     }
 
     #[inline]
+    fn enter_tsrx_expr(&mut self, node: &TsrxExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_tsrx_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_tsrx_expr(&mut self, node: &TsrxExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_tsrx_expr(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_unary_expr(&mut self, node: &UnaryExpr, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_unary_expr(node, ctx);
@@ -15909,6 +16717,14 @@ impl<H: VisitHook<C>, C> Visit for VisitWithHook<H, C> {
         self.hook.exit_jsx_attr_value(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `JSXCatchClause` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_catch_clause(&mut self, node: &JSXCatchClause) {
+        self.hook.enter_jsx_catch_clause(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_catch_clause(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `JSXClosingElement` using the hook's enter and exit methods."]
     #[inline]
     fn visit_jsx_closing_element(&mut self, node: &JSXClosingElement) {
@@ -15924,6 +16740,14 @@ impl<H: VisitHook<C>, C> Visit for VisitWithHook<H, C> {
             .enter_jsx_closing_fragment(node, &mut self.context);
         node.visit_children_with(self);
         self.hook.exit_jsx_closing_fragment(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXCodeBlock` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_code_block(&mut self, node: &JSXCodeBlock) {
+        self.hook.enter_jsx_code_block(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_code_block(node, &mut self.context);
     }
 
     #[doc = "Visits a node of type `JSXElement` using the hook's enter and exit methods."]
@@ -15983,12 +16807,44 @@ impl<H: VisitHook<C>, C> Visit for VisitWithHook<H, C> {
         self.hook.exit_jsx_expr_container(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `JSXForExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_for_expr(&mut self, node: &JSXForExpr) {
+        self.hook.enter_jsx_for_expr(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_for_expr(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXForKind` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_for_kind(&mut self, node: &JSXForKind) {
+        self.hook.enter_jsx_for_kind(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_for_kind(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `JSXFragment` using the hook's enter and exit methods."]
     #[inline]
     fn visit_jsx_fragment(&mut self, node: &JSXFragment) {
         self.hook.enter_jsx_fragment(node, &mut self.context);
         node.visit_children_with(self);
         self.hook.exit_jsx_fragment(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXIfAlternate` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_if_alternate(&mut self, node: &JSXIfAlternate) {
+        self.hook.enter_jsx_if_alternate(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_if_alternate(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXIfExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_if_expr(&mut self, node: &JSXIfExpr) {
+        self.hook.enter_jsx_if_expr(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_if_expr(node, &mut self.context);
     }
 
     #[doc = "Visits a node of type `JSXMemberExpr` using the hook's enter and exit methods."]
@@ -16040,12 +16896,52 @@ impl<H: VisitHook<C>, C> Visit for VisitWithHook<H, C> {
         self.hook.exit_jsx_spread_child(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `JSXStyleElement` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_style_element(&mut self, node: &JSXStyleElement) {
+        self.hook.enter_jsx_style_element(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_style_element(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXSwitchCase` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_switch_case(&mut self, node: &JSXSwitchCase) {
+        self.hook.enter_jsx_switch_case(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_switch_case(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `Vec < JSXSwitchCase >` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_switch_cases(&mut self, node: &[JSXSwitchCase]) {
+        self.hook.enter_jsx_switch_cases(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_switch_cases(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXSwitchExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_switch_expr(&mut self, node: &JSXSwitchExpr) {
+        self.hook.enter_jsx_switch_expr(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_switch_expr(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `JSXText` using the hook's enter and exit methods."]
     #[inline]
     fn visit_jsx_text(&mut self, node: &JSXText) {
         self.hook.enter_jsx_text(node, &mut self.context);
         node.visit_children_with(self);
         self.hook.exit_jsx_text(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXTryExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_jsx_try_expr(&mut self, node: &JSXTryExpr) {
+        self.hook.enter_jsx_try_expr(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_jsx_try_expr(node, &mut self.context);
     }
 
     #[doc = "Visits a node of type `Key` using the hook's enter and exit methods."]
@@ -16326,6 +17222,14 @@ impl<H: VisitHook<C>, C> Visit for VisitWithHook<H, C> {
         self.hook.exit_opt_expr_or_spreads(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `Option < ForHead >` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_opt_for_head(&mut self, node: &Option<ForHead>) {
+        self.hook.enter_opt_for_head(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_opt_for_head(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `Option < FunctionBody >` using the hook's enter and exit \
              methods."]
     #[inline]
@@ -16352,6 +17256,16 @@ impl<H: VisitHook<C>, C> Visit for VisitWithHook<H, C> {
         self.hook.exit_opt_jsx_attr_value(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `Option < JSXCatchClause >` using the hook's enter and exit \
+             methods."]
+    #[inline]
+    fn visit_opt_jsx_catch_clause(&mut self, node: &Option<JSXCatchClause>) {
+        self.hook
+            .enter_opt_jsx_catch_clause(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_opt_jsx_catch_clause(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `Option < JSXClosingElement >` using the hook's enter and exit \
              methods."]
     #[inline]
@@ -16361,6 +17275,25 @@ impl<H: VisitHook<C>, C> Visit for VisitWithHook<H, C> {
         node.visit_children_with(self);
         self.hook
             .exit_opt_jsx_closing_element(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `Option < JSXCodeBlock >` using the hook's enter and exit \
+             methods."]
+    #[inline]
+    fn visit_opt_jsx_code_block(&mut self, node: &Option<JSXCodeBlock>) {
+        self.hook.enter_opt_jsx_code_block(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_opt_jsx_code_block(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `Option < JSXIfAlternate >` using the hook's enter and exit \
+             methods."]
+    #[inline]
+    fn visit_opt_jsx_if_alternate(&mut self, node: &Option<JSXIfAlternate>) {
+        self.hook
+            .enter_opt_jsx_if_alternate(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_opt_jsx_if_alternate(node, &mut self.context);
     }
 
     #[doc = "Visits a node of type `Option < ModuleExportName >` using the hook's enter and exit \
@@ -17587,6 +18520,14 @@ impl<H: VisitHook<C>, C> Visit for VisitWithHook<H, C> {
         self.hook.exit_ts_union_type(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `TsrxExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_tsrx_expr(&mut self, node: &TsrxExpr) {
+        self.hook.enter_tsrx_expr(node, &mut self.context);
+        node.visit_children_with(self);
+        self.hook.exit_tsrx_expr(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `UnaryExpr` using the hook's enter and exit methods."]
     #[inline]
     fn visit_unary_expr(&mut self, node: &UnaryExpr) {
@@ -18432,6 +19373,14 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_attr_value(&mut self, node: &mut JSXAttrValue, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXCatchClause` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_catch_clause(&mut self, node: &mut JSXCatchClause, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXCatchClause` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_catch_clause(&mut self, node: &mut JSXCatchClause, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXClosingElement` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -18448,6 +19397,14 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_closing_fragment(&mut self, node: &mut JSXClosingFragment, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXCodeBlock` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_code_block(&mut self, node: &mut JSXCodeBlock, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXCodeBlock` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_code_block(&mut self, node: &mut JSXCodeBlock, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXElement` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -18506,6 +19463,22 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_expr_container(&mut self, node: &mut JSXExprContainer, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXForExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_for_expr(&mut self, node: &mut JSXForExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXForExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_for_expr(&mut self, node: &mut JSXForExpr, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXForKind` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_for_kind(&mut self, node: &mut JSXForKind, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXForKind` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_for_kind(&mut self, node: &mut JSXForKind, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXFragment` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -18514,6 +19487,22 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_fragment(&mut self, node: &mut JSXFragment, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXIfAlternate` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXIfAlternate` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXIfExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_if_expr(&mut self, node: &mut JSXIfExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXIfExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_if_expr(&mut self, node: &mut JSXIfExpr, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXMemberExpr` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -18562,6 +19551,40 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_spread_child(&mut self, node: &mut JSXSpreadChild, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXStyleElement` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_style_element(&mut self, node: &mut JSXStyleElement, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXStyleElement` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_style_element(&mut self, node: &mut JSXStyleElement, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXSwitchCase` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_switch_case(&mut self, node: &mut JSXSwitchCase, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXSwitchCase` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_switch_case(&mut self, node: &mut JSXSwitchCase, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Vec < JSXSwitchCase >` before visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Vec < JSXSwitchCase >` after visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXSwitchExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXSwitchExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `JSXText` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -18570,6 +19593,14 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_jsx_text(&mut self, node: &mut JSXText, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `JSXTryExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_jsx_try_expr(&mut self, node: &mut JSXTryExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `JSXTryExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_jsx_try_expr(&mut self, node: &mut JSXTryExpr, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `Key` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -18857,6 +19888,14 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_opt_expr_or_spreads(&mut self, node: &mut Option<Vec<ExprOrSpread>>, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Option < ForHead >` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_opt_for_head(&mut self, node: &mut Option<ForHead>, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Option < ForHead >` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_opt_for_head(&mut self, node: &mut Option<ForHead>, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `Option < FunctionBody >` before visiting its \
              children."]
     #[inline]
@@ -18885,6 +19924,16 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_opt_jsx_attr_value(&mut self, node: &mut Option<JSXAttrValue>, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Option < JSXCatchClause >` before visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Option < JSXCatchClause >` after visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `Option < JSXClosingElement >` before visiting \
              its children."]
     #[inline]
@@ -18896,6 +19945,26 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Option < JSXCodeBlock >` before visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Option < JSXCodeBlock >` after visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `Option < JSXIfAlternate >` before visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `Option < JSXIfAlternate >` after visiting its \
+             children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `Option < ModuleExportName >` before visiting its \
              children."]
     #[inline]
@@ -20168,6 +21237,14 @@ pub trait VisitMutHook<C> {
     #[inline]
     #[allow(unused_variables)]
     fn exit_ts_union_type(&mut self, node: &mut TsUnionType, ctx: &mut C) {}
+    #[doc = "Called when entering a node of type `TsrxExpr` before visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn enter_tsrx_expr(&mut self, node: &mut TsrxExpr, ctx: &mut C) {}
+    #[doc = "Called when exiting a node of type `TsrxExpr` after visiting its children."]
+    #[inline]
+    #[allow(unused_variables)]
+    fn exit_tsrx_expr(&mut self, node: &mut TsrxExpr, ctx: &mut C) {}
     #[doc = "Called when entering a node of type `UnaryExpr` before visiting its children."]
     #[inline]
     #[allow(unused_variables)]
@@ -21352,6 +22429,18 @@ where
     }
 
     #[inline]
+    fn enter_jsx_catch_clause(&mut self, node: &mut JSXCatchClause, ctx: &mut C) {
+        self.first.enter_jsx_catch_clause(node, ctx);
+        self.second.enter_jsx_catch_clause(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_catch_clause(&mut self, node: &mut JSXCatchClause, ctx: &mut C) {
+        self.second.exit_jsx_catch_clause(node, ctx);
+        self.first.exit_jsx_catch_clause(node, ctx);
+    }
+
+    #[inline]
     fn enter_jsx_closing_element(&mut self, node: &mut JSXClosingElement, ctx: &mut C) {
         self.first.enter_jsx_closing_element(node, ctx);
         self.second.enter_jsx_closing_element(node, ctx);
@@ -21373,6 +22462,18 @@ where
     fn exit_jsx_closing_fragment(&mut self, node: &mut JSXClosingFragment, ctx: &mut C) {
         self.second.exit_jsx_closing_fragment(node, ctx);
         self.first.exit_jsx_closing_fragment(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_code_block(&mut self, node: &mut JSXCodeBlock, ctx: &mut C) {
+        self.first.enter_jsx_code_block(node, ctx);
+        self.second.enter_jsx_code_block(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_code_block(&mut self, node: &mut JSXCodeBlock, ctx: &mut C) {
+        self.second.exit_jsx_code_block(node, ctx);
+        self.first.exit_jsx_code_block(node, ctx);
     }
 
     #[inline]
@@ -21460,6 +22561,30 @@ where
     }
 
     #[inline]
+    fn enter_jsx_for_expr(&mut self, node: &mut JSXForExpr, ctx: &mut C) {
+        self.first.enter_jsx_for_expr(node, ctx);
+        self.second.enter_jsx_for_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_for_expr(&mut self, node: &mut JSXForExpr, ctx: &mut C) {
+        self.second.exit_jsx_for_expr(node, ctx);
+        self.first.exit_jsx_for_expr(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_for_kind(&mut self, node: &mut JSXForKind, ctx: &mut C) {
+        self.first.enter_jsx_for_kind(node, ctx);
+        self.second.enter_jsx_for_kind(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_for_kind(&mut self, node: &mut JSXForKind, ctx: &mut C) {
+        self.second.exit_jsx_for_kind(node, ctx);
+        self.first.exit_jsx_for_kind(node, ctx);
+    }
+
+    #[inline]
     fn enter_jsx_fragment(&mut self, node: &mut JSXFragment, ctx: &mut C) {
         self.first.enter_jsx_fragment(node, ctx);
         self.second.enter_jsx_fragment(node, ctx);
@@ -21469,6 +22594,30 @@ where
     fn exit_jsx_fragment(&mut self, node: &mut JSXFragment, ctx: &mut C) {
         self.second.exit_jsx_fragment(node, ctx);
         self.first.exit_jsx_fragment(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate, ctx: &mut C) {
+        self.first.enter_jsx_if_alternate(node, ctx);
+        self.second.enter_jsx_if_alternate(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate, ctx: &mut C) {
+        self.second.exit_jsx_if_alternate(node, ctx);
+        self.first.exit_jsx_if_alternate(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_if_expr(&mut self, node: &mut JSXIfExpr, ctx: &mut C) {
+        self.first.enter_jsx_if_expr(node, ctx);
+        self.second.enter_jsx_if_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_if_expr(&mut self, node: &mut JSXIfExpr, ctx: &mut C) {
+        self.second.exit_jsx_if_expr(node, ctx);
+        self.first.exit_jsx_if_expr(node, ctx);
     }
 
     #[inline]
@@ -21544,6 +22693,54 @@ where
     }
 
     #[inline]
+    fn enter_jsx_style_element(&mut self, node: &mut JSXStyleElement, ctx: &mut C) {
+        self.first.enter_jsx_style_element(node, ctx);
+        self.second.enter_jsx_style_element(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_style_element(&mut self, node: &mut JSXStyleElement, ctx: &mut C) {
+        self.second.exit_jsx_style_element(node, ctx);
+        self.first.exit_jsx_style_element(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_switch_case(&mut self, node: &mut JSXSwitchCase, ctx: &mut C) {
+        self.first.enter_jsx_switch_case(node, ctx);
+        self.second.enter_jsx_switch_case(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_switch_case(&mut self, node: &mut JSXSwitchCase, ctx: &mut C) {
+        self.second.exit_jsx_switch_case(node, ctx);
+        self.first.exit_jsx_switch_case(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>, ctx: &mut C) {
+        self.first.enter_jsx_switch_cases(node, ctx);
+        self.second.enter_jsx_switch_cases(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>, ctx: &mut C) {
+        self.second.exit_jsx_switch_cases(node, ctx);
+        self.first.exit_jsx_switch_cases(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr, ctx: &mut C) {
+        self.first.enter_jsx_switch_expr(node, ctx);
+        self.second.enter_jsx_switch_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr, ctx: &mut C) {
+        self.second.exit_jsx_switch_expr(node, ctx);
+        self.first.exit_jsx_switch_expr(node, ctx);
+    }
+
+    #[inline]
     fn enter_jsx_text(&mut self, node: &mut JSXText, ctx: &mut C) {
         self.first.enter_jsx_text(node, ctx);
         self.second.enter_jsx_text(node, ctx);
@@ -21553,6 +22750,18 @@ where
     fn exit_jsx_text(&mut self, node: &mut JSXText, ctx: &mut C) {
         self.second.exit_jsx_text(node, ctx);
         self.first.exit_jsx_text(node, ctx);
+    }
+
+    #[inline]
+    fn enter_jsx_try_expr(&mut self, node: &mut JSXTryExpr, ctx: &mut C) {
+        self.first.enter_jsx_try_expr(node, ctx);
+        self.second.enter_jsx_try_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_jsx_try_expr(&mut self, node: &mut JSXTryExpr, ctx: &mut C) {
+        self.second.exit_jsx_try_expr(node, ctx);
+        self.first.exit_jsx_try_expr(node, ctx);
     }
 
     #[inline]
@@ -21964,6 +23173,18 @@ where
     }
 
     #[inline]
+    fn enter_opt_for_head(&mut self, node: &mut Option<ForHead>, ctx: &mut C) {
+        self.first.enter_opt_for_head(node, ctx);
+        self.second.enter_opt_for_head(node, ctx);
+    }
+
+    #[inline]
+    fn exit_opt_for_head(&mut self, node: &mut Option<ForHead>, ctx: &mut C) {
+        self.second.exit_opt_for_head(node, ctx);
+        self.first.exit_opt_for_head(node, ctx);
+    }
+
+    #[inline]
     fn enter_opt_function_body(&mut self, node: &mut Option<FunctionBody>, ctx: &mut C) {
         self.first.enter_opt_function_body(node, ctx);
         self.second.enter_opt_function_body(node, ctx);
@@ -22000,6 +23221,18 @@ where
     }
 
     #[inline]
+    fn enter_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>, ctx: &mut C) {
+        self.first.enter_opt_jsx_catch_clause(node, ctx);
+        self.second.enter_opt_jsx_catch_clause(node, ctx);
+    }
+
+    #[inline]
+    fn exit_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>, ctx: &mut C) {
+        self.second.exit_opt_jsx_catch_clause(node, ctx);
+        self.first.exit_opt_jsx_catch_clause(node, ctx);
+    }
+
+    #[inline]
     fn enter_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>, ctx: &mut C) {
         self.first.enter_opt_jsx_closing_element(node, ctx);
         self.second.enter_opt_jsx_closing_element(node, ctx);
@@ -22009,6 +23242,30 @@ where
     fn exit_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>, ctx: &mut C) {
         self.second.exit_opt_jsx_closing_element(node, ctx);
         self.first.exit_opt_jsx_closing_element(node, ctx);
+    }
+
+    #[inline]
+    fn enter_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>, ctx: &mut C) {
+        self.first.enter_opt_jsx_code_block(node, ctx);
+        self.second.enter_opt_jsx_code_block(node, ctx);
+    }
+
+    #[inline]
+    fn exit_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>, ctx: &mut C) {
+        self.second.exit_opt_jsx_code_block(node, ctx);
+        self.first.exit_opt_jsx_code_block(node, ctx);
+    }
+
+    #[inline]
+    fn enter_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>, ctx: &mut C) {
+        self.first.enter_opt_jsx_if_alternate(node, ctx);
+        self.second.enter_opt_jsx_if_alternate(node, ctx);
+    }
+
+    #[inline]
+    fn exit_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>, ctx: &mut C) {
+        self.second.exit_opt_jsx_if_alternate(node, ctx);
+        self.first.exit_opt_jsx_if_alternate(node, ctx);
     }
 
     #[inline]
@@ -23773,6 +25030,18 @@ where
     fn exit_ts_union_type(&mut self, node: &mut TsUnionType, ctx: &mut C) {
         self.second.exit_ts_union_type(node, ctx);
         self.first.exit_ts_union_type(node, ctx);
+    }
+
+    #[inline]
+    fn enter_tsrx_expr(&mut self, node: &mut TsrxExpr, ctx: &mut C) {
+        self.first.enter_tsrx_expr(node, ctx);
+        self.second.enter_tsrx_expr(node, ctx);
+    }
+
+    #[inline]
+    fn exit_tsrx_expr(&mut self, node: &mut TsrxExpr, ctx: &mut C) {
+        self.second.exit_tsrx_expr(node, ctx);
+        self.first.exit_tsrx_expr(node, ctx);
     }
 
     #[inline]
@@ -25349,6 +26618,22 @@ where
     }
 
     #[inline]
+    fn enter_jsx_catch_clause(&mut self, node: &mut JSXCatchClause, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_catch_clause(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_catch_clause(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_catch_clause(&mut self, node: &mut JSXCatchClause, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_catch_clause(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_catch_clause(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_jsx_closing_element(&mut self, node: &mut JSXClosingElement, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_jsx_closing_element(node, ctx),
@@ -25377,6 +26662,22 @@ where
         match self {
             Self::Left(hook) => hook.exit_jsx_closing_fragment(node, ctx),
             Self::Right(hook) => hook.exit_jsx_closing_fragment(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_code_block(&mut self, node: &mut JSXCodeBlock, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_code_block(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_code_block(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_code_block(&mut self, node: &mut JSXCodeBlock, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_code_block(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_code_block(node, ctx),
         }
     }
 
@@ -25493,6 +26794,38 @@ where
     }
 
     #[inline]
+    fn enter_jsx_for_expr(&mut self, node: &mut JSXForExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_for_expr(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_for_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_for_expr(&mut self, node: &mut JSXForExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_for_expr(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_for_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_for_kind(&mut self, node: &mut JSXForKind, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_for_kind(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_for_kind(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_for_kind(&mut self, node: &mut JSXForKind, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_for_kind(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_for_kind(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_jsx_fragment(&mut self, node: &mut JSXFragment, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_jsx_fragment(node, ctx),
@@ -25505,6 +26838,38 @@ where
         match self {
             Self::Left(hook) => hook.exit_jsx_fragment(node, ctx),
             Self::Right(hook) => hook.exit_jsx_fragment(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_if_alternate(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_if_alternate(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_if_alternate(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_if_alternate(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_if_expr(&mut self, node: &mut JSXIfExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_if_expr(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_if_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_if_expr(&mut self, node: &mut JSXIfExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_if_expr(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_if_expr(node, ctx),
         }
     }
 
@@ -25605,6 +26970,70 @@ where
     }
 
     #[inline]
+    fn enter_jsx_style_element(&mut self, node: &mut JSXStyleElement, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_style_element(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_style_element(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_style_element(&mut self, node: &mut JSXStyleElement, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_style_element(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_style_element(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_case(&mut self, node: &mut JSXSwitchCase, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_switch_case(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_switch_case(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_case(&mut self, node: &mut JSXSwitchCase, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_switch_case(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_switch_case(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_switch_cases(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_switch_cases(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_switch_cases(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_switch_cases(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_switch_expr(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_switch_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_switch_expr(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_switch_expr(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_jsx_text(&mut self, node: &mut JSXText, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_jsx_text(node, ctx),
@@ -25617,6 +27046,22 @@ where
         match self {
             Self::Left(hook) => hook.exit_jsx_text(node, ctx),
             Self::Right(hook) => hook.exit_jsx_text(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_try_expr(&mut self, node: &mut JSXTryExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_jsx_try_expr(node, ctx),
+            Self::Right(hook) => hook.enter_jsx_try_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_try_expr(&mut self, node: &mut JSXTryExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_jsx_try_expr(node, ctx),
+            Self::Right(hook) => hook.exit_jsx_try_expr(node, ctx),
         }
     }
 
@@ -26165,6 +27610,22 @@ where
     }
 
     #[inline]
+    fn enter_opt_for_head(&mut self, node: &mut Option<ForHead>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_opt_for_head(node, ctx),
+            Self::Right(hook) => hook.enter_opt_for_head(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_opt_for_head(&mut self, node: &mut Option<ForHead>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_opt_for_head(node, ctx),
+            Self::Right(hook) => hook.exit_opt_for_head(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_opt_function_body(&mut self, node: &mut Option<FunctionBody>, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_opt_function_body(node, ctx),
@@ -26213,6 +27674,22 @@ where
     }
 
     #[inline]
+    fn enter_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_opt_jsx_catch_clause(node, ctx),
+            Self::Right(hook) => hook.enter_opt_jsx_catch_clause(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_opt_jsx_catch_clause(node, ctx),
+            Self::Right(hook) => hook.exit_opt_jsx_catch_clause(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_opt_jsx_closing_element(node, ctx),
@@ -26225,6 +27702,38 @@ where
         match self {
             Self::Left(hook) => hook.exit_opt_jsx_closing_element(node, ctx),
             Self::Right(hook) => hook.exit_opt_jsx_closing_element(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_opt_jsx_code_block(node, ctx),
+            Self::Right(hook) => hook.enter_opt_jsx_code_block(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_opt_jsx_code_block(node, ctx),
+            Self::Right(hook) => hook.exit_opt_jsx_code_block(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn enter_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_opt_jsx_if_alternate(node, ctx),
+            Self::Right(hook) => hook.enter_opt_jsx_if_alternate(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_opt_jsx_if_alternate(node, ctx),
+            Self::Right(hook) => hook.exit_opt_jsx_if_alternate(node, ctx),
         }
     }
 
@@ -28565,6 +30074,22 @@ where
     }
 
     #[inline]
+    fn enter_tsrx_expr(&mut self, node: &mut TsrxExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.enter_tsrx_expr(node, ctx),
+            Self::Right(hook) => hook.enter_tsrx_expr(node, ctx),
+        }
+    }
+
+    #[inline]
+    fn exit_tsrx_expr(&mut self, node: &mut TsrxExpr, ctx: &mut C) {
+        match self {
+            Self::Left(hook) => hook.exit_tsrx_expr(node, ctx),
+            Self::Right(hook) => hook.exit_tsrx_expr(node, ctx),
+        }
+    }
+
+    #[inline]
     fn enter_unary_expr(&mut self, node: &mut UnaryExpr, ctx: &mut C) {
         match self {
             Self::Left(hook) => hook.enter_unary_expr(node, ctx),
@@ -30019,6 +31544,20 @@ where
     }
 
     #[inline]
+    fn enter_jsx_catch_clause(&mut self, node: &mut JSXCatchClause, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_catch_clause(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_catch_clause(&mut self, node: &mut JSXCatchClause, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_catch_clause(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_jsx_closing_element(&mut self, node: &mut JSXClosingElement, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_jsx_closing_element(node, ctx);
@@ -30043,6 +31582,20 @@ where
     fn exit_jsx_closing_fragment(&mut self, node: &mut JSXClosingFragment, ctx: &mut C) {
         if let Some(hook) = self {
             hook.exit_jsx_closing_fragment(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_code_block(&mut self, node: &mut JSXCodeBlock, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_code_block(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_code_block(&mut self, node: &mut JSXCodeBlock, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_code_block(node, ctx);
         }
     }
 
@@ -30145,6 +31698,34 @@ where
     }
 
     #[inline]
+    fn enter_jsx_for_expr(&mut self, node: &mut JSXForExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_for_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_for_expr(&mut self, node: &mut JSXForExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_for_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_for_kind(&mut self, node: &mut JSXForKind, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_for_kind(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_for_kind(&mut self, node: &mut JSXForKind, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_for_kind(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_jsx_fragment(&mut self, node: &mut JSXFragment, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_jsx_fragment(node, ctx);
@@ -30155,6 +31736,34 @@ where
     fn exit_jsx_fragment(&mut self, node: &mut JSXFragment, ctx: &mut C) {
         if let Some(hook) = self {
             hook.exit_jsx_fragment(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_if_alternate(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_if_alternate(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_if_expr(&mut self, node: &mut JSXIfExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_if_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_if_expr(&mut self, node: &mut JSXIfExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_if_expr(node, ctx);
         }
     }
 
@@ -30243,6 +31852,62 @@ where
     }
 
     #[inline]
+    fn enter_jsx_style_element(&mut self, node: &mut JSXStyleElement, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_style_element(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_style_element(&mut self, node: &mut JSXStyleElement, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_style_element(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_case(&mut self, node: &mut JSXSwitchCase, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_switch_case(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_case(&mut self, node: &mut JSXSwitchCase, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_switch_case(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_switch_cases(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_switch_cases(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_switch_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_switch_expr(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_jsx_text(&mut self, node: &mut JSXText, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_jsx_text(node, ctx);
@@ -30253,6 +31918,20 @@ where
     fn exit_jsx_text(&mut self, node: &mut JSXText, ctx: &mut C) {
         if let Some(hook) = self {
             hook.exit_jsx_text(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_jsx_try_expr(&mut self, node: &mut JSXTryExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_jsx_try_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_jsx_try_expr(&mut self, node: &mut JSXTryExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_jsx_try_expr(node, ctx);
         }
     }
 
@@ -30733,6 +32412,20 @@ where
     }
 
     #[inline]
+    fn enter_opt_for_head(&mut self, node: &mut Option<ForHead>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_opt_for_head(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_opt_for_head(&mut self, node: &mut Option<ForHead>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_opt_for_head(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_opt_function_body(&mut self, node: &mut Option<FunctionBody>, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_opt_function_body(node, ctx);
@@ -30775,6 +32468,20 @@ where
     }
 
     #[inline]
+    fn enter_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_opt_jsx_catch_clause(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_opt_jsx_catch_clause(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_opt_jsx_closing_element(node, ctx);
@@ -30785,6 +32492,34 @@ where
     fn exit_opt_jsx_closing_element(&mut self, node: &mut Option<JSXClosingElement>, ctx: &mut C) {
         if let Some(hook) = self {
             hook.exit_opt_jsx_closing_element(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_opt_jsx_code_block(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_opt_jsx_code_block(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn enter_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_opt_jsx_if_alternate(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_opt_jsx_if_alternate(node, ctx);
         }
     }
 
@@ -32839,6 +34574,20 @@ where
     }
 
     #[inline]
+    fn enter_tsrx_expr(&mut self, node: &mut TsrxExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.enter_tsrx_expr(node, ctx);
+        }
+    }
+
+    #[inline]
+    fn exit_tsrx_expr(&mut self, node: &mut TsrxExpr, ctx: &mut C) {
+        if let Some(hook) = self {
+            hook.exit_tsrx_expr(node, ctx);
+        }
+    }
+
+    #[inline]
     fn enter_unary_expr(&mut self, node: &mut UnaryExpr, ctx: &mut C) {
         if let Some(hook) = self {
             hook.enter_unary_expr(node, ctx);
@@ -33759,6 +35508,14 @@ impl<H: VisitMutHook<C>, C> VisitMut for VisitMutWithHook<H, C> {
         self.hook.exit_jsx_attr_value(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `JSXCatchClause` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_catch_clause(&mut self, node: &mut JSXCatchClause) {
+        self.hook.enter_jsx_catch_clause(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_catch_clause(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `JSXClosingElement` using the hook's enter and exit methods."]
     #[inline]
     fn visit_mut_jsx_closing_element(&mut self, node: &mut JSXClosingElement) {
@@ -33774,6 +35531,14 @@ impl<H: VisitMutHook<C>, C> VisitMut for VisitMutWithHook<H, C> {
             .enter_jsx_closing_fragment(node, &mut self.context);
         node.visit_mut_children_with(self);
         self.hook.exit_jsx_closing_fragment(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXCodeBlock` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_code_block(&mut self, node: &mut JSXCodeBlock) {
+        self.hook.enter_jsx_code_block(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_code_block(node, &mut self.context);
     }
 
     #[doc = "Visits a node of type `JSXElement` using the hook's enter and exit methods."]
@@ -33833,12 +35598,44 @@ impl<H: VisitMutHook<C>, C> VisitMut for VisitMutWithHook<H, C> {
         self.hook.exit_jsx_expr_container(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `JSXForExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_for_expr(&mut self, node: &mut JSXForExpr) {
+        self.hook.enter_jsx_for_expr(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_for_expr(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXForKind` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_for_kind(&mut self, node: &mut JSXForKind) {
+        self.hook.enter_jsx_for_kind(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_for_kind(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `JSXFragment` using the hook's enter and exit methods."]
     #[inline]
     fn visit_mut_jsx_fragment(&mut self, node: &mut JSXFragment) {
         self.hook.enter_jsx_fragment(node, &mut self.context);
         node.visit_mut_children_with(self);
         self.hook.exit_jsx_fragment(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXIfAlternate` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_if_alternate(&mut self, node: &mut JSXIfAlternate) {
+        self.hook.enter_jsx_if_alternate(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_if_alternate(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXIfExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_if_expr(&mut self, node: &mut JSXIfExpr) {
+        self.hook.enter_jsx_if_expr(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_if_expr(node, &mut self.context);
     }
 
     #[doc = "Visits a node of type `JSXMemberExpr` using the hook's enter and exit methods."]
@@ -33890,12 +35687,52 @@ impl<H: VisitMutHook<C>, C> VisitMut for VisitMutWithHook<H, C> {
         self.hook.exit_jsx_spread_child(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `JSXStyleElement` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_style_element(&mut self, node: &mut JSXStyleElement) {
+        self.hook.enter_jsx_style_element(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_style_element(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXSwitchCase` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_switch_case(&mut self, node: &mut JSXSwitchCase) {
+        self.hook.enter_jsx_switch_case(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_switch_case(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `Vec < JSXSwitchCase >` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_switch_cases(&mut self, node: &mut Vec<JSXSwitchCase>) {
+        self.hook.enter_jsx_switch_cases(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_switch_cases(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXSwitchExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_switch_expr(&mut self, node: &mut JSXSwitchExpr) {
+        self.hook.enter_jsx_switch_expr(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_switch_expr(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `JSXText` using the hook's enter and exit methods."]
     #[inline]
     fn visit_mut_jsx_text(&mut self, node: &mut JSXText) {
         self.hook.enter_jsx_text(node, &mut self.context);
         node.visit_mut_children_with(self);
         self.hook.exit_jsx_text(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `JSXTryExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_jsx_try_expr(&mut self, node: &mut JSXTryExpr) {
+        self.hook.enter_jsx_try_expr(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_jsx_try_expr(node, &mut self.context);
     }
 
     #[doc = "Visits a node of type `Key` using the hook's enter and exit methods."]
@@ -34176,6 +36013,14 @@ impl<H: VisitMutHook<C>, C> VisitMut for VisitMutWithHook<H, C> {
         self.hook.exit_opt_expr_or_spreads(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `Option < ForHead >` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_opt_for_head(&mut self, node: &mut Option<ForHead>) {
+        self.hook.enter_opt_for_head(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_opt_for_head(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `Option < FunctionBody >` using the hook's enter and exit \
              methods."]
     #[inline]
@@ -34202,6 +36047,16 @@ impl<H: VisitMutHook<C>, C> VisitMut for VisitMutWithHook<H, C> {
         self.hook.exit_opt_jsx_attr_value(node, &mut self.context);
     }
 
+    #[doc = "Visits a node of type `Option < JSXCatchClause >` using the hook's enter and exit \
+             methods."]
+    #[inline]
+    fn visit_mut_opt_jsx_catch_clause(&mut self, node: &mut Option<JSXCatchClause>) {
+        self.hook
+            .enter_opt_jsx_catch_clause(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_opt_jsx_catch_clause(node, &mut self.context);
+    }
+
     #[doc = "Visits a node of type `Option < JSXClosingElement >` using the hook's enter and exit \
              methods."]
     #[inline]
@@ -34211,6 +36066,25 @@ impl<H: VisitMutHook<C>, C> VisitMut for VisitMutWithHook<H, C> {
         node.visit_mut_children_with(self);
         self.hook
             .exit_opt_jsx_closing_element(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `Option < JSXCodeBlock >` using the hook's enter and exit \
+             methods."]
+    #[inline]
+    fn visit_mut_opt_jsx_code_block(&mut self, node: &mut Option<JSXCodeBlock>) {
+        self.hook.enter_opt_jsx_code_block(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_opt_jsx_code_block(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `Option < JSXIfAlternate >` using the hook's enter and exit \
+             methods."]
+    #[inline]
+    fn visit_mut_opt_jsx_if_alternate(&mut self, node: &mut Option<JSXIfAlternate>) {
+        self.hook
+            .enter_opt_jsx_if_alternate(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_opt_jsx_if_alternate(node, &mut self.context);
     }
 
     #[doc = "Visits a node of type `Option < ModuleExportName >` using the hook's enter and exit \
@@ -35435,6 +37309,14 @@ impl<H: VisitMutHook<C>, C> VisitMut for VisitMutWithHook<H, C> {
         self.hook.enter_ts_union_type(node, &mut self.context);
         node.visit_mut_children_with(self);
         self.hook.exit_ts_union_type(node, &mut self.context);
+    }
+
+    #[doc = "Visits a node of type `TsrxExpr` using the hook's enter and exit methods."]
+    #[inline]
+    fn visit_mut_tsrx_expr(&mut self, node: &mut TsrxExpr) {
+        self.hook.enter_tsrx_expr(node, &mut self.context);
+        node.visit_mut_children_with(self);
+        self.hook.exit_tsrx_expr(node, &mut self.context);
     }
 
     #[doc = "Visits a node of type `UnaryExpr` using the hook's enter and exit methods."]

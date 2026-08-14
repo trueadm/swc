@@ -193,6 +193,14 @@ impl<I: Tokens> Buffer<I> {
         self.set_cur(t);
     }
 
+    /// Resume JSX child scanning from an exact source position after a parser
+    /// production temporarily used the normal ECMAScript lexer.
+    pub fn rescan_jsx_token_from(&mut self, start: BytePos) {
+        let t = self.iter.rescan_jsx_token(start);
+        self.next = None;
+        self.set_cur(t);
+    }
+
     pub fn scan_jsx_identifier(&mut self) {
         if !self.cur().is_word() {
             return;

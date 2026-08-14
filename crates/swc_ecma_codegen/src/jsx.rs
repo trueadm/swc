@@ -42,13 +42,10 @@ impl MacroNode for JSXOpeningElement {
         }
 
         if !self.attrs.is_empty() {
-            space!(emitter);
-
-            emitter.emit_list(
-                self.span(),
-                Some(&self.attrs),
-                ListFormat::JsxElementAttributes,
-            )?;
+            for attr in &self.attrs {
+                space!(emitter);
+                emit!(attr);
+            }
         }
 
         if self.self_closing {
@@ -66,6 +63,7 @@ impl MacroNode for JSXElementName {
             JSXElementName::Ident(ref n) => emit!(n),
             JSXElementName::JSXMemberExpr(ref n) => emit!(n),
             JSXElementName::JSXNamespacedName(ref n) => emit!(n),
+            JSXElementName::JSXExprContainer(ref n) => emit!(n),
             #[cfg(swc_ast_unknown)]
             _ => return Err(unknown_error()),
         }
@@ -76,6 +74,13 @@ impl MacroNode for JSXElementName {
 #[node_impl]
 impl MacroNode for JSXAttr {
     fn emit(&mut self, emitter: &mut Macro) -> Result {
+        if self.shorthand {
+            punct!(emitter, "{");
+            emit!(self.name);
+            punct!(emitter, "}");
+            return Ok(());
+        }
+
         emit!(self.name);
 
         if let Some(ref value) = self.value {
@@ -140,6 +145,7 @@ impl MacroNode for JSXElementChild {
             JSXElementChild::JSXFragment(ref n) => emit!(n),
             JSXElementChild::JSXSpreadChild(ref n) => emit!(n),
             JSXElementChild::JSXText(ref n) => emit!(n),
+            JSXElementChild::Tsrx(ref n) => emit!(n),
             #[cfg(swc_ast_unknown)]
             _ => return Err(unknown_error()),
         }

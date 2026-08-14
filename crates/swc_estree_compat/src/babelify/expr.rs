@@ -171,6 +171,11 @@ impl Babelify for Expr {
                 "illegal conversion: Cannot convert {:?} to ExprOutput - babel has no equivalent",
                 &self
             ),
+            Expr::Tsrx(_) => panic!(
+                "illegal conversion: Cannot convert {:?} to ExprOutput - babel has no TSRX \
+                 equivalent",
+                &self
+            ),
             #[cfg(swc_ast_unknown)]
             _ => panic!("unable to access unknown nodes"),
         }

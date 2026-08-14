@@ -122,6 +122,7 @@ pub trait ExprExt {
             Expr::TsConstAssertion(..) => false,
 
             Expr::Invalid(..) => false,
+            Expr::Tsrx(..) => false,
             #[cfg(swc_ast_unknown)]
             _ => unreachable!(),
         }

@@ -752,6 +752,9 @@ impl<'a> ConvertCtx<'a> {
             swc::Expr::Invalid(i) => {
                 unreachable!("SWC invalid expressions should not be converted: {:?}", i)
             }
+            swc::Expr::Tsrx(_) => {
+                unimplemented!("the React compiler AST does not support TSRX expressions")
+            }
         }
     }
 
@@ -1824,6 +1827,9 @@ impl<'a> ConvertCtx<'a> {
             swc::JSXElementName::JSXNamespacedName(ns) => {
                 JSXElementName::JSXNamespacedName(self.convert_jsx_namespaced_name(ns))
             }
+            swc::JSXElementName::JSXExprContainer(_) => {
+                unimplemented!("the React compiler AST does not support TSRX dynamic tags")
+            }
         }
     }
 
@@ -1941,6 +1947,9 @@ impl<'a> ConvertCtx<'a> {
             }
             swc::JSXElementChild::JSXFragment(frag) => {
                 JSXChild::JSXFragment(self.convert_jsx_fragment(frag))
+            }
+            swc::JSXElementChild::Tsrx(_) => {
+                unimplemented!("the React compiler AST does not support TSRX JSX children")
             }
         }
     }

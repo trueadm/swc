@@ -128,6 +128,7 @@ fn shopify_2_same_opt() {
                 jsc: JscConfig {
                     syntax: Some(Syntax::Typescript(TsSyntax {
                         tsx: true,
+                        tsrx: false,
                         decorators: false,
                         dts: false,
                         no_early_errors: false,

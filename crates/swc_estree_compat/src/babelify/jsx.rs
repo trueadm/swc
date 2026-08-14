@@ -111,6 +111,9 @@ impl Babelify for JSXElementName {
             JSXElementName::Ident(i) => BabelJSXElementName::Id(i.babelify(ctx).into()),
             JSXElementName::JSXMemberExpr(e) => BabelJSXElementName::Expr(e.babelify(ctx)),
             JSXElementName::JSXNamespacedName(n) => BabelJSXElementName::Name(n.babelify(ctx)),
+            JSXElementName::JSXExprContainer(_) => {
+                panic!("Babel JSXElementName has no TSRX dynamic-tag equivalent")
+            }
             #[cfg(swc_ast_unknown)]
             _ => panic!("unable to access unknown nodes"),
         }
@@ -271,6 +274,9 @@ impl Babelify for JSXElementChild {
             JSXElementChild::JSXSpreadChild(s) => BabelJSXElementChild::Spread(s.babelify(ctx)),
             JSXElementChild::JSXElement(e) => BabelJSXElementChild::Element(e.babelify(ctx)),
             JSXElementChild::JSXFragment(f) => BabelJSXElementChild::Fragment(f.babelify(ctx)),
+            JSXElementChild::Tsrx(_) => {
+                panic!("Babel JSXElementChild has no TSRX directive equivalent")
+            }
             #[cfg(swc_ast_unknown)]
             _ => panic!("unable to access unknown nodes"),
         }

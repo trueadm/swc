@@ -205,6 +205,7 @@ impl VisitMutHook<()> for JsxSelf {
                 span: DUMMY_SP,
                 expr: JSXExpr::Expr(Box::new(ThisExpr { span: DUMMY_SP }.into())),
             })),
+            shorthand: false,
         }));
     }
 }

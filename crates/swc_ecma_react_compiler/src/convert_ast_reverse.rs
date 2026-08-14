@@ -1558,6 +1558,7 @@ impl ReverseCtx {
                     .value
                     .as_ref()
                     .map(|value| self.convert_jsx_attribute_value(value)),
+                shorthand: false,
             }),
             JSXAttributeItem::JSXSpreadAttribute(spread) => {
                 swc::JSXAttrOrSpread::SpreadElement(swc::SpreadElement {

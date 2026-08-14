@@ -1409,7 +1409,8 @@ impl Optimizer<'_> {
             | Expr::TsNonNull(_)
             | Expr::TsAs(_)
             | Expr::TsInstantiation(_)
-            | Expr::TsSatisfies(_) => false,
+            | Expr::TsSatisfies(_)
+            | Expr::Tsrx(_) => false,
 
             #[cfg(swc_ast_unknown)]
             _ => panic!("unable to access unknown nodes"),
